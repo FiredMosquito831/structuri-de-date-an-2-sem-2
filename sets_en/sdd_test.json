@@ -1,0 +1,1824 @@
+[
+  {
+    "id": 1,
+    "question": "Identificați problema secvenței de cod sursă următoare:\n\nCod:\nint* p;\n*p = 10;",
+    "category": "Pointeri & memorie",
+    "sourceType": "s",
+    "code": "int* p;\n*p = 10;",
+    "answers": [
+      {
+        "text": "Variabila p este alocată în segmentul de cod (read-only), deci nu poate fi modificată.",
+        "isCorrect": false
+      },
+      {
+        "text": "Pointerul este constant.",
+        "isCorrect": false
+      },
+      {
+        "text": "Memoria nu este alocată înainte de utilizare.",
+        "isCorrect": true
+      },
+      {
+        "text": "Variabila p conține adresa nulă.",
+        "isCorrect": false
+      },
+      {
+        "text": "Nu se poate modifica valoarea 10.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Care dintre următoarele afirmații sunt adevărate cu privire la o variabilă de tip pointer în limbajul C?",
+    "category": "Pointeri & memorie",
+    "sourceType": "m",
+    "answers": [
+      {
+        "text": "Poate fi utilizată în orice calcul aritmetic.",
+        "isCorrect": false
+      },
+      {
+        "text": "Prezintă o sintaxă dedicată pentru declarare.",
+        "isCorrect": true
+      },
+      {
+        "text": "Stochează o adresă de memorie.",
+        "isCorrect": true
+      },
+      {
+        "text": "Poate fi utilizată doar pentru accesul la segmente de date.",
+        "isCorrect": false
+      },
+      {
+        "text": "Poate fi utilizată doar pentru accesul la memorie heap.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Precizați rezultatul execuției aplicației de mai jos:\n\nCod:\nint v[] = {10, 20};\nint *pv = v;\nprintf(\"v[0] = %d, pv[0] = %d\\n\", v[0], pv[0]);",
+    "category": "Pointeri & memorie",
+    "sourceType": "s",
+    "code": "int v[] = {10, 20};\nint *pv = v;\nprintf(\"v[0] = %d, pv[0] = %d\\n\", v[0], pv[0]);",
+    "answers": [
+      {
+        "text": "v[0] = 10, pv[0] = 20",
+        "isCorrect": false
+      },
+      {
+        "text": "v[0] = 10, pv[0] = 0",
+        "isCorrect": false
+      },
+      {
+        "text": "Eroare de compilare: operatorul [] nu se aplică unui pointer.",
+        "isCorrect": false
+      },
+      {
+        "text": "Eroare de compilare: adresa unui vector nu poate fi atribuită unui pointer.",
+        "isCorrect": false
+      },
+      {
+        "text": "v[0] = 10, pv[0] = 10",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Precizați rezultatul execuției aplicației de mai jos:\n\nCod:\nint* pc, c, d;\npc = (int*)malloc(sizeof(int));\npc[0] = -10;\nc = *pc + 11;\nd = c + 1;\nprintf(\"c = %d, d = %d, *pc = %d\\n\", c, d, *pc);\nfree(pc);",
+    "category": "Pointeri & memorie",
+    "sourceType": "s",
+    "code": "int* pc, c, d;\npc = (int*)malloc(sizeof(int));\npc[0] = -10;\nc = *pc + 11;\nd = c + 1;\nprintf(\"c = %d, d = %d, *pc = %d\\n\", c, d, *pc);\nfree(pc);",
+    "answers": [
+      {
+        "text": "c = 1, d = 2, *pc = -10",
+        "isCorrect": true
+      },
+      {
+        "text": "c = 1, d = 1, *pc = -10",
+        "isCorrect": false
+      },
+      {
+        "text": "Eroare de compilare: c și d nu sunt modificate corect.",
+        "isCorrect": false
+      },
+      {
+        "text": "c = -10, d = -9, *pc = -10",
+        "isCorrect": false
+      },
+      {
+        "text": "Eroare de execuție: nu se alocă suficient spațiu heap.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Completați codul pentru eliberarea corectă a spațiului ocupat de un vector alocat dinamic (spațiul 1 / spațiul 2):\n\nCod:\nint* v = malloc(nrEl * sizeof(int));\n/* ... */\n[ spațiu 1 ](v);\nv = [ spațiu 2 ];",
+    "category": "Pointeri & memorie",
+    "sourceType": "s",
+    "code": "int* v = malloc(nrEl * sizeof(int));\n/* ... */\n[ spațiu 1 ](v);\nv = [ spațiu 2 ];",
+    "answers": [
+      {
+        "text": "free(v);  v = NULL;",
+        "isCorrect": true
+      },
+      {
+        "text": "delete(v);  v = NULL;",
+        "isCorrect": false
+      },
+      {
+        "text": "free(v);  v = malloc(nrEl);",
+        "isCorrect": false
+      },
+      {
+        "text": "clear(v);  v = NULL;",
+        "isCorrect": false
+      },
+      {
+        "text": "clean(v);  v = NULL;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Care afirmație este adevărată cu privire la variabila pointer p la momentul dezalocării memoriei Heap prin apelarea funcției free(p)?",
+    "category": "Pointeri & memorie",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Își păstrează conținutul, respectiv adresa de memorie Heap obținută la momentul alocării.",
+        "isCorrect": true
+      },
+      {
+        "text": "Se dezalocă variabila p de pe segmentul de Stack unde a fost alocată.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se copiază datele în memoria Stack unde vor fi accesate prin pointerul p.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se reinițializează cu pointerul nul.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se rescrie cu o adresă de memorie Heap diferită.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Ce valoare este afișată în urma rulării secvenței de cod?\n\nCod:\nint v[5] = { 1, 2, 3, 4, 5 };\nprintf(\"%d\", v[3]);",
+    "category": "Vectori",
+    "sourceType": "s",
+    "code": "int v[5] = { 1, 2, 3, 4, 5 };\nprintf(\"%d\", v[3]);",
+    "answers": [
+      {
+        "text": "5",
+        "isCorrect": false
+      },
+      {
+        "text": "2",
+        "isCorrect": false
+      },
+      {
+        "text": "4",
+        "isCorrect": true
+      },
+      {
+        "text": "3",
+        "isCorrect": false
+      },
+      {
+        "text": "1",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Dacă un vector este declarat ca char mesaj[10], care este indexul valid pentru ultimul element al acestui vector?",
+    "category": "Vectori",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "9",
+        "isCorrect": true
+      },
+      {
+        "text": "last",
+        "isCorrect": false
+      },
+      {
+        "text": "mesaj + 1",
+        "isCorrect": false
+      },
+      {
+        "text": "mesaj - 1",
+        "isCorrect": false
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Selectați caracteristicile vectorilor alocați în mod static:",
+    "category": "Vectori",
+    "sourceType": "m",
+    "answers": [
+      {
+        "text": "Trebuie să fie eliberați cu ajutorul funcției free()",
+        "isCorrect": false
+      },
+      {
+        "text": "Dimensiunea vectorului poate fi stabilită la momentul execuției",
+        "isCorrect": false
+      },
+      {
+        "text": "Dimensiunea este fixă",
+        "isCorrect": true
+      },
+      {
+        "text": "Sunt alocați pe stiva de memorie a funcției în care sunt declarați",
+        "isCorrect": true
+      },
+      {
+        "text": "Pot fi redimensionați cu ajutorul funcției realloc()",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Ce presupune mecanismul de tip chaining într-o tabelă de dispersie?",
+    "category": "Tabele de dispersie",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Folosirea unui vector auxiliar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Calcularea unei funcții de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Tratarea coliziunilor printr-o listă de elemente.",
+        "isCorrect": true
+      },
+      {
+        "text": "Duplicarea seturilor de date în memorie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Translatarea în coduri ASCII a valorii hash.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Ce structură de date se utilizează pentru implementarea mecanismului chaining pentru o tabelă de dispersie?",
+    "category": "Tabele de dispersie",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Structura arborescentă.",
+        "isCorrect": false
+      },
+      {
+        "text": "Structura Heap.",
+        "isCorrect": false
+      },
+      {
+        "text": "Matrice.",
+        "isCorrect": false
+      },
+      {
+        "text": "Listă simplu înlănțuită.",
+        "isCorrect": true
+      },
+      {
+        "text": "Vector.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Care dintre următoarele afirmații sunt adevărate cu privire la secvența de cod?\n\nCod:\nstruct Nod** hTable;\nhTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    hTable[i] = NULL;",
+    "category": "Tabele de dispersie",
+    "sourceType": "m",
+    "code": "struct Nod** hTable;\nhTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    hTable[i] = NULL;",
+    "answers": [
+      {
+        "text": "Inițializarea elementelor din vector este efectuată cu valoarea unui pointer nul.",
+        "isCorrect": true
+      },
+      {
+        "text": "Inițializează un vector de 100 de elemente de tip Nod*.",
+        "isCorrect": true
+      },
+      {
+        "text": "Alocă și inițializează structura suport pentru o tabelă de dispersie cu mecanism de tip chaining.",
+        "isCorrect": true
+      },
+      {
+        "text": "Alocă un vector cu dimensiunea de 100 de elemente.",
+        "isCorrect": true
+      },
+      {
+        "text": "Inițializează un vector de 100 de elemente de tip Nod.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "Tabelă de dispersie cu linear probing. Care afirmație este adevărată despre funcția de căutare?\n\nCod:\nint functieStudent(struct Student* ht, int size, char* studName){\n  char found = 0, i;\n  for (i = 0; i < size && !found; i++)\n    if (ht[i].name != NULL && strcmp(ht[i].name, studName)==0)\n      found = 1;\n  if (found == 1) return i;\n  else return -1;\n}",
+    "category": "Tabele de dispersie",
+    "sourceType": "s",
+    "code": "int functieStudent(struct Student* ht, int size, char* studName){\n  char found = 0, i;\n  for (i = 0; i < size && !found; i++)\n    if (ht[i].name != NULL && strcmp(ht[i].name, studName)==0)\n      found = 1;\n  if (found == 1) return i;\n  else return -1;\n}",
+    "answers": [
+      {
+        "text": "Implementează corect căutarea dacă studName este cheie pentru tabela de dispersie.",
+        "isCorrect": true
+      },
+      {
+        "text": "Implementează incorect căutarea dacă studName nu este cheie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Parametrii funcției insertStudent(...) sunt declarați eronat.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementează corect căutarea dacă studName nu este cheie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Identifică toate elementele de tip Student stocate în tabelă.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Tabelă de dispersie cu chaining, având numele studentului drept cheie. Care afirmație este corectă despre funcția de căutare?\n\nCod:\nstruct Student cautaInTable(struct Nod** hab, int size, char* nume){\n  int index = calculPozitie(nume, size);\n  struct Nod* tmp = hab[index];\n  while (tmp){\n    if (strcmp(tmp->std.nume, nume)==0){ /* ... */ }\n    tmp = tmp->next;\n  }\n  /* ... */\n}",
+    "category": "Tabele de dispersie",
+    "sourceType": "s",
+    "code": "struct Student cautaInTable(struct Nod** hab, int size, char* nume){\n  int index = calculPozitie(nume, size);\n  struct Nod* tmp = hab[index];\n  while (tmp){\n    if (strcmp(tmp->std.nume, nume)==0){ /* ... */ }\n    tmp = tmp->next;\n  }\n  /* ... */\n}",
+    "answers": [
+      {
+        "text": "Incorectă: funcția hash permite accesul direct la lista de studenți care au generat conflict.",
+        "isCorrect": false
+      },
+      {
+        "text": "Incorectă: funcția hash generează valori în afara zonei alocate.",
+        "isCorrect": false
+      },
+      {
+        "text": "Incorectă: funcția hash nu poate fi utilizată pentru nume de student.",
+        "isCorrect": false
+      },
+      {
+        "text": "Corectă: se utilizează exclusiv accesul secvențial la datele stocate.",
+        "isCorrect": false
+      },
+      {
+        "text": "Corectă: se utilizează funcția hash urmată de căutarea secvențială a studentului.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Care dintre următoarele afirmații sunt adevărate cu privire la o structură de tip listă simplă?",
+    "category": "Liste înlănțuite",
+    "sourceType": "m",
+    "answers": [
+      {
+        "text": "Lista simplă este o structură liniară.",
+        "isCorrect": true
+      },
+      {
+        "text": "Este o structură dinamică: nodurile pot fi adăugate/eliminate oricând, fără a cunoaște apriori numărul lor.",
+        "isCorrect": true
+      },
+      {
+        "text": "Două noduri diferite sunt eterogene din punct de vedere al datelor stocate.",
+        "isCorrect": false
+      },
+      {
+        "text": "Elementele sunt referite în acces secvențial.",
+        "isCorrect": true
+      },
+      {
+        "text": "Două noduri diferite sunt omogene din punct de vedere al datelor stocate.",
+        "isCorrect": true
+      },
+      {
+        "text": "Fiecare nod stochează mai multe elemente de același tip.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "question": "Pentru ștergerea eficientă a nodurilor arbitrare, cea mai potrivită structură este:",
+    "category": "Liste înlănțuite",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Heap binar",
+        "isCorrect": false
+      },
+      {
+        "text": "Listă dublu înlănțuită",
+        "isCorrect": true
+      },
+      {
+        "text": "Listă simplu înlănțuită",
+        "isCorrect": false
+      },
+      {
+        "text": "Listă circulară simplu înlănțuită",
+        "isCorrect": false
+      },
+      {
+        "text": "Tablou static",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Avantaje ale listelor înlănțuite față de heap-uri:",
+    "category": "Liste înlănțuite",
+    "sourceType": "m",
+    "answers": [
+      {
+        "text": "Cea mai mare eficiență în sortare",
+        "isCorrect": false
+      },
+      {
+        "text": "Management dinamic simplificat în anumite contexte",
+        "isCorrect": true
+      },
+      {
+        "text": "Acces aleator mai rapid",
+        "isCorrect": false
+      },
+      {
+        "text": "Inserții/ștergeri mai simple în poziții cunoscute",
+        "isCorrect": true
+      },
+      {
+        "text": "Acces direct la elementul min/max",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "question": "După parcurgerea listei până la ultimul nod, ce cod adaugă corect un nod nou cu valoarea 4 la finalul listei?\n\nCod:\nwhile (current->next != NULL){\n    current = current->next;\n}\n/* punctul A */",
+    "category": "Liste înlănțuite",
+    "sourceType": "s",
+    "code": "while (current->next != NULL){\n    current = current->next;\n}\n/* punctul A */",
+    "answers": [
+      {
+        "text": "current->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next->next = malloc(sizeof(Node)); current->next->next->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next = malloc(sizeof(Node)); current->next->info = 4; current->next->next = NULL;",
+        "isCorrect": true
+      },
+      {
+        "text": "current = malloc(sizeof(Node)); current->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next = malloc(sizeof(Node)); current = current->next; current->info = 4; current->next = NULL;",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Care este afirmația corectă cu privire la funcția de mai jos?\n\nCod:\nStudent functionList(Node** head){\n  Student s = {...};\n  if (*head != NULL){\n    s = (*head)->info;\n    Node* tmp = *head;\n    if ((*head)->next != (*head)){\n      tmp->prev->next = tmp->next;\n      tmp->next->prev = tmp->prev;\n      *head = tmp->next;\n    } else { *head = NULL; }\n    free(tmp);\n  }\n  return s;\n}",
+    "category": "Liste înlănțuite",
+    "sourceType": "s",
+    "code": "Student functionList(Node** head){\n  Student s = {...};\n  if (*head != NULL){\n    s = (*head)->info;\n    Node* tmp = *head;\n    if ((*head)->next != (*head)){\n      tmp->prev->next = tmp->next;\n      tmp->next->prev = tmp->prev;\n      *head = tmp->next;\n    } else { *head = NULL; }\n    free(tmp);\n  }\n  return s;\n}",
+    "answers": [
+      {
+        "text": "Inserează un element la începutul unei liste simplu înlănțuite.",
+        "isCorrect": false
+      },
+      {
+        "text": "Inserează un nod la începutul unei liste dublu înlănțuite circulare.",
+        "isCorrect": false
+      },
+      {
+        "text": "Capătul listei este transmis prin valoare pentru a nu-l actualiza.",
+        "isCorrect": false
+      },
+      {
+        "text": "Returnează informația utilă existentă în capătul listei.",
+        "isCorrect": true
+      },
+      {
+        "text": "Realizează ștergerea containerului echivalent primului nod din listă.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "question": "Operații aplicabile arborilor binari de căutare includ:",
+    "category": "Arbori",
+    "sourceType": "m",
+    "answers": [
+      {
+        "text": "Căutare nod după o anumită valoare a cheii",
+        "isCorrect": true
+      },
+      {
+        "text": "Traversare postordine",
+        "isCorrect": true
+      },
+      {
+        "text": "Sortare topologică",
+        "isCorrect": false
+      },
+      {
+        "text": "Inserare nod nou",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "În ce domenii se folosesc arborii ca structuri de date aplicate?",
+    "category": "Arbori",
+    "sourceType": "m",
+    "answers": [
+      {
+        "text": "Definirea structurii arborescente a unui site web",
+        "isCorrect": true
+      },
+      {
+        "text": "Organizarea fișierelor în cadrul unui sistem de operare",
+        "isCorrect": true
+      },
+      {
+        "text": "Organigrame sau structuri ierarhice în companii",
+        "isCorrect": true
+      },
+      {
+        "text": "Implementarea căutărilor secvențiale",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Care valoare poate fi cheie pentru nodul rădăcină după ștergerea nodului 55 din arborele binar de căutare cu reprezentarea pe niveluri 55-33-77-11-44-66-88?",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "44",
+        "isCorrect": true
+      },
+      {
+        "text": "66",
+        "isCorrect": true
+      },
+      {
+        "text": "77",
+        "isCorrect": false
+      },
+      {
+        "text": "88",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "Ce metodă de căutare folosim pentru a găsi un nod într-un arbore?",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Bubble Sort",
+        "isCorrect": false
+      },
+      {
+        "text": "Metoda selecției",
+        "isCorrect": false
+      },
+      {
+        "text": "Divide et Impera",
+        "isCorrect": true
+      },
+      {
+        "text": "Metoda numărării",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Arborii binari de căutare sunt:",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "arbori oarecare",
+        "isCorrect": false
+      },
+      {
+        "text": "arbori binari",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Având un nod X cu 2 copii și Y succesorul lui X (în ordine), care afirmație este adevărată?",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Y nu are niciun copil în dreapta",
+        "isCorrect": false
+      },
+      {
+        "text": "Y nu are niciun copil în stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "Niciuna de mai sus",
+        "isCorrect": false
+      },
+      {
+        "text": "Y are 2 copii",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "question": "Care dintre următoarele afirmații este falsă?",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Subarborii din stânga și dreapta ar trebui să fie tot arbori binari de căutare",
+        "isCorrect": false
+      },
+      {
+        "text": "Niciunul dintre cele de mai sus",
+        "isCorrect": true
+      },
+      {
+        "text": "Copilul din dreapta e întotdeauna mai mare decât părintele său",
+        "isCorrect": false
+      },
+      {
+        "text": "Copilul din stânga e întotdeauna mai mic decât părintele său",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Care traversare afișează elementele unui arbore binar de căutare în ordine crescătoare (sortat)?",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Inordine",
+        "isCorrect": true
+      },
+      {
+        "text": "Preordine",
+        "isCorrect": false
+      },
+      {
+        "text": "Postordine",
+        "isCorrect": false
+      },
+      {
+        "text": "Pe nivel",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "question": "Ce se poate afirma despre traversarea inordine a unui arbore binar de căutare?",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Niciun răspuns corect",
+        "isCorrect": false
+      },
+      {
+        "text": "Traversează arborele în ordine descrescătoare",
+        "isCorrect": false
+      },
+      {
+        "text": "Traversează arborele în ordine crescătoare",
+        "isCorrect": true
+      },
+      {
+        "text": "Traversează arborele la întâmplare",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "question": "Înălțimea unui arbore binar de căutare construit aleator este:",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Distanța de la primul la ultimul nod din subarborele stâng",
+        "isCorrect": false
+      },
+      {
+        "text": "Niciun răspuns corect",
+        "isCorrect": false
+      },
+      {
+        "text": "O(log n)",
+        "isCorrect": true
+      },
+      {
+        "text": "Distanța de la primul la ultimul nod",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "question": "Într-o traversare postordine, nodurile rădăcină apar la final.",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Adevărat",
+        "isCorrect": true
+      },
+      {
+        "text": "Fals",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "question": "Într-un arbore binar de căutare, o nouă valoare se inserează mereu ca:",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "frunză",
+        "isCorrect": true
+      },
+      {
+        "text": "oriunde",
+        "isCorrect": false
+      },
+      {
+        "text": "lângă cel mai mare element",
+        "isCorrect": false
+      },
+      {
+        "text": "rădăcină",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "question": "Într-un arbore binar de căutare, valoarea asociată copilului din dreapta unui nod este întotdeauna:",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "mai mare decât valoarea nodului",
+        "isCorrect": true
+      },
+      {
+        "text": "mai mare sau egală decât valoarea nodului",
+        "isCorrect": false
+      },
+      {
+        "text": "mai mică decât valoarea nodului",
+        "isCorrect": false
+      },
+      {
+        "text": "mai mică sau egală decât valoarea nodului",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "question": "Parcurgerea nerecursivă a unui arbore binar se poate face folosind o:",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "listă dublă",
+        "isCorrect": false
+      },
+      {
+        "text": "tabelă de dispersie",
+        "isCorrect": false
+      },
+      {
+        "text": "listă simplă",
+        "isCorrect": false
+      },
+      {
+        "text": "stivă",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Principala metodă de rezolvare a problemelor cu arbori binari este:",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "permutări",
+        "isCorrect": false
+      },
+      {
+        "text": "recursivitate",
+        "isCorrect": true
+      },
+      {
+        "text": "backtracking",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "question": "Timpul de căutare pentru arborii binari (în cazul cel mai defavorabil) este identic cu:",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "cel al unei liste simplu înlănțuite",
+        "isCorrect": true
+      },
+      {
+        "text": "cel al unei tabele de dispersie",
+        "isCorrect": false
+      },
+      {
+        "text": "cel al unei liste dublu înlănțuite",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "question": "Toți arborii binari de căutare sunt echilibrați.",
+    "category": "Arbori BST",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Adevărat",
+        "isCorrect": false
+      },
+      {
+        "text": "Fals",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "question": "Care dintre următoarele sunt cazuri în care se folosește rotația dreapta-stânga într-un arbore AVL?",
+    "category": "Arbori AVL",
+    "sourceType": "m",
+    "answers": [
+      {
+        "text": "Dezechilibru la stânga cu fiu dreapta",
+        "isCorrect": false
+      },
+      {
+        "text": "Rădăcina are gradul de echilibru -2 și fiul stâng +1",
+        "isCorrect": false
+      },
+      {
+        "text": "Gradul de echilibru este 0",
+        "isCorrect": false
+      },
+      {
+        "text": "Rădăcina are gradul de echilibru +2 și fiul drept -1",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "question": "Ce tipuri de rotații se aplică pentru reechilibrarea unui arbore AVL?",
+    "category": "Arbori AVL",
+    "sourceType": "m",
+    "answers": [
+      {
+        "text": "Rotație stânga-dreapta",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație dreapta-stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație dreapta",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "question": "Arborele binar este echilibrat când:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "unul dintre factorii de echilibrare ai nodurilor este 0",
+        "isCorrect": false
+      },
+      {
+        "text": "toți factorii de echilibrare sunt egali cu suma nodurilor",
+        "isCorrect": false
+      },
+      {
+        "text": "unul dintre factorii de echilibrare este egal cu suma nodurilor",
+        "isCorrect": false
+      },
+      {
+        "text": "toți factorii de echilibrare ai nodurilor sunt -1, 0, +1",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "question": "Arborii AVL se mai numesc și arbori:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "conecși",
+        "isCorrect": false
+      },
+      {
+        "text": "echilibrați",
+        "isCorrect": true
+      },
+      {
+        "text": "sortați",
+        "isCorrect": false
+      },
+      {
+        "text": "dezechilibrați",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "question": "Arborii AVL sunt arbori binari ordonați, care au în plus o proprietate de echilibru:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "înălțimea subarborelui stâng este egală cu înălțimea subarborelui drept",
+        "isCorrect": false
+      },
+      {
+        "text": "înălțimea subarborelui stâng diferă de a celui drept prin cel puțin o unitate",
+        "isCorrect": false
+      },
+      {
+        "text": "înălțimea subarborelui stâng diferă de a celui drept prin cel mult o unitate",
+        "isCorrect": true
+      },
+      {
+        "text": "înălțimea subarborelui drept diferă de a celui stâng prin maxim o unitate",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "question": "Caracteristica unui arbore binar de căutare echilibrat este aceea că:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Numărul de noduri al subarborelui stâng diferă de cel al subarborelui drept cu exact o unitate",
+        "isCorrect": false
+      },
+      {
+        "text": "Înălțimea subarborelui stâng diferă de a celui drept cu fix o unitate",
+        "isCorrect": false
+      },
+      {
+        "text": "Înălțimea subarborelui stâng diferă de a celui drept cu cel mult o unitate",
+        "isCorrect": true
+      },
+      {
+        "text": "Numărul de noduri al subarborelui stâng diferă de cel al subarborelui drept cu cel mult o unitate",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "question": "Care dintre următoarele afirmații este adevărată cu privire la arborii AVL?",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Inserarea unui nod presupune traversarea de la rădăcină către poziția de inserat, urmată de traversarea inversă de la nodul inserat către rădăcină.",
+        "isCorrect": true
+      },
+      {
+        "text": "Arborii AVL se traversează o singură dată, de la poziția de inserat către rădăcină.",
+        "isCorrect": false
+      },
+      {
+        "text": "Arborii AVL se traversează o singură dată, de la rădăcină către poziția de inserat.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "question": "Care dintre următoarele afirmații este corectă?",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Un arbore AVL are gradul de echilibru al fiecărui nod în mulțimea {-1, 0, +1}",
+        "isCorrect": false
+      },
+      {
+        "text": "Arborele AVL reprezintă un arbore binar de căutare echilibrat.",
+        "isCorrect": false
+      },
+      {
+        "text": "Toate variantele sunt corecte",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotirea unui arbore se poate face prin rotire la stânga sau la dreapta",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "question": "Care dintre următoarele afirmații este greșită?",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Arborii perfect echilibrați: pentru fiecare nod, diferența dintre numărul de noduri ale subarborelui drept și stâng ia valori în {-1, 0, +1}",
+        "isCorrect": false
+      },
+      {
+        "text": "Arborii echilibrați se împart în perfect echilibrați, imperfect echilibrați și inegal echilibrați",
+        "isCorrect": false
+      },
+      {
+        "text": "Arborii imperfect echilibrați: pentru fiecare nod, diferența dintre înălțimea subarborelui drept și stâng ia valori în {-1, 0, +1}",
+        "isCorrect": false
+      },
+      {
+        "text": "Nodurile frunză de pe nivelurile 1..h-2 ale unui arbore perfect echilibrat de înălțime h trebuie să aibă numărul maxim de fii",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "question": "Care afirmație legată de caracteristicile arborilor de echilibru este corectă?",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Toate variantele sunt corecte",
+        "isCorrect": true
+      },
+      {
+        "text": "Factorul de echilibru reprezintă diferența dintre înălțimea subarborelui drept și a celui stâng",
+        "isCorrect": false
+      },
+      {
+        "text": "Un arbore binar este echilibrat când toți factorii de echilibrare sunt {-1, 0, +1}",
+        "isCorrect": false
+      },
+      {
+        "text": "Înălțimea unui arbore de echilibru este lungimea celui mai lung drum de la rădăcină la unul dintre nodurile terminale",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "question": "Care dintre următoarele proprietăți NU este caracteristică arborilor binari perfect echilibrați?",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Orice nod de pe niveluri intermediare are doi fii",
+        "isCorrect": false
+      },
+      {
+        "text": "Gradul de echilibru al fiecărui nod ia valori în {-1, 0, 1}",
+        "isCorrect": false
+      },
+      {
+        "text": "Toate nodurile frunză sunt pe același nivel",
+        "isCorrect": false
+      },
+      {
+        "text": "Diferența dintre numărul de noduri ale subarborelui drept și cel stâng este 0",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "question": "Dacă gradul de echilibru este -2:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "dezechilibru pe partea stângă",
+        "isCorrect": true
+      },
+      {
+        "text": "dezechilibru pe partea dreaptă",
+        "isCorrect": false
+      },
+      {
+        "text": "niciuna dintre variante",
+        "isCorrect": false
+      },
+      {
+        "text": "este în echilibru",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "question": "Dezechilibrul în partea dreaptă a unui arbore (calcul de la stânga la dreapta) se rezolvă prin:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "rotire la stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "rotire la dreapta",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "question": "Echilibrul trebuie verificat după:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "doar după inserare",
+        "isCorrect": false
+      },
+      {
+        "text": "o dată ce este echilibrat, arborele rămâne echilibrat",
+        "isCorrect": false
+      },
+      {
+        "text": "după fiecare ștergere și inserare",
+        "isCorrect": true
+      },
+      {
+        "text": "doar după ștergere",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "question": "Gradul de echilibru pentru un arbore AVL se poate calcula:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "doar de la stânga la dreapta",
+        "isCorrect": false
+      },
+      {
+        "text": "doar de la dreapta la stânga",
+        "isCorrect": false
+      },
+      {
+        "text": "de la stânga la dreapta și de la dreapta la stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "de sus în jos",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "question": "În structura elementelor unui arbore echilibrat găsim:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "informația utilă",
+        "isCorrect": false
+      },
+      {
+        "text": "informația utilă (eticheta), nod stânga, nod dreapta",
+        "isCorrect": false
+      },
+      {
+        "text": "informația utilă, nod *nod;",
+        "isCorrect": false
+      },
+      {
+        "text": "informația utilă (eticheta), nod *stânga, nod *dreapta",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "question": "Înălțimea unui arbore este:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "lungimea drumului de la un nod la alt nod",
+        "isCorrect": false
+      },
+      {
+        "text": "lungimea drumului de la rădăcină la un nod",
+        "isCorrect": false
+      },
+      {
+        "text": "lungimea celui mai lung drum de la rădăcină la alt nod",
+        "isCorrect": false
+      },
+      {
+        "text": "lungimea celui mai lung drum de la rădăcină la unul dintre nodurile terminale",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "question": "Pentru GE ∈ {-2, 2}, nodul este:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Echilibrat",
+        "isCorrect": false
+      },
+      {
+        "text": "Dezechilibrat la dreapta",
+        "isCorrect": false
+      },
+      {
+        "text": "Dezechilibrat la stânga",
+        "isCorrect": false
+      },
+      {
+        "text": "Dezechilibrat puternic",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "question": "Pentru GE = 0, nodul este:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Dezechilibrat la dreapta",
+        "isCorrect": false
+      },
+      {
+        "text": "Dezechilibrat puternic",
+        "isCorrect": false
+      },
+      {
+        "text": "Echilibrat",
+        "isCorrect": true
+      },
+      {
+        "text": "Dezechilibrat la stânga",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "question": "Prin câte unități diferă înălțimea subarborelui stâng al unui nod de înălțimea subarborelui drept într-un arbore AVL?",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "niciuna",
+        "isCorrect": false
+      },
+      {
+        "text": "cel puțin una",
+        "isCorrect": false
+      },
+      {
+        "text": "două",
+        "isCorrect": false
+      },
+      {
+        "text": "cel mult una",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "question": "Proprietatea de echilibru a arborilor AVL este valabilă pentru:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "frunze",
+        "isCorrect": false
+      },
+      {
+        "text": "orice nod",
+        "isCorrect": true
+      },
+      {
+        "text": "cel mai mare element al arborelui",
+        "isCorrect": false
+      },
+      {
+        "text": "rădăcină",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "question": "Reechilibrarea unui arbore binar de căutare și păstrarea caracteristicilor AVL se realizează prin:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "dublă rotire la dreapta",
+        "isCorrect": false
+      },
+      {
+        "text": "toate variantele sunt corecte",
+        "isCorrect": true
+      },
+      {
+        "text": "dublă rotire la stânga",
+        "isCorrect": false
+      },
+      {
+        "text": "rotirea simplă la stânga și rotirea simplă la dreapta",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "question": "Pentru șirul 23, 8, 28, 10, 5, 3 (rădăcina = 23), pe baza căruia se definește un arbore binar de căutare, care afirmație este greșită?",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "arborele este dezechilibrat",
+        "isCorrect": false
+      },
+      {
+        "text": "înălțimea subarborelui drept este egală cu înălțimea subarborelui stâng",
+        "isCorrect": true
+      },
+      {
+        "text": "arborele are h = 4",
+        "isCorrect": false
+      },
+      {
+        "text": "pentru a echilibra arborele trebuie făcută o rotire la dreapta",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "question": "Se numește factor de echilibrare:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "diferența dintre înălțimea subarborelui drept și înălțimea subarborelui stâng",
+        "isCorrect": true
+      },
+      {
+        "text": "diferența dintre lungimea arborelui stâng și înălțimea acestuia",
+        "isCorrect": false
+      },
+      {
+        "text": "suma dintre înălțimea subarborelui stâng și lățimea subarborelui drept",
+        "isCorrect": false
+      },
+      {
+        "text": "suma dintre înălțimea subarborelui drept și înălțimea subarborelui stâng",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "question": "Structura pentru arborele AVL cuprinde:",
+    "category": "Arbori AVL",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "informații despre fiul din dreapta și fiul din stânga",
+        "isCorrect": false
+      },
+      {
+        "text": "informații despre fiul din dreapta, fiul din stânga și despre conținutul nodurilor",
+        "isCorrect": true
+      },
+      {
+        "text": "informații despre fiul din stânga și despre conținutul nodului",
+        "isCorrect": false
+      },
+      {
+        "text": "niciun răspuns de mai sus",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "question": "Arborii heap pot fi de două feluri:",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "niciuna dintre variante",
+        "isCorrect": false
+      },
+      {
+        "text": "compleți & incompleți",
+        "isCorrect": false
+      },
+      {
+        "text": "min-heap & max-heap",
+        "isCorrect": true
+      },
+      {
+        "text": "sortați & nesortați",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "question": "Care afirmație este greșită?",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "O structură heap se poate implementa folosind arbori binari, însă stocarea eficientă se face folosind un masiv bidimensional",
+        "isCorrect": true
+      },
+      {
+        "text": "Construirea unei structuri heap pornește de la un masiv unidimensional",
+        "isCorrect": false
+      },
+      {
+        "text": "Proprietatea de structură înseamnă că elementele sunt organizate într-un arbore binar complet",
+        "isCorrect": false
+      },
+      {
+        "text": "Proprietatea de ordonare (max-heap): valoarea oricărui nod, în afară de rădăcină, este mai mică sau egală decât valoarea părintelui",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "question": "Care dintre următoarele afirmații este eronată în ceea ce privește o structură heap?",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Un min-heap poate fi transformat în max-heap doar inversând relația de ordin",
+        "isCorrect": false
+      },
+      {
+        "text": "Heap-ul reprezintă un arbore binar ordonat și structurat",
+        "isCorrect": false
+      },
+      {
+        "text": "Nodurile de pe ultimul nivel al unei structuri heap sunt completate de la dreapta la stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "Heap-ul poate fi organizat sub formă de min-heap sau max-heap",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "question": "Ce tip de sortare se poate implementa cu ajutorul structurii binare heap?",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "bubble sort",
+        "isCorrect": false
+      },
+      {
+        "text": "heap sort",
+        "isCorrect": true
+      },
+      {
+        "text": "căutare binară",
+        "isCorrect": false
+      },
+      {
+        "text": "sortarea rapidă",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "question": "Conform proprietății de heap (max-heap), elementul maxim din vector este plasat în:",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "ultimul părinte al heap-ului",
+        "isCorrect": false
+      },
+      {
+        "text": "ultimul copil al heap-ului",
+        "isCorrect": false
+      },
+      {
+        "text": "rădăcina heap-ului",
+        "isCorrect": true
+      },
+      {
+        "text": "primul copil al heap-ului",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "question": "Cum putem determina care este rădăcina unei structuri heap?",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "are cea mai mare valoare sau cea mai mică valoare",
+        "isCorrect": true
+      },
+      {
+        "text": "e setată mereu cu valoarea unu",
+        "isCorrect": false
+      },
+      {
+        "text": "rădăcina nu are valoare",
+        "isCorrect": false
+      },
+      {
+        "text": "valoarea sa e de câteva ori mai mare decât celelalte",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "question": "Dintre proprietățile enumerate, care propoziție este adevărată despre structura heap?",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "niciuna din variantele de mai sus",
+        "isCorrect": false
+      },
+      {
+        "text": "valoarea oricărui nod este mai mare sau egală cu valoarea oricărui fiu al său",
+        "isCorrect": true
+      },
+      {
+        "text": "structura heap se completează de la dreapta la stânga",
+        "isCorrect": false
+      },
+      {
+        "text": "toate nivelurile sunt completate",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "question": "Fiul din dreapta se găsește pe poziția (indexare de la 0):",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "n / p, unde n este numărul total de noduri și p este nodul părinte",
+        "isCorrect": false
+      },
+      {
+        "text": "2*p + 2, unde p este nodul părinte",
+        "isCorrect": true
+      },
+      {
+        "text": "2*p + 1, unde p este nodul părinte",
+        "isCorrect": false
+      },
+      {
+        "text": "(p-1) / 2, unde p este nodul părinte",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "question": "HeapSort este:",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "transformă un arbore într-un vector",
+        "isCorrect": false
+      },
+      {
+        "text": "funcție care returnează valoarea nodului rădăcină",
+        "isCorrect": false
+      },
+      {
+        "text": "algoritm de sortare a arborelui",
+        "isCorrect": false
+      },
+      {
+        "text": "algoritm de sortare a unui vector",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "question": "Într-un MAX-Heap, elementul cu cea mai mare prioritate este mereu pe nodul:",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Primul nod din subarborele drept",
+        "isCorrect": false
+      },
+      {
+        "text": "Nodul rădăcină",
+        "isCorrect": true
+      },
+      {
+        "text": "Primul nod din subarborele stâng",
+        "isCorrect": false
+      },
+      {
+        "text": "Nodul frunză",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "question": "Legat de min-heap, este fals faptul că:",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Ultimul nivel al heap-ului conține nodurile cu cele mai mari valori",
+        "isCorrect": false
+      },
+      {
+        "text": "Cea mai mică valoare se află pe primul nivel al heap-ului",
+        "isCorrect": false
+      },
+      {
+        "text": "Rădăcina heap-ului va fi elementul cu valoarea cea mai mare",
+        "isCorrect": true
+      },
+      {
+        "text": "Valorile nodurilor părinte sunt mai mici sau egale decât cele ale copiilor",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "question": "Pentru parcurgerea unui masiv unidimensional ce stochează nodurile unui heap, NU se poate folosi formula:",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Fiu-Dreapta = 2*(poziție + 1)",
+        "isCorrect": false
+      },
+      {
+        "text": "Fiu-Stânga = 2*poziție - 1",
+        "isCorrect": true
+      },
+      {
+        "text": "Fiu-Dreapta = 2*poziție + 2",
+        "isCorrect": false
+      },
+      {
+        "text": "Fiu-Stânga = 2*poziție + 1",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "question": "Structura heap poate fi folosită ca:",
+    "category": "Heap",
+    "sourceType": "s",
+    "answers": [
+      {
+        "text": "Niciun răspuns corect",
+        "isCorrect": false
+      },
+      {
+        "text": "Coadă de prioritate",
+        "isCorrect": true
+      },
+      {
+        "text": "Stivă",
+        "isCorrect": false
+      },
+      {
+        "text": "Un vector cu elemente în ordine descrescătoare",
+        "isCorrect": false
+      }
+    ]
+  }
+]

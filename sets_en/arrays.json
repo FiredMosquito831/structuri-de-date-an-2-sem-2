@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "question": "What is the time complexity of accessing an array element by index?",
+    "answers": [
+      {
+        "text": "O(1)",
+        "isCorrect": true
+      },
+      {
+        "text": "O(log n)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(n)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(n log n)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Which operation is expensive in a fixed-size array when inserting near the beginning?",
+    "answers": [
+      {
+        "text": "Shifting following elements to make room",
+        "isCorrect": true
+      },
+      {
+        "text": "Reading the first element",
+        "isCorrect": false
+      },
+      {
+        "text": "Reading the array length",
+        "isCorrect": false
+      },
+      {
+        "text": "Comparing two indexes",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What does contiguous storage usually improve?",
+    "answers": [
+      {
+        "text": "Cache locality",
+        "isCorrect": true
+      },
+      {
+        "text": "Pointer chasing",
+        "isCorrect": false
+      },
+      {
+        "text": "Hash collisions",
+        "isCorrect": false
+      },
+      {
+        "text": "Tree balancing",
+        "isCorrect": false
+      }
+    ]
+  }
+]

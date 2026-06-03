@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "question": "In a binary search tree, where are values smaller than a node usually stored?",
+    "answers": [
+      {
+        "text": "In the left subtree",
+        "isCorrect": true
+      },
+      {
+        "text": "In the right subtree",
+        "isCorrect": false
+      },
+      {
+        "text": "Only at the root",
+        "isCorrect": false
+      },
+      {
+        "text": "Outside the tree",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What traversal visits left subtree, node, then right subtree?",
+    "answers": [
+      {
+        "text": "In-order traversal",
+        "isCorrect": true
+      },
+      {
+        "text": "Pre-order traversal",
+        "isCorrect": false
+      },
+      {
+        "text": "Post-order traversal",
+        "isCorrect": false
+      },
+      {
+        "text": "Level-order traversal",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What is the main risk of an unbalanced binary search tree?",
+    "answers": [
+      {
+        "text": "Operations can degrade to O(n)",
+        "isCorrect": true
+      },
+      {
+        "text": "It cannot store keys",
+        "isCorrect": false
+      },
+      {
+        "text": "It always uses no memory",
+        "isCorrect": false
+      },
+      {
+        "text": "It becomes a hash table",
+        "isCorrect": false
+      }
+    ]
+  }
+]

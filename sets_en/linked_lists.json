@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "question": "What is a linked list node typically composed of?",
+    "answers": [
+      {
+        "text": "Stored data plus one or more links to other nodes",
+        "isCorrect": true
+      },
+      {
+        "text": "Only contiguous memory cells",
+        "isCorrect": false
+      },
+      {
+        "text": "Only a hash function",
+        "isCorrect": false
+      },
+      {
+        "text": "Only a comparison function",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is the cost of searching an unsorted singly linked list by value?",
+    "answers": [
+      {
+        "text": "O(n)",
+        "isCorrect": true
+      },
+      {
+        "text": "O(1)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(log n)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(n log n)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Which linked list operation can be O(1) if the target position/node is already known?",
+    "answers": [
+      {
+        "text": "Insertion after a known node",
+        "isCorrect": true
+      },
+      {
+        "text": "Searching by value",
+        "isCorrect": false
+      },
+      {
+        "text": "Sorting the list",
+        "isCorrect": false
+      },
+      {
+        "text": "Finding the middle without extra information",
+        "isCorrect": false
+      }
+    ]
+  }
+]

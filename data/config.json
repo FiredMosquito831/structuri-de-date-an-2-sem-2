@@ -1,0 +1,78 @@
+{
+  "title": "Data Structures MCQ Practice",
+  "subtitle": "Data Structures and Algorithms",
+  "displayOrder": [
+    "sdd_test",
+    "arrays",
+    "linked_lists",
+    "trees"
+  ],
+  "defaultSet": "sdd_test",
+  "links": {
+    "youtube": "https://www.youtube.com/"
+  },
+  "sets": {
+    "sdd_test": {
+      "id": "sdd_test",
+      "displayName": "SDD Test HTML",
+      "shortName": "SDD Test",
+      "icon": "ph-database",
+      "colorClass": "blue",
+      "dataFile": "sets/sdd_test.json",
+      "englishDataFile": "sets_en/sdd_test.json",
+      "chapters": null,
+      "presets": [
+        30,
+        50,
+        74,
+        "all"
+      ],
+      "defaultCount": 30
+    },
+    "arrays": {
+      "id": "arrays",
+      "displayName": "Arrays",
+      "shortName": "Arrays",
+      "icon": "ph-grid-four",
+      "colorClass": "blue",
+      "dataFile": "sets/arrays.json",
+      "englishDataFile": "sets_en/arrays.json",
+      "chapters": null,
+      "presets": [
+        3,
+        "all"
+      ],
+      "defaultCount": 3
+    },
+    "linked_lists": {
+      "id": "linked_lists",
+      "displayName": "Linked Lists",
+      "shortName": "Lists",
+      "icon": "ph-link",
+      "colorClass": "green",
+      "dataFile": "sets/linked_lists.json",
+      "englishDataFile": "sets_en/linked_lists.json",
+      "chapters": null,
+      "presets": [
+        3,
+        "all"
+      ],
+      "defaultCount": 3
+    },
+    "trees": {
+      "id": "trees",
+      "displayName": "Trees",
+      "shortName": "Trees",
+      "icon": "ph-tree-structure",
+      "colorClass": "amber",
+      "dataFile": "sets/trees.json",
+      "englishDataFile": "sets_en/trees.json",
+      "chapters": null,
+      "presets": [
+        3,
+        "all"
+      ],
+      "defaultCount": 3
+    }
+  }
+}

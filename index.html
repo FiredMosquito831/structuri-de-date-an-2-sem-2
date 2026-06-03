@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SEO Optimization -->
+    <title>Data Structures MCQ Practice</title>
+    <meta name="description"
+        content="Static Data Structures multiple choice exam practice website.">
+
+    <!-- React & ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { bg: '#111827', card: '#1f2937', text: '#f9fafb', border: '#374151' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Compact Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+        }
+    </style>
+</head>
+
+<body class="transition-colors duration-300 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useMemo, useRef } = React;
+        const APP_DATA_VERSION = 'data-structures-sdd-test-2026-06-04';
+        const fetchJson = (path) => fetch(`${path}?v=${encodeURIComponent(APP_DATA_VERSION)}`, { cache: 'no-store' }).then(res => res.json());
+        const LANGUAGE_OPTIONS = {
+            ro: { label: 'Romana', short: 'RO', subtitle: 'Seturile romanesti curente' },
+            en: { label: 'English', short: 'EN', subtitle: 'Translated MCQ sets' }
+        };
+
+        // --- 1. DATA INPUT ---
+        // NOTE: Data is now loaded from external JSON files in data/ directory
+        // The following arrays are kept for reference but commented out
+
+        // --- 2. LOGICĂ PROCESARE ---
+
+        // Helper to calculate score for a single question based on new rules
+        const calculatePointsForQuestion = (question, userAnswers, totalQuestions) => {
+            if (!question || !totalQuestions) return 0;
+
+            // Handle potentially undefined userAnswers (if skipping question)
+            const safeUserAnswers = userAnswers || [];
+
+            const totalCorrect = question.correctAnswers.length;
+
+            // Max possible score per test is 5.0
+            // Value of one question = 5.0 / Total Questions
+            const maxQuestionScore = 5.0 / totalQuestions;
+
+            // SPECIAL CASE: If NO answers are correct, user MUST select NOTHING to get points.
+            if (totalCorrect === 0) {
+                // If user selected nothing (empty array), they are correct
+                if (safeUserAnswers.length === 0) {
+                    return maxQuestionScore;
+                } else {
+                    // If user selected something, it's wrong.
+                    // Score is 0 (or penalty, but logically 0 fits best for "completely wrong premise")
+                    return 0;
+                }
+            }
+
+            const valuePerCorrect = maxQuestionScore / totalCorrect;
+            // Penalty is 20% of the specific question's value (ratio maintained from 0.1/0.5)
+            const penalty = maxQuestionScore * 0.2;
+
+            let correctSelections = 0;
+            let wrongSelections = 0;
+
+            safeUserAnswers.forEach(id => {
+                if (question.correctAnswers.includes(id)) correctSelections++;
+                else wrongSelections++;
+            });
+
+            const rawScore = (correctSelections * valuePerCorrect) - (wrongSelections * penalty);
+            return Math.max(0, rawScore);
+        };
+
+        /**
+         * getUnitConfig - Generate chapter/unit selection options for a question set
+         *
+         * This function is now DATA-DRIVEN - it reads from config and allQuestionData
+         * instead of having hardcoded chapter definitions.
+         *
+         * @param {string} setId - The question set ID (e.g., 'previous', 'generated', 'book')
+         * @param {Object} config - The config object loaded from config.json
+         * @param {Object} allQuestionData - The question data loaded from JSON files
+         * @returns {Array} Array of unit options with id, label, sub, min, max
+         */
+        const getQuestionList = (rawData) => {
+            if (!rawData) return [];
+            if (Array.isArray(rawData)) {
+                if (rawData.length === 1 && rawData[0] && Array.isArray(rawData[0].questions)) {
+                    return rawData[0].questions;
+                }
+                return rawData;
+            }
+            if (Array.isArray(rawData.questions)) return rawData.questions;
+            return [];
+        };
+
+        const getConfiguredSetIds = (config) => {
+            const ordered = Array.isArray(config?.displayOrder) ? config.displayOrder : [];
+            return ordered.filter(setId => config?.sets?.[setId]);
+        };
+
+        const getUnitConfig = (setId, config, allQuestionData) => {
+            // Get the configuration for this set
+            const setConfig = config?.sets?.[setId];
+            if (!setConfig) {
+                console.warn(`No config found for set: ${setId}`);
+                return [];
+            }
+
+            // Get the actual question data to calculate totals
+            const rawData = allQuestionData?.[setId];
+            if (!rawData) {
+                console.warn(`No data found for set: ${setId}`);
+                return [];
+            }
+
+            const questions = getQuestionList(rawData);
+            const totalQuestions = questions.length;
+
+            // Always include "All" option as first choice
+            const units = [{
+                id: 'all',
+                label: setConfig.displayName,
+                sub: `Complete Set (1-${totalQuestions})`,
+                min: 1,
+                max: totalQuestions
+            }];
+
+            // Add chapter options if this set has chapters defined
+            if (setConfig.chapters && setConfig.chapters.length > 0) {
+                setConfig.chapters.forEach(ch => {
+                    units.push({
+                        id: ch.id,
+                        label: ch.label,
+                        sub: `Questions ${ch.range[0]}-${ch.range[1]}`,
+                        min: ch.range[0],
+                        max: ch.range[1]
+                    });
+                });
+            }
+
+            return units;
+        };
+
+        /**
+         * shuffleArray - Fisher-Yates shuffle algorithm
+         * Creates a new randomized copy of the array (doesn't modify original)
+         */
+        const shuffleArray = (array) => {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        };
+
+        // ╔═══════════════════════════════════════════════════════════════════════════════╗
+        // ║                    ENHANCED RANDOMIZATION SYSTEM                              ║
+        // ║                                                                               ║
+        // ║  This system tracks which questions you've seen and prioritizes showing      ║
+        // ║  you NEW questions first. This means better variety, especially when         ║
+        // ║  selecting smaller samples (like 10 questions at a time).                    ║
+        // ║                                                                               ║
+        // ║  HOW IT WORKS:                                                                ║
+        // ║  1. Questions you've seen are stored in localStorage (persists across        ║
+        // ║     sessions)                                                                ║
+        // ║  2. When selecting questions, unseen questions are prioritized               ║
+        // ║  3. If all questions have been seen, it starts from the "oldest seen"        ║
+        // ║  4. Each set and chapter has its own independent history                     ║
+        // ║                                                                               ║
+        // ║  TO CLEAR HISTORY: Call clearQuestionHistory('setId') in browser console     ║
+        // ║  Example: clearQuestionHistory('generated_ch1')                              ║
+        // ╚═══════════════════════════════════════════════════════════════════════════════╝
+
+        /**
+         * getQuestionHistory - Retrieve list of recently seen question IDs
+         * 
+         * @param {string} historyKey - Unique key combining set and part (e.g., 'generated_ch1')
+         * @returns {Array} Array of question IDs that were recently shown
+         */
+        const getQuestionHistory = (historyKey) => {
+            const storageKey = `quiz_history_${historyKey}`;
+            try {
+                const stored = localStorage.getItem(storageKey);
+                return stored ? JSON.parse(stored) : [];
+            } catch (e) {
+                console.warn('Failed to load question history:', e);
+                return [];
+            }
+        };
+
+        /**
+         * saveQuestionHistory - Store list of seen question IDs
+         * 
+         * @param {string} historyKey - Unique key combining set and part
+         * @param {Array} history - Array of question IDs
+         * @param {number} maxSize - Maximum history size (prevents infinite growth)
+         */
+        const saveQuestionHistory = (historyKey, history, maxSize = 300) => {
+            const storageKey = `quiz_history_${historyKey}`;
+            try {
+                // Only keep the most recent N questions to prevent localStorage bloat
+                const trimmed = history.slice(-maxSize);
+                localStorage.setItem(storageKey, JSON.stringify(trimmed));
+            } catch (e) {
+                console.warn('Failed to save question history:', e);
+            }
+        };
+
+        /**
+         * clearQuestionHistory - Reset history for a specific set/chapter
+         * 
+         * Call this in browser console if you want to "start fresh":
+         * Example: clearQuestionHistory('generated_all')
+         * 
+         * @param {string} historyKey - The history key to clear
+         */
+        const clearQuestionHistory = (historyKey) => {
+            localStorage.removeItem(`quiz_history_${historyKey}`);
+            console.log(`Cleared history for: ${historyKey}`);
+        };
+
+        /**
+         * selectQuestionsWithHistory - Smart question selection that maximizes variety
+         * 
+         * ALGORITHM:
+         * 1. Load history of previously seen questions
+         * 2. Split pool into "fresh" (never seen) and "seen" (in history)
+         * 3. Take from fresh questions first (shuffled for randomness)
+         * 4. If need more, take from seen (oldest first, to maximize time between repeats)
+         * 5. Final shuffle of selected questions for presentation order
+         * 6. Update history with newly selected questions
+         * 
+         * RESULT: You won't see the same questions until you've gone through most/all
+         * of the available questions. Much better variety at small sample sizes!
+         * 
+         * @param {Array} pool - Available questions to choose from
+         * @param {number} count - How many questions to select
+         * @param {string} historyKey - Unique key for tracking (e.g., 'generated_ch1')
+         * @returns {Array} Selected questions in randomized order
+         */
+        const selectQuestionsWithHistory = (pool, count, historyKey) => {
+            if (!pool || pool.length === 0) return [];
+
+            const safeCount = Math.min(count, pool.length);
+            const history = getQuestionHistory(historyKey);
+            const historySet = new Set(history);
+
+            // Split pool into fresh (unseen) and seen questions
+            const fresh = pool.filter(q => !historySet.has(q.id));
+            const seen = pool.filter(q => historySet.has(q.id));
+
+            // Sort seen questions by their position in history
+            // Lower index = seen longer ago = should be prioritized for repeat
+            seen.sort((a, b) => {
+                const posA = history.indexOf(a.id);
+                const posB = history.indexOf(b.id);
+                return posA - posB; // Oldest first
+            });
+
+            let selected = [];
+
+            // PRIORITY 1: Take from fresh pool (shuffle for randomness within fresh)
+            if (fresh.length > 0) {
+                const shuffledFresh = shuffleArray(fresh);
+                const fromFresh = shuffledFresh.slice(0, safeCount);
+                selected.push(...fromFresh);
+            }
+
+            // PRIORITY 2: If need more, take oldest seen questions
+            if (selected.length < safeCount && seen.length > 0) {
+                const remaining = safeCount - selected.length;
+                // Take oldest seen, then shuffle them for variety in presentation
+                const oldestSeen = seen.slice(0, remaining);
+                const shuffledOldest = shuffleArray(oldestSeen);
+                selected.push(...shuffledOldest);
+            }
+
+            // Final shuffle of the entire selection for presentation order
+            selected = shuffleArray(selected);
+
+            // Update history with newly selected question IDs
+            const newHistory = [...history, ...selected.map(q => q.id)];
+            saveQuestionHistory(historyKey, newHistory);
+
+            return selected;
+        };
+
+        function processQuestions(rawData) {
+            const questions = getQuestionList(rawData);
+            return questions
+                .filter(q => q && q.question && q.answers)
+                .map(q => {
+                const rawAnswers = Array.isArray(q.answers)
+                    ? q.answers
+                    : Object.entries(q.answers).map(([key, text]) => ({
+                        text: `${key}) ${text}`,
+                        isCorrect: Array.isArray(q.correct) && q.correct.includes(key)
+                    }));
+
+                const normalizedAnswers = rawAnswers
+                    .map((ans) => {
+                        const cleanText = String(ans.text || '').replace(/^[a-zA-Z]\)\s*/, '').trim();
+                        return { text: cleanText, isCorrect: Boolean(ans.isCorrect) };
+                    })
+                    .filter(ans => ans.text && !/^[,.;:"'`]+$/.test(ans.text));
+
+                const options = shuffleArray(normalizedAnswers)
+                    .map((ans, index) => ({
+                        id: String.fromCharCode(97 + index),
+                        text: ans.text,
+                        isCorrect: ans.isCorrect
+                    }));
+
+                const correctAnswers = options.filter(o => o.isCorrect).map(o => o.id);
+
+                if (options.length < 1 || correctAnswers.length === 0) return null;
+
+                return {
+                    id: q.id,
+                    text: q.question,
+                    options: options,
+                    correctAnswers: correctAnswers,
+                    isMultiple: correctAnswers.length > 1
+                };
+            }).filter(Boolean);
+        }
+
+        function isValidProcessedQuestion(question) {
+            if (!question || typeof question.text !== 'string' || !question.text.trim()) return false;
+            if (!Array.isArray(question.options) || question.options.length < 1) return false;
+            if (!Array.isArray(question.correctAnswers) || question.correctAnswers.length === 0) return false;
+
+            const optionIds = new Set();
+            return question.options.every(opt => {
+                if (!opt || typeof opt.id !== 'string' || optionIds.has(opt.id)) return false;
+                optionIds.add(opt.id);
+                if (typeof opt.text !== 'string') return false;
+                const text = opt.text.trim();
+                if (!text || /^[,.;:"'`]+$/.test(text)) return false;
+                return true;
+            }) && question.correctAnswers.every(id => optionIds.has(id));
+        }
+
+        function isValidSavedSession(sess) {
+            return (
+                sess &&
+                sess.dataVersion === APP_DATA_VERSION &&
+                Array.isArray(sess.activeQuestions) &&
+                sess.activeQuestions.length > 0 &&
+                sess.activeQuestions.every(isValidProcessedQuestion)
+            );
+        }
+
+        // --- 3. UI COMPONENTS ---
+
+        function ThemeToggle({ isDark, toggleTheme }) {
+            return (
+                <button
+                    onClick={toggleTheme}
+                    className="fixed top-3 right-3 z-50 p-2 rounded-full bg-white dark:bg-gray-800 text-gray-600 dark:text-yellow-400 shadow-md border border-gray-200 dark:border-gray-700 hover:scale-105 transition-transform"
+                    title={isDark ? "Light Mode" : "Dark Mode"}
+                >
+                    <i className={`ph-fill ${isDark ? 'ph-sun' : 'ph-moon'} text-xl`}></i>
+                </button>
+            );
+        }
+
+        function ExitButton({ onExit }) {
+            return (
+                <button
+                    onClick={onExit}
+                    className="fixed top-3 left-3 z-50 p-2 rounded-full bg-white dark:bg-gray-800 text-red-500 shadow-md border border-gray-200 dark:border-gray-700 hover:bg-red-50 dark:hover:bg-red-900/30 transition-colors"
+                    title="Exit to Menu"
+                >
+                    <i className="ph-bold ph-x text-xl"></i>
+                </button>
+            );
+        }
+
+        function QuestionCard({ question, index, selectedOptions, onSelect, showFeedback, score, mode = 'exam' }) {
+            if (!question) return null;
+
+            const currentSelection = selectedOptions || [];
+
+            return (
+                <div className={`p-4 md:p-5 rounded-xl shadow-sm border transition-all duration-200 ${mode === 'practice'
+                    ? 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 mb-4'
+                    : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 flex flex-col h-full'
+                    }`}>
+                    <div className="mb-3">
+                        <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                            <span className="inline-block px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-200 text-[10px] font-bold rounded uppercase tracking-wide">
+                                Question {index + 1}
+                            </span>
+                            <span className="text-[10px] text-gray-400 dark:text-gray-500">ID: {question.id}</span>
+                            {question.isMultiple && (
+                                <span className="inline-block px-1.5 py-0.5 bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-200 text-[10px] font-bold rounded uppercase tracking-wide flex items-center gap-1">
+                                    <i className="ph-bold ph-check-square"></i>
+                                    Multiple Answers
+                                </span>
+                            )}
+                            {showFeedback && typeof score === 'number' && (
+                                <span className={`inline-block px-1.5 py-0.5 text-[10px] font-bold rounded uppercase tracking-wide border ${score > 0 ? 'bg-green-100 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-300 dark:border-green-800' : 'bg-red-100 text-red-700 border-red-200 dark:bg-red-900/30 dark:text-red-300 dark:border-red-800'
+                                    }`}>
+                                    {Number(score).toFixed(3).replace(/\.?0+$/, '')} pts
+                                </span>
+                            )}
+                        </div>
+                        <h2 className="text-base md:text-lg font-bold text-gray-800 dark:text-gray-100 leading-tight whitespace-pre-wrap">
+                            {question.text}
+                        </h2>
+                    </div>
+
+                    <div className="space-y-2 flex-grow">
+                        {question.options.map((opt) => {
+                            let btnClass = "relative w-full p-3 text-left rounded-lg border transition-all duration-200 flex items-start gap-3 group ";
+
+                            const isSelected = currentSelection.includes(opt.id);
+                            const isCorrect = question.correctAnswers.includes(opt.id);
+
+                            if (showFeedback) {
+                                if (isCorrect) {
+                                    if (isSelected) {
+                                        btnClass += "bg-green-50 dark:bg-green-900/20 border-green-500 text-green-900 dark:text-green-300";
+                                    } else {
+                                        btnClass += "bg-white dark:bg-gray-800 border-green-400 border-dashed text-gray-500 dark:text-gray-400";
+                                    }
+                                } else if (isSelected && !isCorrect) {
+                                    btnClass += "bg-red-50 dark:bg-red-900/20 border-red-500 text-red-900 dark:text-red-300";
+                                } else {
+                                    btnClass += "bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-700 text-gray-400 dark:text-gray-500 opacity-60";
+                                }
+                            } else {
+                                if (isSelected) {
+                                    btnClass += "bg-blue-50 dark:bg-blue-900/20 border-blue-500 text-blue-900 dark:text-blue-100 shadow-sm ring-1 ring-blue-500/20";
+                                } else {
+                                    btnClass += "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700";
+                                }
+                            }
+
+                            return (
+                                <button
+                                    key={opt.id}
+                                    onClick={() => onSelect(opt.id, question.isMultiple)}
+                                    disabled={showFeedback && mode === 'exam'}
+                                    className={btnClass}
+                                >
+                                    <div className={`flex-shrink-0 w-6 h-6 flex items-center justify-center text-xs font-bold border transition-colors ${question.isMultiple ? 'rounded-md' : 'rounded-full'
+                                        } ${showFeedback && isCorrect && isSelected ? 'bg-green-500 text-white border-green-500' :
+                                            showFeedback && isSelected && !isCorrect ? 'bg-red-500 text-white border-red-500' :
+                                                showFeedback && isCorrect && !isSelected ? 'bg-white text-green-500 border-green-500 border-dashed' :
+                                                    isSelected ? 'bg-blue-600 text-white border-blue-600' :
+                                                        'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 border-gray-300 dark:border-gray-600'
+                                        }`}>
+                                        {question.isMultiple && isSelected && <i className="ph-bold ph-check text-[10px]"></i>}
+                                        {!question.isMultiple && isSelected && <div className="w-2 h-2 bg-white rounded-full"></div>}
+                                        {!isSelected && <span className="text-[10px]">{opt.id.toUpperCase()}</span>}
+                                    </div>
+                                    <span className="mt-0.5 flex-grow font-medium text-sm leading-snug">{opt.text}</span>
+
+                                    {showFeedback && (
+                                        <div className="w-5 flex-shrink-0 self-center">
+                                            {isCorrect && <i className="ph-fill ph-check-circle text-green-500 text-xl"></i>}
+                                            {isSelected && !isCorrect && <i className="ph-fill ph-x-circle text-red-500 text-xl"></i>}
+                                        </div>
+                                    )}
+                                </button>
+                            )
+                        })}
+                    </div>
+                </div>
+            );
+        }
+
+        // --- 4. SCREENS ---
+
+        // SetupScreen - Now uses config and allQuestionData props for dynamic set management
+        // Props changed: difficulty -> currentSetId, setDifficulty -> setCurrentSetId
+        function SetupScreen({ totalPool, onStart, hasSavedSession, onResume, currentSetId, setCurrentSetId, config, allQuestionData, websiteConfig, language, setLanguage }) {
+            // Get config for current set to determine defaults
+            const setConfig = config?.sets?.[currentSetId];
+            const defaultCount = setConfig ? setConfig.defaultCount : 10;
+
+            const [selectedCount, setSelectedCount] = useState(defaultCount);
+            const [customCount, setCustomCount] = useState("");
+            const [isCustom, setIsCustom] = useState(false);
+            const [mode, setMode] = useState('exam');
+            const [selectedPart, setSelectedPart] = useState('all');
+            // Multi-set selection: track which sets are selected
+            const allSetIds = useMemo(() => getConfiguredSetIds(config), [config]);
+            const [selectedSets, setSelectedSets] = useState([currentSetId]);
+
+            // Get unit config dynamically from config
+            const unitConfig = useMemo(() => getUnitConfig(currentSetId, config, allQuestionData), [currentSetId, config, allQuestionData]);
+
+            // Calculate total available across all selected sets
+            const totalAvailable = useMemo(() => {
+                let total = 0;
+                selectedSets.forEach(setId => {
+                    total += getQuestionList(allQuestionData[setId]).length;
+                });
+                return total;
+            }, [selectedSets, allQuestionData]);
+
+            useEffect(() => {
+                if (!isCustom && totalAvailable > 0) {
+                    setSelectedCount(totalAvailable);
+                }
+            }, [totalAvailable, isCustom]);
+
+            // Reset selections when set changes
+            useEffect(() => {
+                setSelectedPart('all');
+                const cfg = config?.sets?.[currentSetId];
+                if (cfg) {
+                    setSelectedCount(cfg.defaultCount);
+                }
+                setSelectedSets(prev => {
+                    const validSelected = prev.filter(setId => allSetIds.includes(setId));
+                    if (validSelected.length > 0) return validSelected;
+                    if (prev.length === 0) return [];
+                    return allSetIds.includes(currentSetId) ? [currentSetId] : [];
+                });
+                setIsCustom(false);
+            }, [currentSetId, config, allSetIds]);
+
+            const toggleSet = (setId) => {
+                setSelectedSets(prev => {
+                    if (prev.includes(setId)) {
+                        return prev.filter(s => s !== setId);
+                    }
+                    return [...prev, setId];
+                });
+            };
+
+            const selectAllSets = () => setSelectedSets(allSetIds);
+            const clearSets = () => setSelectedSets([]);
+
+            const handleStart = () => {
+                let countToStart = selectedCount;
+                if (isCustom) {
+                    const val = parseInt(customCount);
+                    if (!val || val <= 0) return alert("Invalid number.");
+                    if (val > totalAvailable) return alert(`Max available: ${totalAvailable}`);
+                    countToStart = val;
+                } else {
+                    countToStart = Math.min(selectedCount, totalAvailable);
+                }
+                onStart(countToStart, mode, selectedPart, selectedSets);
+            };
+
+            // Dynamic presets from config
+            const presetOptions = useMemo(() => {
+                const cfg = config?.sets?.[currentSetId];
+                if (!cfg || !cfg.presets) return [10, 20, 30];
+                return cfg.presets.map(p => {
+                    if (p === 'all') return totalAvailable;
+                    return p;
+                });
+            }, [currentSetId, totalAvailable]);
+
+            return (
+                <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center fade-in">
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl max-w-md w-full border border-gray-100 dark:border-gray-700">
+                        <div className="mb-5">
+                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-3">
+                                <i className="ph-fill ph-student text-2xl"></i>
+                            </div>
+                            <h1 className="text-xl font-bold text-gray-800 dark:text-white leading-tight">{websiteConfig?.title || 'Data Structures MCQ Practice'}</h1>
+                            <p className="text-xs text-blue-600 dark:text-blue-400 font-medium mt-1">{websiteConfig?.subtitle || 'Data Structures and Algorithms'}</p>
+                        </div>
+
+                        <div className="mb-4 p-1 bg-gray-100 dark:bg-gray-700 rounded-xl flex gap-1">
+                            {Object.entries(LANGUAGE_OPTIONS).map(([langId, lang]) => (
+                                <button
+                                    key={langId}
+                                    type="button"
+                                    onClick={() => setLanguage(langId)}
+                                    className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold transition-all ${language === langId
+                                        ? 'bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-300 shadow-sm'
+                                        : 'text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-white'
+                                        }`}
+                                >
+                                    <span className="block">{lang.label}</span>
+                                    <span className="block text-[9px] font-medium opacity-70">{lang.subtitle}</span>
+                                </button>
+                            ))}
+                        </div>
+
+                        {hasSavedSession && (
+                            <button onClick={onResume} className="w-full mb-4 py-3 bg-green-600 hover:bg-green-700 text-white text-sm font-bold rounded-xl shadow-md flex items-center justify-center gap-2 animate-pulse">
+                                <i className="ph-bold ph-arrow-u-up-left"></i>
+                                <span>Continue Previous Session</span>
+                            </button>
+                        )}
+
+                        {websiteConfig?.links?.youtube && (
+                            <div className="mb-6 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                <a href={websiteConfig.links.youtube} target="_blank" rel="noopener noreferrer" className="w-full py-2.5 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:border-red-200 dark:hover:border-red-800 hover:bg-red-50 dark:hover:bg-red-900/10 text-gray-700 dark:text-gray-200 hover:text-red-700 dark:hover:text-red-400 text-xs font-bold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 group">
+                                    <i className="ph-bold ph-youtube-logo text-red-500 text-lg group-hover:scale-110 transition-transform"></i>
+                                    <span>View Theory (YouTube)</span>
+                                </a>
+                                <a href="answers.html" className="w-full py-2.5 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/50 hover:bg-green-100 dark:hover:bg-green-900/30 text-green-800 dark:text-green-200 text-xs font-bold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 group">
+                                    <i className="ph-bold ph-check-circle text-green-500 text-lg group-hover:scale-110 transition-transform"></i>
+                                    <span>Correct Answers</span>
+                                </a>
+                                <a href="materials.html" className="w-full py-2.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700/50 hover:bg-amber-100 dark:hover:bg-amber-900/30 text-amber-800 dark:text-amber-200 text-xs font-bold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 group">
+                                    <i className="ph-bold ph-download-simple text-amber-500 text-lg group-hover:scale-110 transition-transform"></i>
+                                    <span>Study Materials</span>
+                                </a>
+                            </div>
+                        )}
+
+                        <div className="space-y-4">
+                            {/* Question Set Checkboxes - Multi-select */}
+                            <div className="text-left">
+                                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide ml-1 block mb-2">
+                                    Question Sets <span className="font-normal text-gray-400 normal-case">(select multiple to combine)</span>
+                                </label>
+                                <div className="flex gap-2 mb-2">
+                                    <button type="button" onClick={selectAllSets} className="flex-1 py-1.5 rounded-lg border border-blue-500/40 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-[10px] font-bold">
+                                        Select all
+                                    </button>
+                                    <button type="button" onClick={clearSets} className="flex-1 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-[10px] font-bold">
+                                        Clear
+                                    </button>
+                                </div>
+                                <div className="grid grid-cols-1 gap-1.5 max-h-52 overflow-y-auto pr-1">
+                                    {config.displayOrder.map(setId => {
+                                        const setCfg = config.sets[setId];
+                                        const data = allQuestionData[setId];
+                                        const count = getQuestionList(data).length;
+                                        const isSelected = selectedSets.includes(setId);
+
+                                        return (
+                                            <button
+                                                key={setId}
+                                                onClick={() => toggleSet(setId)}
+                                                className={`p-2.5 rounded-lg border text-left transition-all flex items-center gap-3 ${isSelected
+                                                    ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500 ring-1 ring-blue-500/20'
+                                                    : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-500'
+                                                    }`}
+                                            >
+                                                <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 ${isSelected
+                                                    ? 'bg-blue-600 border-blue-600'
+                                                    : 'border-gray-300 dark:border-gray-600'
+                                                    }`}>
+                                                    {isSelected && <i className="ph-bold ph-check text-white text-xs"></i>}
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <div className={`text-xs font-bold ${isSelected ? 'text-blue-700 dark:text-blue-300' : 'text-gray-700 dark:text-gray-200'}`}>
+                                                        <i className={`ph-bold ${setCfg.icon} mr-1`}></i>
+                                                        {setCfg.displayName}
+                                                    </div>
+                                                    <div className="text-[10px] text-gray-500 dark:text-gray-400">{count} questions</div>
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                                <div className="text-[10px] text-gray-400 dark:text-gray-500 mt-1.5 ml-1">
+                                    {selectedSets.length} set{selectedSets.length !== 1 ? 's' : ''} selected — {totalAvailable} total questions
+                                </div>
+                            </div>
+
+                            {/* Work Mode */}
+                            <div className="text-left">
+                                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide ml-1 block mb-2">Work Mode</label>
+                                <div className="flex bg-gray-100 dark:bg-gray-700 p-1 rounded-lg">
+                                    <button onClick={() => setMode('exam')} className={`flex-1 py-2 rounded-md text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${mode === 'exam' ? 'bg-white dark:bg-gray-600 text-blue-600 dark:text-blue-300 shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
+                                        <i className="ph-bold ph-cards"></i> Exam
+                                    </button>
+                                    <button onClick={() => setMode('practice')} className={`flex-1 py-2 rounded-md text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${mode === 'practice' ? 'bg-white dark:bg-gray-600 text-green-600 dark:text-green-300 shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}>
+                                        <i className="ph-bold ph-list-checks"></i> Practice
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Number of Questions */}
+                            <div className="text-left">
+                                <label className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide ml-1 block mb-2">Number of Questions <span className="font-normal text-gray-400 normal-case">(Available: {totalAvailable})</span></label>
+                                <div className="grid grid-cols-4 gap-2 mb-2">
+                                    {presetOptions.map(num => (
+                                        <button key={num} onClick={() => { setSelectedCount(num); setIsCustom(false); }} disabled={num > totalAvailable} className={`py-2 rounded-lg border text-xs font-bold transition-all ${!isCustom && selectedCount === num ? 'bg-blue-600 border-blue-600 text-white' : num > totalAvailable ? 'bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700 text-gray-300 dark:text-gray-600 cursor-not-allowed' : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
+                                            {num}
+                                        </button>
+                                    ))}
+                                </div>
+                                <div className="flex gap-2">
+                                    <button onClick={() => { setSelectedCount(totalAvailable); setIsCustom(false); }} className={`flex-1 py-2 rounded-lg border text-xs font-bold transition-all ${!isCustom && selectedCount === totalAvailable ? 'bg-blue-600 border-blue-600 text-white' : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'}`}>
+                                        All ({totalAvailable})
+                                    </button>
+                                    <div onClick={() => setIsCustom(true)} className={`flex-1 flex items-center border rounded-lg px-2 transition-all ${isCustom ? 'border-blue-600 ring-1 ring-blue-100 dark:ring-blue-900 bg-white dark:bg-gray-800' : 'border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700'}`}>
+                                        <input type="number" placeholder="Custom" value={customCount} onChange={(e) => setCustomCount(e.target.value)} onFocus={() => setIsCustom(true)} className="w-full bg-transparent outline-none text-xs font-bold text-center text-gray-800 dark:text-white placeholder-gray-400" min="1" max={totalAvailable} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onClick={handleStart} disabled={selectedSets.length === 0 || totalAvailable === 0} className="w-full mt-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white text-sm font-bold rounded-xl shadow-lg shadow-blue-200/50 dark:shadow-none transform transition active:scale-[0.98] flex items-center justify-center gap-2">
+                            <span>Start New Quiz</span>
+                            <i className="ph-bold ph-caret-right"></i>
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        // Exam Mode: One Question at a Time, Multi-select, Check -> Next flow
+        function ExamModeScreen({ questions, currentIdx, answers, onAnswer, onNext, onExit }) {
+            const [isChecked, setIsChecked] = useState(false);
+
+            useEffect(() => {
+                setIsChecked(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, [currentIdx]);
+
+            if (!questions || questions.length === 0) return <div>Loading...</div>;
+            const currentQ = questions[currentIdx];
+            if (!currentQ) return <div>Error loading question.</div>;
+
+            const isAnswered = answers[currentQ.id] && answers[currentQ.id].length > 0;
+            // Pass total questions count for correct weighting
+            // Safe to pass answers[currentQ.id] even if undefined, function handles it
+            const currentPoints = isChecked ? calculatePointsForQuestion(currentQ, answers[currentQ.id], questions.length) : 0;
+
+            const progress = ((currentIdx + 1) / questions.length) * 100;
+
+            const handleAction = () => {
+                if (!isChecked) {
+                    setIsChecked(true);
+                } else {
+                    onNext();
+                }
+            };
+
+            return (
+                <div className="min-h-screen flex flex-col max-w-xl mx-auto p-4 fade-in pb-20">
+                    <ExitButton onExit={onExit} />
+
+                    <div className="sticky top-0 z-10 bg-gray-50 dark:bg-gray-900 pt-2 pb-3 mb-1">
+                        <div className="flex justify-between items-center mb-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
+                            <div>
+                                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider block">Progress</span>
+                                <span className="text-sm font-bold text-gray-700 dark:text-gray-200">
+                                    {currentIdx + 1} <span className="text-gray-400 font-normal">/ {questions.length}</span>
+                                </span>
+                            </div>
+                            <div className="flex gap-2">
+                                <div className="flex flex-col items-center px-2">
+                                    <span className="text-[9px] font-bold text-gray-400 uppercase">Answered</span>
+                                    <span className="text-sm font-bold text-gray-700 dark:text-gray-300">{Object.keys(answers).length}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 overflow-hidden">
+                            <div className="bg-blue-600 h-1.5 rounded-full transition-all duration-300" style={{ width: `${progress}%` }}></div>
+                        </div>
+                    </div>
+
+                    <QuestionCard
+                        question={currentQ}
+                        index={currentIdx}
+                        selectedOptions={answers[currentQ.id]}
+                        onSelect={(optId, isMulti) => onAnswer(currentQ.id, optId, isMulti)}
+                        showFeedback={isChecked}
+                        score={currentPoints}
+                        mode="exam"
+                    />
+
+                    <div className="fixed bottom-0 left-0 w-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 p-3 flex justify-center z-20">
+                        <div className="w-full max-w-xl">
+                            <button
+                                onClick={handleAction}
+                                className={`w-full py-3 text-white text-sm font-bold rounded-xl shadow-lg transition transform active:scale-[0.98] flex items-center justify-center gap-2 ${isChecked
+                                    ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900'
+                                    : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'
+                                    }`}
+                            // Disabled check removed entirely to allow empty submission
+                            >
+                                <span>
+                                    {!isChecked
+                                        ? 'Check Answer'
+                                        : (currentIdx < questions.length - 1 ? 'Next Question' : 'Finish Exam')
+                                    }
+                                </span>
+                                <i className={`ph-bold ${!isChecked ? 'ph-check' : 'ph-arrow-right'}`}></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Practice Mode: List View, Submit All at End
+        function PracticeModeScreen({ questions, answers, onAnswer, isSubmitted, onSubmit, onExit }) {
+            if (!questions || questions.length === 0) return <div>Loading...</div>;
+
+            const progress = Object.keys(answers).length;
+            const progressPercent = (progress / questions.length) * 100;
+
+            const stats = useMemo(() => {
+                if (!isSubmitted) return null;
+                let correct = 0;
+                questions.forEach(q => {
+                    const userAns = answers[q.id] || [];
+                    const correctAns = q.correctAnswers;
+                    if (userAns.length === correctAns.length && userAns.every(v => correctAns.includes(v))) {
+                        correct++;
+                    }
+                });
+                return { correct, total: questions.length };
+            }, [isSubmitted, answers, questions]);
+
+            return (
+                <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+                    <ExitButton onExit={onExit} />
+
+                    <div className="sticky top-0 z-30 bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 px-4 py-2 shadow-sm">
+                        <div className="max-w-xl mx-auto flex items-center justify-between pl-8">
+                            <div className="flex flex-col">
+                                {isSubmitted ? (
+                                    <>
+                                        <span className="text-[10px] font-bold text-green-600 dark:text-green-400 uppercase">Result</span>
+                                        <span className="text-sm font-bold text-gray-800 dark:text-white">
+                                            {stats.correct} / {stats.total} Correct
+                                        </span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span className="text-[10px] font-bold text-gray-400 uppercase">Answered</span>
+                                        <span className="text-sm font-bold text-gray-800 dark:text-white">
+                                            {progress} <span className="text-gray-400 font-normal">/ {questions.length}</span>
+                                        </span>
+                                    </>
+                                )}
+                            </div>
+                            <div className="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div className={`h-2 rounded-full transition-all duration-300 ${isSubmitted ? 'bg-blue-600' : 'bg-green-500'}`} style={{ width: isSubmitted ? '100%' : `${progressPercent}%` }}></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="max-w-xl mx-auto p-4 pb-24">
+                        {questions.map((q, idx) => (
+                            <QuestionCard
+                                key={q.id}
+                                question={q}
+                                index={idx}
+                                selectedOptions={answers[q.id]}
+                                onSelect={(optId, isMulti) => !isSubmitted && onAnswer(q.id, optId, isMulti)}
+                                showFeedback={isSubmitted}
+                                score={isSubmitted ? calculatePointsForQuestion(q, answers[q.id], questions.length) : undefined}
+                                mode="practice"
+                            />
+                        ))}
+                    </div>
+
+                    <div className="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-3 shadow-lg z-30">
+                        <div className="max-w-xl mx-auto">
+                            <button
+                                onClick={onSubmit}
+                                className={`w-full py-3 text-white text-sm font-bold rounded-xl shadow-lg transform transition active:scale-[0.98] flex items-center justify-center gap-2 ${isSubmitted
+                                    ? 'bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600'
+                                    : 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'
+                                    }`}
+                            >
+                                {isSubmitted ? (
+                                    <>
+                                        <i className="ph-bold ph-arrow-counter-clockwise text-lg"></i>
+                                        <span>Back to Menu</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <i className="ph-bold ph-check-circle text-lg"></i>
+                                        <span>Check All</span>
+                                    </>
+                                )}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function ResultScreen({ score, total, onRestart }) {
+            const percentage = total > 0 ? Math.round((score.correct / total) * 100) : 0;
+            let message = "";
+            let colorClass = "";
+
+            if (percentage >= 90) { message = "Excellent!"; colorClass = "text-green-600 dark:text-green-400"; }
+            else if (percentage >= 70) { message = "Good!"; colorClass = "text-blue-600 dark:text-blue-400"; }
+            else if (percentage >= 50) { message = "Satisfactory"; colorClass = "text-yellow-600 dark:text-yellow-400"; }
+            else { message = "Try Again"; colorClass = "text-red-600 dark:text-red-400"; }
+
+            return (
+                <div className="min-h-screen flex items-center justify-center p-4 fade-in bg-gray-50 dark:bg-gray-900">
+                    <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl max-w-sm w-full border border-gray-100 dark:border-gray-700 text-center">
+                        <div className="mb-6 relative inline-flex items-center justify-center">
+                            <svg className="w-32 h-32 transform -rotate-90">
+                                <circle className="text-gray-100 dark:text-gray-700" strokeWidth="10" stroke="currentColor" fill="transparent" r="58" cx="64" cy="64" />
+                                <circle className={percentage >= 50 ? "text-blue-500" : "text-red-500"} strokeWidth="10" strokeDasharray={365} strokeDashoffset={365 - (365 * percentage) / 100} strokeLinecap="round" stroke="currentColor" fill="transparent" r="58" cx="64" cy="64" style={{ transition: "stroke-dashoffset 1s ease-out" }} />
+                            </svg>
+                            <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
+                                <span className={`text-3xl font-extrabold ${colorClass}`}>{percentage}%</span>
+                            </div>
+                        </div>
+
+                        <h2 className={`text-2xl font-bold mb-1 ${colorClass}`}>{message}</h2>
+
+                        <div className="mb-6 p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl border border-indigo-100 dark:border-indigo-800">
+                            <span className="block text-xs font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-wide mb-1">Total Points</span>
+                            <span className="text-3xl font-bold text-indigo-700 dark:text-indigo-300">
+                                {score.totalPoints.toFixed(2)} <span className="text-sm font-medium text-indigo-400">/ 5.00</span>
+                            </span>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-3 mb-6">
+                            <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-100 dark:border-green-800">
+                                <p className="text-green-600 dark:text-green-400 font-bold text-[10px] uppercase tracking-wider mb-0.5">Perfect</p>
+                                <p className="text-2xl font-bold text-green-700 dark:text-green-300">{score.correct}</p>
+                            </div>
+                            <div className="p-3 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-100 dark:border-red-800">
+                                <p className="text-red-600 dark:text-red-400 font-bold text-[10px] uppercase tracking-wider mb-0.5">Wrong/Partial</p>
+                                <p className="text-2xl font-bold text-red-700 dark:text-red-300">{score.wrong}</p>
+                            </div>
+                        </div>
+
+                        <button onClick={onRestart} className="w-full py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-bold rounded-xl shadow-md transition flex items-center justify-center gap-2 hover:opacity-90">
+                            <i className="ph-bold ph-arrow-counter-clockwise"></i>
+                            <span>Start New Quiz</span>
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        function App() {
+            // Loading state for JSON data
+            const [config, setConfig] = useState(null);
+            const [allQuestionDataByLanguage, setAllQuestionDataByLanguage] = useState({ ro: {}, en: {} });
+            const [language, setLanguageState] = useState(() => localStorage.getItem('peag_language') || 'ro');
+            const allQuestionData = allQuestionDataByLanguage[language] || {};
+            const [isLoading, setIsLoading] = useState(true);
+            const [websiteConfig, setWebsiteConfig] = useState(null);
+
+            const [screen, setScreen] = useState('setup');
+            const [gameMode, setGameMode] = useState('exam');
+            // currentSetId: Which question set is active (e.g., 'previous', 'generated', 'book')
+            // Will be set from config after loading
+            const [currentSetId, setCurrentSetId] = useState('arrays');
+            // Track which part/chapter is selected for history tracking
+            const [selectedPart, setSelectedPart] = useState('all');
+            const [questionsPool, setQuestionsPool] = useState([]);
+
+            // State
+            const [activeQuestions, setActiveQuestions] = useState([]);
+            const [answers, setAnswers] = useState({});
+            const [currentIndex, setCurrentIndex] = useState(0);
+            const [isSubmitted, setIsSubmitted] = useState(false);
+            const [isDark, setIsDark] = useState(false);
+            const [hasSavedSession, setHasSavedSession] = useState(false);
+
+            const setLanguage = (lang) => {
+                if (!LANGUAGE_OPTIONS[lang]) return;
+                setLanguageState(lang);
+                localStorage.setItem('peag_language', lang);
+            };
+
+            // Load config and question data from JSON files on mount
+            useEffect(() => {
+                // Load theme preference
+                if (localStorage.getItem('mgmt_theme') === 'dark' || (!localStorage.getItem('mgmt_theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    setIsDark(true);
+                }
+
+                // Load config first
+                Promise.all([
+                    fetchJson('data/config.json'),
+                    fetchJson('data/website.json')
+                ])
+                    .then(([configData, websiteData]) => {
+                        setConfig(configData);
+                        setWebsiteConfig(websiteData);
+
+                        // Then load all question sets defined in config
+                        const setConfigs = configData.sets;
+                        const loadPromises = Object.values(setConfigs).flatMap(setConfig => ([
+                            fetchJson(setConfig.dataFile)
+                                .then(data => ({ lang: 'ro', id: setConfig.id, data })),
+                            fetchJson(setConfig.englishDataFile || setConfig.dataFile)
+                                .then(data => ({ lang: 'en', id: setConfig.id, data }))
+                        ]));
+
+                        Promise.all(loadPromises)
+                            .then(results => {
+                                const combined = { ro: {}, en: {} };
+                                results.forEach(r => {
+                                    combined[r.lang][r.id] = r.data;
+                                });
+                                setAllQuestionDataByLanguage(combined);
+
+                                // Set default set from config
+                                const savedSession = localStorage.getItem('mgmt_session');
+                                let initialSetId = configData.defaultSet;
+
+                                if (savedSession) {
+                                    try {
+                                        const sess = JSON.parse(savedSession);
+                                        if (isValidSavedSession(sess)) {
+                                            setHasSavedSession(true);
+                                            if (sess.currentSetId && configData.sets[sess.currentSetId]) initialSetId = sess.currentSetId;
+                                            else if (sess.difficulty) {
+                                                if (sess.difficulty === 'hard' && configData.sets.generated) initialSetId = 'generated';
+                                                else if (sess.difficulty === 'book' && configData.sets.book) initialSetId = 'book';
+                                                else initialSetId = configData.defaultSet;
+                                            }
+                                        } else {
+                                            localStorage.removeItem('mgmt_session');
+                                        }
+                                    } catch (e) { console.error("Err loading session", e); }
+                                }
+
+                                setCurrentSetId(initialSetId);
+                                setIsLoading(false);
+                            });
+                    })
+                    .catch(err => {
+                        console.error("Failed to load config:", err);
+                        setIsLoading(false);
+                    });
+            }, []);
+
+            // Combine questions from all loaded sets. This starter currently has no chapters.
+            useEffect(() => {
+                if (!config || !allQuestionData || Object.keys(allQuestionData).length === 0) return;
+
+                // Combine questions from all sets
+                let combinedRaw = [];
+                Object.values(allQuestionData).forEach(data => {
+                    combinedRaw = combinedRaw.concat(getQuestionList(data));
+                });
+
+                // Reassign IDs to avoid conflicts when combining
+                const combinedWithUniqueIds = combinedRaw.map((q, idx) => ({ ...q, id: idx + 1 }));
+                setQuestionsPool(processQuestions(combinedWithUniqueIds));
+            }, [config, allQuestionData]);
+
+            // Save session data whenever state changes (for resume functionality)
+            useEffect(() => {
+                if (activeQuestions.length > 0) {
+                    const sessionData = {
+                        dataVersion: APP_DATA_VERSION,
+                        language,
+                        screen,
+                        gameMode,
+                        currentSetId,      // Using new set ID instead of old 'difficulty'
+                        selectedPart,      // Track which chapter/part was selected
+                        activeQuestions,
+                        answers,
+                        currentIndex,
+                        isSubmitted
+                    };
+                    localStorage.setItem('mgmt_session', JSON.stringify(sessionData));
+                    setHasSavedSession(true);
+                }
+            }, [screen, gameMode, currentSetId, selectedPart, activeQuestions, answers, currentIndex, isSubmitted, language]);
+
+            useEffect(() => {
+                if (isDark) {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('mgmt_theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('mgmt_theme', 'light');
+                }
+            }, [isDark]);
+
+            /**
+             * startGame - Initialize a new quiz session
+             * NOW USES: selectQuestionsWithHistory for better variety!
+             * Questions you've seen before are deprioritized.
+             * @param {number} count - Number of questions
+             * @param {string} mode - 'exam' or 'practice'
+             * @param {string} part - Chapter/part ID, or 'all' when the active sets have no chapters.
+             * @param {Array} sets - Array of selected set IDs (can be multiple)
+             */
+            const startGame = (count, mode, part, sets) => {
+                setSelectedPart(part);
+
+                // Combine questions from all selected sets
+                let combinedRaw = [];
+                const selectedSets = sets || [currentSetId];
+                selectedSets.forEach(setId => {
+                    combinedRaw = combinedRaw.concat(getQuestionList(allQuestionData[setId]));
+                });
+
+                // Reassign IDs to avoid conflicts when combining sets
+                const combinedWithUniqueIds = combinedRaw.map((q, idx) => ({ ...q, id: idx + 1 }));
+
+                const processedPool = processQuestions(combinedWithUniqueIds);
+                let filteredPool = [...processedPool];
+
+                // Only apply ID range filter for single-set quizzes with chapter selection
+                if (part !== 'all' && (sets || [currentSetId]).length === 1) {
+                    const unitConfig = getUnitConfig(currentSetId, config, allQuestionData);
+                    const partConfig = unitConfig.find(p => p.id === part);
+                    if (partConfig) {
+                        filteredPool = filteredPool.filter(q => q.id >= partConfig.min && q.id <= partConfig.max);
+                    }
+                }
+
+                const safeCount = Math.min(count, filteredPool.length);
+                const historyKey = `${language}_${selectedSets.join('_')}_${part}`;
+                const selected = selectQuestionsWithHistory(filteredPool, safeCount, historyKey);
+
+                setActiveQuestions(selected);
+                setGameMode(mode);
+                setAnswers({});
+                setCurrentIndex(0);
+                setIsSubmitted(false);
+                setScreen('playing');
+            };
+
+            const resumeGame = () => {
+                const savedSession = localStorage.getItem('mgmt_session');
+                if (savedSession) {
+                    const sess = JSON.parse(savedSession);
+                    if (!isValidSavedSession(sess)) {
+                        localStorage.removeItem('mgmt_session');
+                        setHasSavedSession(false);
+                        return;
+                    }
+
+                    // Support both old 'difficulty' and new 'currentSetId'
+                    if (sess.currentSetId && config?.sets?.[sess.currentSetId]) {
+                        setCurrentSetId(sess.currentSetId);
+                    } else if (sess.difficulty) {
+                        // Map old values to new set IDs
+                        if (sess.difficulty === 'hard' && config?.sets?.generated) setCurrentSetId('generated');
+                        else if (sess.difficulty === 'book' && config?.sets?.book) setCurrentSetId('book');
+                        else setCurrentSetId(config?.defaultSet || 'arrays');
+                    }
+
+                    if (sess.selectedPart) setSelectedPart(sess.selectedPart);
+
+                    setActiveQuestions(sess.activeQuestions);
+                    setAnswers(sess.answers || {});
+                    setCurrentIndex(sess.currentIndex || 0);
+                    setGameMode(sess.gameMode || 'exam');
+                    setIsSubmitted(sess.isSubmitted || false);
+                    setScreen(sess.screen || 'playing');
+                }
+            };
+
+            const handleAnswer = (qId, optId, isMultiple) => {
+                setAnswers(prev => {
+                    const currentSelection = prev[qId] || [];
+
+                    if (isMultiple) {
+                        // Toggle logic
+                        if (currentSelection.includes(optId)) {
+                            return { ...prev, [qId]: currentSelection.filter(id => id !== optId) };
+                        } else {
+                            return { ...prev, [qId]: [...currentSelection, optId] };
+                        }
+                    } else {
+                        // Single choice logic (replace)
+                        return { ...prev, [qId]: [optId] };
+                    }
+                });
+            };
+
+            const handleNextQuestion = () => {
+                if (currentIndex < activeQuestions.length - 1) {
+                    setCurrentIndex(prev => prev + 1);
+                } else {
+                    setScreen('finished');
+                }
+            };
+
+            const handlePracticeSubmit = () => {
+                if (!isSubmitted) {
+                    if (Object.keys(answers).length < activeQuestions.length) {
+                        if (!confirm("You haven't answered all questions. Are you sure you want to see the results?")) return;
+                    }
+                    setIsSubmitted(true);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    clearSession();
+                }
+            };
+
+            const handleExit = () => {
+                setScreen('setup');
+            };
+
+            const clearSession = () => {
+                localStorage.removeItem('mgmt_session');
+                setActiveQuestions([]);
+                setAnswers({});
+                setCurrentIndex(0);
+                setIsSubmitted(false);
+                setHasSavedSession(false);
+                setScreen('setup');
+            };
+
+            const calculateScore = () => {
+                let correct = 0;
+                let wrong = 0;
+                let totalPoints = 0;
+
+                activeQuestions.forEach(q => {
+                    const userAns = answers[q.id] || [];
+                    const correctAns = q.correctAnswers;
+
+                    // Count perfect matches for statistics
+                    if (userAns.length === correctAns.length && userAns.every(v => correctAns.includes(v))) {
+                        correct++;
+                    } else {
+                        wrong++;
+                    }
+
+                    // Calculate points with correct weighting
+                    totalPoints += calculatePointsForQuestion(q, userAns, activeQuestions.length);
+                });
+
+                return { correct, wrong, totalPoints };
+            };
+
+            // Show loading screen while fetching config and data
+            if (isLoading || !config) {
+                return (
+                    <div className="flex items-center justify-center h-screen bg-gray-50 dark:bg-gray-900">
+                        <div className="text-center">
+                            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-4 animate-spin">
+                                <i className="ph-bold ph-spinner gap-2"></i>
+                            </div>
+                            <p className="text-gray-600 dark:text-gray-300 font-medium">Loading quiz data...</p>
+                        </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="min-h-screen">
+                    <ThemeToggle isDark={isDark} toggleTheme={() => setIsDark(!isDark)} />
+
+                    {screen === 'setup' && (
+                        <SetupScreen
+                            totalPool={questionsPool}
+                            onStart={startGame}
+                            hasSavedSession={hasSavedSession}
+                            onResume={resumeGame}
+                            currentSetId={currentSetId}
+                            setCurrentSetId={setCurrentSetId}
+                            config={config}
+                            allQuestionData={allQuestionData}
+                            websiteConfig={websiteConfig}
+                            language={language}
+                            setLanguage={setLanguage}
+                        />
+                    )}
+
+                    {screen === 'playing' && gameMode === 'exam' && (
+                        <ExamModeScreen
+                            questions={activeQuestions}
+                            currentIdx={currentIndex}
+                            answers={answers}
+                            onAnswer={handleAnswer}
+                            onNext={handleNextQuestion}
+                            onExit={handleExit}
+                        />
+                    )}
+
+                    {screen === 'playing' && gameMode === 'practice' && (
+                        <PracticeModeScreen
+                            questions={activeQuestions}
+                            answers={answers}
+                            onAnswer={handleAnswer}
+                            isSubmitted={isSubmitted}
+                            onSubmit={handlePracticeSubmit}
+                            onExit={handleExit}
+                        />
+                    )}
+
+                    {screen === 'finished' && (
+                        <ResultScreen
+                            score={calculateScore()}
+                            total={activeQuestions.length}
+                            onRestart={clearSession}
+                        />
+                    )}
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
