@@ -88,6 +88,13 @@
             gap: 18px;
         }
 
+        .featured-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
         .sets-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -101,6 +108,17 @@
             display: flex;
             flex-direction: column;
             min-height: 280px;
+        }
+
+        .featured-card {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.92));
+            border: 1px solid rgba(96, 165, 250, 0.22);
+            min-height: 300px;
+        }
+
+        .featured-card.primary {
+            border-color: rgba(54, 217, 139, 0.28);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .sets-section {
@@ -236,11 +254,13 @@
 
         @media (max-width: 760px) {
             .grid { grid-template-columns: 1fr; }
+            .featured-grid { grid-template-columns: 1fr; }
             .sets-grid { grid-template-columns: 1fr; }
             .section-head { align-items: flex-start; flex-direction: column; }
         }
 
         @media (min-width: 761px) and (max-width: 980px) {
+            .featured-grid { grid-template-columns: 1fr; }
             .sets-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
     </style>
@@ -256,6 +276,44 @@
                 Use these files alongside the MCQ sets. The PDF is the broad course reference for theory and MCQ preparation.
                 The C cheatsheet is a practical code/theory companion for applying implementation patterns in Test 1 and Test 2.
             </p>
+        </section>
+
+        <section class="featured-grid" aria-label="Main preparation documents">
+            <article class="card featured-card primary">
+                <span class="tag">Main Prep · PDF</span>
+                <h2>Data Structures Exam Prep</h2>
+                <p class="desc">
+                    The main preparation document. Use this as the primary path for Test 1, Test 2, and exam-level
+                    mastery. It is the strongest single prep file in this materials pack.
+                </p>
+                <ul>
+                    <li>Best first read before the MCQ sets.</li>
+                    <li>Strongest single document for end-to-end exam preparation.</li>
+                    <li>Use it when you want the most complete structured study path.</li>
+                </ul>
+                <div class="actions">
+                    <a class="button" href="./materials/data-structures-exam-prep.pdf" download>Download PDF</a>
+                    <a class="button secondary" href="./materials/data-structures-exam-prep.pdf" target="_blank" rel="noopener">Open in browser</a>
+                </div>
+            </article>
+
+            <article class="card featured-card">
+                <span class="tag">Main Prep · PDF</span>
+                <h2>Condensed Exam Prep</h2>
+                <p class="desc">
+                    A shorter companion prep document for quick revision and last-pass review. Use it when you want a
+                    compact refresher next to the main exam prep PDF.
+                </p>
+                <ul>
+                    <li>Best for fast revision before a quiz or exam session.</li>
+                    <li>Works as the concise companion to the main prep file.</li>
+                    <li>Useful when you need a lighter recap instead of the full document.</li>
+                </ul>
+                <div class="actions">
+                    <a class="button" href="./materials/condensed-exam-prep.pdf" download>Download PDF</a>
+                    <a class="button secondary" href="./materials/condensed-exam-prep.pdf" target="_blank" rel="noopener">Open in browser</a>
+                </div>
+            </article>
         </section>
 
         <section class="grid" aria-label="Downloadable materials">

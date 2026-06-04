@@ -8,7 +8,9 @@ The site is built for browser-only use: no backend, no database, no build step. 
 
 - `index.html`: main quiz application.
 - `answers.html`: searchable correct-answer viewer.
-- `materials.html`: placeholder page for future course materials.
+- `materials.html`: study materials page with the main prep PDFs, cheatsheet, corpus files, and MCQ set downloads.
+- `materials/data-structures-exam-prep.pdf`: main long-form prep document for Test 1, Test 2, and exam mastery.
+- `materials/condensed-exam-prep.pdf`: condensed companion prep document for fast revision.
 - `materials/all_in_one_courses.pdf`: complete course PDF for MCQ theory preparation.
 - `materials/complete_cheatsheet.c`: C code and theory cheatsheet for Test 1 and Test 2 implementation patterns.
 - `materials/data_structures_mcq_corpus.json`: full Data Structures MCQ corpus in machine-readable JSON format.
@@ -72,6 +74,8 @@ materials.html
 
 Available downloads:
 
+- `Data Structures Exam Prep`: the main prep PDF, intended as the primary document for Test 1, Test 2, and exam mastery.
+- `Condensed Exam Prep`: shorter companion PDF for fast revision.
 - `All In One Courses`: PDF with all course content, intended as the main theory reference for MCQ preparation.
 - `Complete Cheatsheet C`: C file with code plus theory explanations for applying implementation patterns in Test 1 and Test 2.
 - `Full MCQ Corpus`: complete question corpus in JSON, PDF, and DOCX formats.
