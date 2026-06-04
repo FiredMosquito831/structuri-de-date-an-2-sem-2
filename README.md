@@ -71,6 +71,7 @@ Available downloads:
 
 - `All In One Courses`: PDF with all course content, intended as the main theory reference for MCQ preparation.
 - `Complete Cheatsheet C`: C file with code plus theory explanations for applying implementation patterns in Test 1 and Test 2.
+- `MCQ JSON Question Sets`: direct downloads for every active quiz set plus `data/config.json`, useful for backup, review, migration, or rebuilding the site.
 
 ## Regenerate The SDD Set
 

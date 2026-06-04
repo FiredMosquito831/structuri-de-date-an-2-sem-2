@@ -88,12 +88,79 @@
             gap: 18px;
         }
 
+        .sets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
         .card {
             background: var(--panel-strong);
             padding: 24px;
             display: flex;
             flex-direction: column;
             min-height: 280px;
+        }
+
+        .sets-section {
+            margin-top: 22px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            background: rgba(15, 23, 42, 0.7);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
+        }
+
+        .section-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+
+        .section-head h2 {
+            margin: 0;
+        }
+
+        .set-card {
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            border-radius: 18px;
+            background: rgba(30, 41, 59, 0.78);
+            padding: 16px;
+        }
+
+        .set-card h3 {
+            margin: 10px 0 6px;
+            font-size: 1rem;
+        }
+
+        .set-card p {
+            margin: 0 0 14px;
+            color: var(--muted);
+            line-height: 1.5;
+            font-size: 0.92rem;
+        }
+
+        .mini-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .mini-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 11px;
+            padding: 9px 10px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 800;
+            border: 1px solid rgba(96, 165, 250, 0.38);
+            background: rgba(96, 165, 250, 0.14);
+            color: #dbeafe;
         }
 
         .tag {
@@ -169,6 +236,12 @@
 
         @media (max-width: 760px) {
             .grid { grid-template-columns: 1fr; }
+            .sets-grid { grid-template-columns: 1fr; }
+            .section-head { align-items: flex-start; flex-direction: column; }
+        }
+
+        @media (min-width: 761px) and (max-width: 980px) {
+            .sets-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
     </style>
 </head>
@@ -223,8 +296,114 @@
             </article>
         </section>
 
+        <section class="sets-section" aria-label="Downloadable MCQ question sets">
+            <div class="section-head">
+                <div>
+                    <div class="eyebrow">Question Data</div>
+                    <h2>MCQ JSON Question Sets</h2>
+                </div>
+                <a class="button secondary" href="./data/config.json" download>Download set registry</a>
+            </div>
+            <p class="desc">
+                These are the exact JSON files loaded by the quiz website. Use them for backup, review, migration,
+                or building a new version of the MCQ site.
+            </p>
+
+            <div class="sets-grid">
+                <article class="set-card">
+                    <span class="tag">74 questions</span>
+                    <h3>SDD Test HTML</h3>
+                    <p>Primary set extracted from the original SDD HTML test source.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/sdd_test.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/sdd_test.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+
+                <article class="set-card">
+                    <span class="tag">74 questions</span>
+                    <h3>From Forms</h3>
+                    <p>Google Forms-derived set with local image references and reviewed answer keys.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/fromForms.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/fromForms.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+
+                <article class="set-card">
+                    <span class="tag">47 questions</span>
+                    <h3>Grile 1</h3>
+                    <p>Final verified corrected grile export, preserving single and multi-correct answers.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/grile1.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/grile1.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+
+                <article class="set-card">
+                    <span class="tag">44 questions</span>
+                    <h3>Grile 2</h3>
+                    <p>Final verified corrected grile export, preserving single and multi-correct answers.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/grile2.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/grile2.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+
+                <article class="set-card">
+                    <span class="tag">44 questions</span>
+                    <h3>Grile 3</h3>
+                    <p>Final verified corrected grile export, preserving single and multi-correct answers.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/grile3.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/grile3.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+
+                <article class="set-card">
+                    <span class="tag">47 questions</span>
+                    <h3>Grile 4</h3>
+                    <p>Final verified corrected grile export, preserving single and multi-correct answers.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/grile4.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/grile4.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+
+                <article class="set-card">
+                    <span class="tag">3 questions</span>
+                    <h3>Arrays</h3>
+                    <p>Small starter placeholder set for array practice.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/arrays.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/arrays.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+
+                <article class="set-card">
+                    <span class="tag">3 questions</span>
+                    <h3>Linked Lists</h3>
+                    <p>Small starter placeholder set for linked-list practice.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/linked_lists.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/linked_lists.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+
+                <article class="set-card">
+                    <span class="tag">3 questions</span>
+                    <h3>Trees</h3>
+                    <p>Small starter placeholder set for tree practice.</p>
+                    <div class="mini-actions">
+                        <a class="mini-button" href="./sets/trees.json" download>Download JSON</a>
+                        <a class="mini-button" href="./sets/trees.json" target="_blank" rel="noopener">Open</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <p class="note">
-            Files are stored locally in <code>materials/</code> so GitHub Pages can serve them directly with the website.
+            Materials are stored locally in <code>materials/</code>; MCQs are stored in <code>sets/</code> and registered in <code>data/config.json</code>.
         </p>
     </main>
 </body>
