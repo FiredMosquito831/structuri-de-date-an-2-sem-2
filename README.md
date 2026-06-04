@@ -16,6 +16,7 @@ The site is built for browser-only use: no backend, no database, no build step. 
 - `sets_en/`: English-mode MCQ JSON sets. For now these mirror the Romanian/current sets where no translation exists.
 - `scripts/extract_test_sdd_html.js`: extractor used to regenerate the SDD test set from the original HTML source.
 - `scripts/extract_from_forms.js`: extractor/normalizer for the Google Forms-derived `fromForms` set.
+- `scripts/extract_grile_txt_sets.js`: extractor for the corrected verified `grile1`-`grile4` text exports.
 - `assets/fromForms/`: local copies of images embedded in the Google Form questions.
 
 ## Current Question Sets
@@ -30,12 +31,17 @@ Current counts:
 
 - `sdd_test`: 74 questions
 - `fromForms`: 74 questions, including 14 questions with images
+- `grile1`: 47 questions
+- `grile2`: 44 questions
+- `grile3`: 44 questions
+- `grile4`: 47 questions
 - `arrays`: 3 placeholder questions
 - `linked_lists`: 3 placeholder questions
 - `trees`: 3 placeholder questions
 
 `sdd_test` contains 62 single-correct questions and 12 multi-correct questions.
 `fromForms` is extracted from a public Google Form. The public form does not expose its answer key, so correctness is maintained in `scripts/extract_from_forms.js` using a reviewed answer map and local image assets.
+`grile1`-`grile4` are extracted from corrected verified TXT/DOCX outputs and preserve both single-correct and multi-correct answer keys.
 
 ## Local Run
 
@@ -97,6 +103,38 @@ Important details:
 - Question images are referenced from local files under `assets/fromForms/`.
 - Correct answers are not exposed by the public Google Form, so they are maintained in the extractor's `CORRECT_BY_INDEX` map.
 - If the Google Form changes, inspect and update the answer map before trusting regenerated output.
+
+## Regenerate The Corrected Grile TXT Sets
+
+The corrected verified grile sets are generated from:
+
+```text
+C:\Users\fgghk\Downloads\SDD_grile_corrected_verified_outputs\SDD_grile_corrected_verified\outputs_txt_docx\grile1.txt
+C:\Users\fgghk\Downloads\SDD_grile_corrected_verified_outputs\SDD_grile_corrected_verified\outputs_txt_docx\grile2.txt
+C:\Users\fgghk\Downloads\SDD_grile_corrected_verified_outputs\SDD_grile_corrected_verified\outputs_txt_docx\grile3.txt
+C:\Users\fgghk\Downloads\SDD_grile_corrected_verified_outputs\SDD_grile_corrected_verified\outputs_txt_docx\grile4.txt
+```
+
+Regenerate them with:
+
+```powershell
+node scripts/extract_grile_txt_sets.js
+```
+
+The script writes both Romanian/current and English-mode copies:
+
+```text
+sets/grile1.json
+sets/grile2.json
+sets/grile3.json
+sets/grile4.json
+sets_en/grile1.json
+sets_en/grile2.json
+sets_en/grile3.json
+sets_en/grile4.json
+```
+
+The parser expects blocks shaped as `Question N`, prompt/code text, numbered options, then `Correct: ...`. It validates that every correct option index exists and every question has at least one correct answer.
 
 ## Add A New Question Set
 

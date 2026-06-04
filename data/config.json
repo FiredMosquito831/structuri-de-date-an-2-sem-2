@@ -4,6 +4,10 @@
   "displayOrder": [
     "sdd_test",
     "fromForms",
+    "grile1",
+    "grile2",
+    "grile3",
+    "grile4",
     "arrays",
     "linked_lists",
     "trees"
@@ -43,6 +47,70 @@
         30,
         50,
         74,
+        "all"
+      ],
+      "defaultCount": 30
+    },
+    "grile1": {
+      "id": "grile1",
+      "displayName": "Grile 1",
+      "shortName": "Grile 1",
+      "icon": "ph-file-text",
+      "colorClass": "amber",
+      "dataFile": "sets/grile1.json",
+      "englishDataFile": "sets_en/grile1.json",
+      "chapters": null,
+      "presets": [
+        30,
+        47,
+        "all"
+      ],
+      "defaultCount": 30
+    },
+    "grile2": {
+      "id": "grile2",
+      "displayName": "Grile 2",
+      "shortName": "Grile 2",
+      "icon": "ph-file-text",
+      "colorClass": "blue",
+      "dataFile": "sets/grile2.json",
+      "englishDataFile": "sets_en/grile2.json",
+      "chapters": null,
+      "presets": [
+        30,
+        44,
+        "all"
+      ],
+      "defaultCount": 30
+    },
+    "grile3": {
+      "id": "grile3",
+      "displayName": "Grile 3",
+      "shortName": "Grile 3",
+      "icon": "ph-file-text",
+      "colorClass": "green",
+      "dataFile": "sets/grile3.json",
+      "englishDataFile": "sets_en/grile3.json",
+      "chapters": null,
+      "presets": [
+        30,
+        44,
+        "all"
+      ],
+      "defaultCount": 30
+    },
+    "grile4": {
+      "id": "grile4",
+      "displayName": "Grile 4",
+      "shortName": "Grile 4",
+      "icon": "ph-file-text",
+      "colorClass": "amber",
+      "dataFile": "sets/grile4.json",
+      "englishDataFile": "sets_en/grile4.json",
+      "chapters": null,
+      "presets": [
+        30,
+        47,
         "all"
       ],
       "defaultCount": 30

@@ -1,0 +1,1302 @@
+[
+  {
+    "id": 1,
+    "question": "Pentru ștergere eficientă a nodurilor arbitrare, cea mai potrivită structură este:",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 1,
+    "answers": [
+      {
+        "text": "Heap binar",
+        "isCorrect": false
+      },
+      {
+        "text": "Listă dublu înlănțuită",
+        "isCorrect": true
+      },
+      {
+        "text": "Listă simplu înlănțuită",
+        "isCorrect": false
+      },
+      {
+        "text": "Listă circulară simplu înlănțuită",
+        "isCorrect": false
+      },
+      {
+        "text": "Tablou static",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Dacă un vector este declarat ca char mesaj[10] care este indexul valid pentru ultimul element al acestui vector?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 2,
+    "answers": [
+      {
+        "text": "9",
+        "isCorrect": true
+      },
+      {
+        "text": "last",
+        "isCorrect": false
+      },
+      {
+        "text": "mesaj + 1",
+        "isCorrect": false
+      },
+      {
+        "text": "mesaj - 1",
+        "isCorrect": false
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Completează codul pentru eliberarea corectă spațiului ocupat de un vector alocat dinamic:\nCode:\nint nrEl = 10;\nint* v = malloc(nrEl * sizeof(int));\nfor (int i = 0; i < nrEl; i++) {\n    v[i] = i;\n}\n___(v);\nv = ___;",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 3,
+    "answers": [
+      {
+        "text": "delete",
+        "isCorrect": false
+      },
+      {
+        "text": "clear",
+        "isCorrect": false
+      },
+      {
+        "text": "free",
+        "isCorrect": true
+      },
+      {
+        "text": "clean",
+        "isCorrect": false
+      },
+      {
+        "text": "NULL",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Care dintre următoarele sunt cazuri în care se folosește rotația dreapta-stânga într-un arbore AVL?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 4,
+    "answers": [
+      {
+        "text": "Dezechilibru la stânga cu fiu drept",
+        "isCorrect": false
+      },
+      {
+        "text": "Rădăcina are gradul de echilibru -2 și fiul stânga +1",
+        "isCorrect": false
+      },
+      {
+        "text": "Gradul de echilibru este 0",
+        "isCorrect": false
+      },
+      {
+        "text": "Rădăcina are gradul de echilibru +2 și fiul dreapta -1",
+        "isCorrect": true
+      },
+      {
+        "text": "(none)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Selectează caracteristicile vectorilor alocați în mod static:",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 5,
+    "answers": [
+      {
+        "text": "Trebuie să fie eliberați cu ajutorul funcției free()",
+        "isCorrect": false
+      },
+      {
+        "text": "Dimensiunea vectorului poate fi stabilită la momentul execuției",
+        "isCorrect": false
+      },
+      {
+        "text": "Dimensiunea este fixă",
+        "isCorrect": true
+      },
+      {
+        "text": "Sunt alocați pe stiva de memorie a funcției în care sunt declarați",
+        "isCorrect": true
+      },
+      {
+        "text": "Pot fi redimensionați cu ajutorul funcției realloc()",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Care dintre urmatoarele afirmatii este corecta?\nCode:\nSe considera urmatoarea secventa de cod sursa C cu privire la operatia de cautare a unui student intr-o tabela de dispersie implementata cu mecanism avand numele studentului cu rol de cheie (functia cautaHTable)",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 6,
+    "answers": [
+      {
+        "text": "Implementarea operatiei de cautare este incorecta deoarece functia hash permite accesul direct la lista de studenti care au generat conflict pe aceeasi pozitie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementarea operatiei de cautare este incorecta deoarece functia hash genereaza valori plasate in afara zonei alocate pentru tabela de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementarea operatiei de cautare este incorecta deoarece functia hash nu poate fi utilizata pentru nume student.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementarea operatiei de cautare este corecta deoarece se utilizeaza exclusiv accesul secvential la datele stocate in tabela de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementarea operatiei de cautare este corecta deoarece se utilizeaza functia hash urmata de cautarea secventiala a studentului.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Avantaje ale listelor înlănțuite față de heap-uri:",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 7,
+    "answers": [
+      {
+        "text": "Cea mai mare eficiență în sortare",
+        "isCorrect": false
+      },
+      {
+        "text": "Management dinamic simplificat în anumite contexte",
+        "isCorrect": true
+      },
+      {
+        "text": "Acces aleator mai rapid",
+        "isCorrect": false
+      },
+      {
+        "text": "Inserții/ștergeri mai simple în poziții cunoscute",
+        "isCorrect": true
+      },
+      {
+        "text": "Acces direct la elementul min / max",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Identificati problema secventei de cod sursa urmatoare:\nCode:\nint* p;\n*p = 10;",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 8,
+    "answers": [
+      {
+        "text": "Variabila p este alocata in segmentul de cod (read-only), deci nu poate fi modificata.",
+        "isCorrect": false
+      },
+      {
+        "text": "Pointerul este constant.",
+        "isCorrect": false
+      },
+      {
+        "text": "Memoria nu este alocata inainte de utilizare.",
+        "isCorrect": true
+      },
+      {
+        "text": "Variabila p contine adresa nula.",
+        "isCorrect": false
+      },
+      {
+        "text": "Nu se poate modifica valoarea 10.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Se considera urmatoarea secventa de cod sursa in limbajul C. Precizati rezultatul executiei aplicatiei de mai sus:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n\nint main()\n{\n    int* pc, c, d;\n\n    pc = (int*)malloc(sizeof(int));\n    pc[0] = -10;\n    c = *pc + 11;\n    d = c + 1;\n\n    printf(\"c = %d, d = %d, *pc = %d\\n\", c, d, *pc);\n    free(pc);\n    return 0;\n}",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 9,
+    "answers": [
+      {
+        "text": "c = 1, d = 2, *pc = -10",
+        "isCorrect": true
+      },
+      {
+        "text": "c = 1, d = 1, *pc = -10",
+        "isCorrect": false
+      },
+      {
+        "text": "Aplicatia determina eroare de compilare deoarece variabilele c si d nu sunt modificate corect cu valorile calculate pe baza adresei de memorie heap stocata in variabila pointer",
+        "isCorrect": false
+      },
+      {
+        "text": "c = -10, d = -9, *pc = -10",
+        "isCorrect": false
+      },
+      {
+        "text": "Aplicatia determina eroare de executie deoarece nu se aloca suficient spatiu de memorie heap la apelul functiei malloc().",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Care afirmatie este adevarata cu privire la variabila pointer p la momentul dezalocarii memoriei Heap prin apelarea functiei free(p)?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 10,
+    "answers": [
+      {
+        "text": "Isi pastreaza continutul, respectiv adresa de memorie Heap obtinuta la momentul alocarii.",
+        "isCorrect": true
+      },
+      {
+        "text": "Se dezaloca variabila p de pe segmentul de Stack unde a fost alocata la momentul definirii sale.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se copiaza datele in memorie Stack unde vor fi accesate prin variabila pointer p.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se reinitializeaza cu pointerul nul.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se rescrie cu o adresa de memorie Heap diferita.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la o structura de tip lista simpla?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 11,
+    "answers": [
+      {
+        "text": "Lista simpla este o structura liniara.",
+        "isCorrect": true
+      },
+      {
+        "text": "Lista simpla este o structura dinamica in sensul ca nodurile pot fi adaugate si/sau eliminate oricand fara a se cunoaste apriori numarul acestora.",
+        "isCorrect": true
+      },
+      {
+        "text": "Lista simpla contine noduri unde doua noduri diferite sunt eterogene din punct de vedere al datelor stocate.",
+        "isCorrect": false
+      },
+      {
+        "text": "Lista simpla este o structura a carei elemente sunt referite in acces secvential.",
+        "isCorrect": true
+      },
+      {
+        "text": "Lista simpla contine noduri unde doua noduri diferite sunt omogene din punct de vedere al datelor stocate.",
+        "isCorrect": true
+      },
+      {
+        "text": "Lista simpla cotine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Se considera urmatoarea secventa de cod sursa in limbajul C. Precizati rezultatul executiei aplicatiei de mai sus:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n\nint main()\n{\n    int v[] = {10, 20};\n    int *pv = v;\n\n    printf(\"v[0] = %d, pv[0] = %d\\n\", v[0], pv[0]);\n\n    return 0;\n}",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 12,
+    "answers": [
+      {
+        "text": "v[0] = 10, pv[0] = 20",
+        "isCorrect": false
+      },
+      {
+        "text": "v[0] = 10, pv[0] = 0",
+        "isCorrect": false
+      },
+      {
+        "text": "Aplicatia determina eroare de compilare deoarece operatorul de indexare [] nu se aplica variabilei de tip pointer.",
+        "isCorrect": false
+      },
+      {
+        "text": "Aplicatia determina eroare de compilare deoarece adresa unei variabile vector nu poate fi atribuita unei variabile de tip pointer.",
+        "isCorrect": false
+      },
+      {
+        "text": "v[0] = 10, pv[0] = 10",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "În ce domenii se folosesc arborii ca structuri de date aplicate?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 13,
+    "answers": [
+      {
+        "text": "Definirea structurii arborescente a unui site web",
+        "isCorrect": true
+      },
+      {
+        "text": "Organizarea fișierelor în cadrul unui sistem de de operare",
+        "isCorrect": true
+      },
+      {
+        "text": "Organigrame sau structuri ierarhice în companii",
+        "isCorrect": true
+      },
+      {
+        "text": "Implementarea căutărilor secvențiale",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Ce tipuri de rotații se aplică pentru reechilibrarea unui arbore AVL?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 14,
+    "answers": [
+      {
+        "text": "Rotație stânga-dreapta",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație dreapta-stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație dreapta",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Care din valorile de mai jos poate fi cheia pentru nodul radacina după ștergerea nodului cu cheia 55 din arborele binar de cautare a carui reprezentare pe niveluri este 55-33-77-11-44-66-88?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 15,
+    "answers": [
+      {
+        "text": "44",
+        "isCorrect": true
+      },
+      {
+        "text": "66",
+        "isCorrect": true
+      },
+      {
+        "text": "77",
+        "isCorrect": false
+      },
+      {
+        "text": "88",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "question": "Care dintre următoarele afirmații sunt adevărate cu privire la o variabilă de tip pointer în limbajul C?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 16,
+    "answers": [
+      {
+        "text": "Poate fi utilizată în orice calcul aritmetic.",
+        "isCorrect": false
+      },
+      {
+        "text": "Prezintă o sintaxă dedicată pentru declarare.",
+        "isCorrect": true
+      },
+      {
+        "text": "Stochează o adresă de memorie.",
+        "isCorrect": true
+      },
+      {
+        "text": "Poate fi utilizată doar pentru accesul la segmente de date.",
+        "isCorrect": false
+      },
+      {
+        "text": "Poate fi utilizată doar pentru accesul la memorie heap.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Considerându-se următoarea secvență, care dintre fragmentele procedurale adaugă un nou nod la sfârșitul listei?\nCode:\n// Existing list: 9 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 17,
+    "answers": [
+      {
+        "text": "current->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next->next = malloc(sizeof(Node));\ncurrent->next->next->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next = malloc(sizeof(Node));\ncurrent->next->info = 4;\ncurrent->next->next = NULL;",
+        "isCorrect": true
+      },
+      {
+        "text": "current = malloc(sizeof(Node));\ncurrent->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next = malloc(sizeof(Node));\ncurrent = current->next;\ncurrent->info = 4;\ncurrent->next = NULL;",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Care dintre urmatoarele afirmatii este adevarata?\nCode:\nSe considera urmatoarea secventa de cod sursa C pentru o tabela de dispersie implementata cu linear probing (functia functieStudent)",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 18,
+    "answers": [
+      {
+        "text": "Functia implementeaza corect operatia de cautare pentru parametrul studName daca acesta este cheie pentru tabela de dispersie.",
+        "isCorrect": true
+      },
+      {
+        "text": "Functia implementeaza incorect operatia de cautare pentru parametrul studName daca nu este cheie pentru tabela de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Parametrii functiei insertStudent(struct Student*, int, struct Student) sunt declarati eronat in raport cu modul lor de utilizare.",
+        "isCorrect": false
+      },
+      {
+        "text": "Functia implementeaza corect operatia de cautare pentru parametrul studName daca nu este cheie pentru tabela de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Functia identifica toate elementele de tip Student stocate in tabela de dispersie.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Ce structura de date se utilizeaza pentru implementarea mecanismului chaining pentru o tabela de dispersie?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 19,
+    "answers": [
+      {
+        "text": "Structura arborescenta.",
+        "isCorrect": false
+      },
+      {
+        "text": "Structura Heap.",
+        "isCorrect": false
+      },
+      {
+        "text": "Matrice.",
+        "isCorrect": false
+      },
+      {
+        "text": "Lista simplu inlantuita.",
+        "isCorrect": true
+      },
+      {
+        "text": "Vector.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "question": "Ce presupune mecanismul de tip chaining intr-o tabela de dispersie?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 20,
+    "answers": [
+      {
+        "text": "Folosirea unui vector auxiliar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Calcularea unei functii de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Tratarea coliziunilor printr-o lista de elemente.",
+        "isCorrect": true
+      },
+      {
+        "text": "Duplicarea seturilor de date in memorie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Translatarea in coduri ASCII a valorii hash.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la urmatoarea secventa de cod sursa C:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#define DIM 100\n#define SPERS NULL\n\nstruct Student {\n    int id;\n    char* name;\n    float media;\n};\n\nstruct Nod* {\n    struct Student s;\n    struct Nod* next;\n};\n\nstruct Nod** stTable;\nstruct Student stKey;\n\nstTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    stTable[i] = 0;",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 21,
+    "answers": [
+      {
+        "text": "Initializarea elementelor din vector este efectuata cu valoarea unui pointer nul.",
+        "isCorrect": true
+      },
+      {
+        "text": "Initializeaza un vector de 100 de elemente de tip Nod*.",
+        "isCorrect": true
+      },
+      {
+        "text": "Aloca si initializeaza structura suport pentru o tabela de dispersie care implementeaza mecanismul de tip chaining pentru rezolvarea cazurilor de coliziune.",
+        "isCorrect": true
+      },
+      {
+        "text": "Aloca un vector cu dimensiunea 100 de elemente.",
+        "isCorrect": true
+      },
+      {
+        "text": "Initializeaza un vector de 100 de elemente de tip Nod**.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Pentru ștergere eficientă a nodurilor arbitrare, cea mai potrivită structură este:",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 22,
+    "answers": [
+      {
+        "text": "Heap binar",
+        "isCorrect": false
+      },
+      {
+        "text": "Listă dublu înlănțuită",
+        "isCorrect": true
+      },
+      {
+        "text": "Listă simplu înlănțuită",
+        "isCorrect": false
+      },
+      {
+        "text": "Listă circulară simplu înlănțuită",
+        "isCorrect": false
+      },
+      {
+        "text": "Tablou static",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "Se considera urmatoarea secventa de cod sursa in limbajul C. Precizati rezultatul executiei aplicatiei de mai sus:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n\nint main()\n{\n    int* pc, c, d;\n\n    pc = (int*)malloc(sizeof(int));\n    pc[0] = -10;\n    c = *pc + 11;\n    d = c + 1;\n\n    printf(\"c = %d, d = %d, *pc = %d\\n\", c, d, *pc);\n    free(pc);\n    return 0;\n}",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 23,
+    "answers": [
+      {
+        "text": "c = 1, d = 2, *pc = -10",
+        "isCorrect": true
+      },
+      {
+        "text": "c = 1, d = 1, *pc = -10",
+        "isCorrect": false
+      },
+      {
+        "text": "Aplicatia determina eroare de compilare deoarece variabilele c si d nu sunt modificate corect cu valorile calculate pe baza adresei de memorie heap stocata in variabila pointer",
+        "isCorrect": false
+      },
+      {
+        "text": "c = -10, d = -9, *pc = -10",
+        "isCorrect": false
+      },
+      {
+        "text": "Aplicatia determina eroare de executie deoarece nu se aloca suficient spatiu de memorie heap la apelul functiei malloc().",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Dacă un vector este declarat ca char mesaj[10] care este indexul valid pentru ultimul element al acestui vector?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 24,
+    "answers": [
+      {
+        "text": "9",
+        "isCorrect": true
+      },
+      {
+        "text": "last",
+        "isCorrect": false
+      },
+      {
+        "text": "mesaj + 1",
+        "isCorrect": false
+      },
+      {
+        "text": "mesaj - 1",
+        "isCorrect": false
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Care este afirmația corectă cu privire la următoarea funcție?\nCode:\nStudent* functionList(Node** head)\n{\n    Student* student = NULL;\n    if (*head != NULL)\n    {\n        student = (*head)->info;\n        Node* tmp = *head;\n        if ((*head)->next != (*head))\n        {\n            tmp->prev->next = tmp->next;\n            tmp->next->prev = tmp->prev;\n            *head = tmp->next;\n        }\n        else\n            *head = NULL;\n        free(tmp);\n    }\n    return student;\n}",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 25,
+    "answers": [
+      {
+        "text": "funcția insereaza un element la inceputul unei liste simplu inlantuite",
+        "isCorrect": false
+      },
+      {
+        "text": "funcția insereaza un nod la inceputul unei liste dublu inlantuite circulare",
+        "isCorrect": false
+      },
+      {
+        "text": "capatul listei este trimis prin valoare pentru a nu-l actualiza",
+        "isCorrect": false
+      },
+      {
+        "text": "funcția returneaza informatia utila existenta in capatul listei",
+        "isCorrect": true
+      },
+      {
+        "text": "stergerea containerului echivalent primul nod din lista",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "question": "Care dintre următoarele sunt cazuri în care se folosește rotația dreapta-stânga într-un arbore AVL?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 26,
+    "answers": [
+      {
+        "text": "Dezechilibru la stânga cu fiu drept",
+        "isCorrect": false
+      },
+      {
+        "text": "Rădăcina are gradul de echilibru -2 și fiul stânga +1",
+        "isCorrect": false
+      },
+      {
+        "text": "Gradul de echilibru este 0",
+        "isCorrect": false
+      },
+      {
+        "text": "Rădăcina are gradul de echilibru +2 și fiul dreapta -1",
+        "isCorrect": true
+      },
+      {
+        "text": "(none)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "question": "Selectează caracteristicile vectorilor alocați în mod static:",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 27,
+    "answers": [
+      {
+        "text": "Trebuie să fie eliberați cu ajutorul funcției free()",
+        "isCorrect": false
+      },
+      {
+        "text": "Dimensiunea vectorului poate fi stabilită la momentul execuției",
+        "isCorrect": false
+      },
+      {
+        "text": "Dimensiunea este fixă",
+        "isCorrect": true
+      },
+      {
+        "text": "Sunt alocați pe stiva de memorie a funcției în care sunt declarați",
+        "isCorrect": true
+      },
+      {
+        "text": "Pot fi redimensionați cu ajutorul funcției realloc()",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "question": "Care dintre urmatoarele afirmatii este corecta?\nCode:\nSe considera urmatoarea secventa de cod sursa C cu privire la operatia de cautare a unui student intr-o tabela de dispersie implementata cu mecanism avand numele studentului cu rol de cheie (functia cautaHTable)",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 28,
+    "answers": [
+      {
+        "text": "Implementarea operatiei de cautare este incorecta deoarece functia hash permite accesul direct la lista de studenti care au generat conflict pe aceeasi pozitie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementarea operatiei de cautare este incorecta deoarece functia hash genereaza valori plasate in afara zonei alocate pentru tabela de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementarea operatiei de cautare este incorecta deoarece functia hash nu poate fi utilizata pentru nume student.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementarea operatiei de cautare este corecta deoarece se utilizeaza exclusiv accesul secvential la datele stocate in tabela de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Implementarea operatiei de cautare este corecta deoarece se utilizeaza functia hash urmata de cautarea secventiala a studentului.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "question": "Ce funcție este folosită pentru a aloca memorie in mod dinamic pentru un vector de elemente in limbajul C?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 29,
+    "answers": [
+      {
+        "text": "malloc()",
+        "isCorrect": true
+      },
+      {
+        "text": "printf()",
+        "isCorrect": false
+      },
+      {
+        "text": "sizeof()",
+        "isCorrect": false
+      },
+      {
+        "text": "strlen()",
+        "isCorrect": false
+      },
+      {
+        "text": "scanf()",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "question": "Avantaje ale listelor înlănțuite față de heap-uri:",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 30,
+    "answers": [
+      {
+        "text": "Cea mai mare eficiență în sortare",
+        "isCorrect": false
+      },
+      {
+        "text": "Management dinamic simplificat în anumite contexte",
+        "isCorrect": true
+      },
+      {
+        "text": "Acces aleator mai rapid",
+        "isCorrect": false
+      },
+      {
+        "text": "Inserții/ștergeri mai simple în poziții cunoscute",
+        "isCorrect": true
+      },
+      {
+        "text": "Acces direct la elementul min / max",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "question": "Identificati problema secventei de cod sursa urmatoare:\nCode:\nint* p;\n*p = 10;",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 31,
+    "answers": [
+      {
+        "text": "Variabila p este alocata in segmentul de cod (read-only), deci nu poate fi modificata.",
+        "isCorrect": false
+      },
+      {
+        "text": "Pointerul este constant.",
+        "isCorrect": false
+      },
+      {
+        "text": "Memoria nu este alocata inainte de utilizare.",
+        "isCorrect": true
+      },
+      {
+        "text": "Variabila p contine adresa nula.",
+        "isCorrect": false
+      },
+      {
+        "text": "Nu se poate modifica valoarea 10.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "question": "Care dintre urmatoarele afirmatii este adevarata?\nCode:\nSe considera urmatoarea secventa de cod sursa C pentru o tabela de dispersie implementata cu linear probing (functia functieStudent)",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 32,
+    "answers": [
+      {
+        "text": "Functia implementeaza corect operatia de cautare pentru parametrul studName daca acesta este cheie pentru tabela de dispersie.",
+        "isCorrect": true
+      },
+      {
+        "text": "Functia implementeaza incorect operatia de cautare pentru parametrul studName daca nu este cheie pentru tabela de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Parametrii functiei insertStudent(struct Student*, int, struct Student) sunt declarati eronat in raport cu modul lor de utilizare.",
+        "isCorrect": false
+      },
+      {
+        "text": "Functia implementeaza corect operatia de cautare pentru parametrul studName daca nu este cheie pentru tabela de dispersie.",
+        "isCorrect": false
+      },
+      {
+        "text": "Functia identifica toate elementele de tip Student stocate in tabela de dispersie.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "question": "Completează codul pentru eliberarea corectă spațiului ocupat de un vector alocat dinamic:\nCode:\nint nrEl = 10;\nint* v = malloc(nrEl * sizeof(int));\nfor (int i = 0; i < nrEl; i++) {\n    v[i] = i;\n}\n___(v);\nv = ___;",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 33,
+    "answers": [
+      {
+        "text": "delete",
+        "isCorrect": false
+      },
+      {
+        "text": "clear",
+        "isCorrect": false
+      },
+      {
+        "text": "free",
+        "isCorrect": true
+      },
+      {
+        "text": "clean",
+        "isCorrect": false
+      },
+      {
+        "text": "NULL",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la o structura de tip lista simpla?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 34,
+    "answers": [
+      {
+        "text": "Lista simpla este o structura liniara.",
+        "isCorrect": true
+      },
+      {
+        "text": "Lista simpla este o structura dinamica in sensul ca nodurile pot fi adaugate si/sau eliminate oricand fara a se cunoaste apriori numarul acestora.",
+        "isCorrect": true
+      },
+      {
+        "text": "Lista simpla contine noduri unde doua noduri diferite sunt eterogene din punct de vedere al datelor stocate.",
+        "isCorrect": false
+      },
+      {
+        "text": "Lista simpla este o structura a carei elemente sunt referite in acces secvential.",
+        "isCorrect": true
+      },
+      {
+        "text": "Lista simpla contine noduri unde doua noduri diferite sunt omogene din punct de vedere al datelor stocate.",
+        "isCorrect": true
+      },
+      {
+        "text": "Lista simpla cotine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "question": "Se considera urmatoarea secventa de cod sursa in limbajul C. Precizati rezultatul executiei aplicatiei de mai sus:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n\nint main()\n{\n    int v[] = {10, 20};\n    int *pv = v;\n\n    printf(\"v[0] = %d, pv[0] = %d\\n\", v[0], pv[0]);\n\n    return 0;\n}",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 35,
+    "answers": [
+      {
+        "text": "v[0] = 10, pv[0] = 20",
+        "isCorrect": false
+      },
+      {
+        "text": "v[0] = 10, pv[0] = 0",
+        "isCorrect": false
+      },
+      {
+        "text": "Aplicatia determina eroare de compilare deoarece operatorul de indexare [] nu se aplica variabilei de tip pointer.",
+        "isCorrect": false
+      },
+      {
+        "text": "Aplicatia determina eroare de compilare deoarece adresa unei variabile vector nu poate fi atribuita unei variabile de tip pointer.",
+        "isCorrect": false
+      },
+      {
+        "text": "v[0] = 10, pv[0] = 10",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "question": "În ce domenii se folosesc arborii ca structuri de date aplicate?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 36,
+    "answers": [
+      {
+        "text": "Definirea structurii arborescente a unui site web",
+        "isCorrect": true
+      },
+      {
+        "text": "Organizarea fișierelor în cadrul unui sistem de de operare",
+        "isCorrect": true
+      },
+      {
+        "text": "Organigrame sau structuri ierarhice în companii",
+        "isCorrect": true
+      },
+      {
+        "text": "Implementarea căutărilor secvențiale",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "question": "Ce tipuri de rotații se aplică pentru reechilibrarea unui arbore AVL?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 37,
+    "answers": [
+      {
+        "text": "Rotație stânga-dreapta",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație dreapta-stânga",
+        "isCorrect": true
+      },
+      {
+        "text": "Rotație dreapta",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "question": "Care din valorile de mai jos poate fi cheia pentru nodul radacina după ștergerea nodului cu cheia 55 din arborele binar de cautare a carui reprezentare pe niveluri este 55-33-77-11-44-66-88?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 38,
+    "answers": [
+      {
+        "text": "44",
+        "isCorrect": true
+      },
+      {
+        "text": "66",
+        "isCorrect": true
+      },
+      {
+        "text": "77",
+        "isCorrect": false
+      },
+      {
+        "text": "88",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "question": "Care dintre următoarele afirmații sunt adevărate cu privire la o variabilă de tip pointer în limbajul C?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 39,
+    "answers": [
+      {
+        "text": "Poate fi utilizată în orice calcul aritmetic.",
+        "isCorrect": false
+      },
+      {
+        "text": "Prezintă o sintaxă dedicată pentru declarare.",
+        "isCorrect": true
+      },
+      {
+        "text": "Stochează o adresă de memorie.",
+        "isCorrect": true
+      },
+      {
+        "text": "Poate fi utilizată doar pentru accesul la segmente de date.",
+        "isCorrect": false
+      },
+      {
+        "text": "Poate fi utilizată doar pentru accesul la memorie heap.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "question": "Considerand ca urmatoarea secventa care de mai jos reprezinta procedeul utilizat de catre nodul de valoare 4 la sfarsitul secventei curente:\nCode:\n// Existing list: 3 -> 2 -> 1\nstruct node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 40,
+    "answers": [
+      {
+        "text": "current->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next->next = malloc(sizeof(Node)); current->next->next->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next = malloc(sizeof(Node)); current->next->info = 4; current->next->next = NULL;",
+        "isCorrect": true
+      },
+      {
+        "text": "current = malloc(sizeof(Node)); current->info = 4;",
+        "isCorrect": false
+      },
+      {
+        "text": "current->next = malloc(sizeof(Node)); current = current->next; current->info = 4; current->next = NULL;",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "question": "Care afirmatie este adevarata cu privire la variabila pointer p la momentul dezalocarii memoriei Heap prin apelarea functiei free(p)?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 41,
+    "answers": [
+      {
+        "text": "Isi pastreaza continutul, respectiv adresa de memorie Heap obtinuta la momentul alocarii.",
+        "isCorrect": true
+      },
+      {
+        "text": "Se dezaloca variabila p de pe segmentul de Stack unde a fost alocata la momentul definirii sale.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se copiaza datele in memorie Stack unde vor fi accesate prin variabila pointer p.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se reinitializeaza cu pointerul nul.",
+        "isCorrect": false
+      },
+      {
+        "text": "Se rescrie cu o adresa de memorie Heap diferita.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "question": "Ce structura de date se utilizeaza pentru implementarea mecanismului chaining pentru o tabela de dispersie?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 42,
+    "answers": [
+      {
+        "text": "Structura arborescenta.",
+        "isCorrect": false
+      },
+      {
+        "text": "Structura Heap.",
+        "isCorrect": false
+      },
+      {
+        "text": "Matrice.",
+        "isCorrect": false
+      },
+      {
+        "text": "Lista simplu inlantuita.",
+        "isCorrect": true
+      },
+      {
+        "text": "Vector.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "question": "Operatii aplicabile arborilor binari de cautare includ:",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 43,
+    "answers": [
+      {
+        "text": "Cautare nod dupa o anumita valoare a cheii",
+        "isCorrect": true
+      },
+      {
+        "text": "Traversare postordine",
+        "isCorrect": true
+      },
+      {
+        "text": "Sortare topologica",
+        "isCorrect": false
+      },
+      {
+        "text": "Inserare nod nou",
+        "isCorrect": true
+      },
+      {
+        "text": "N/A",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "question": "Ce structura de date se utilizeaza pentru implementarea mecanismului chaining pentru o tabela de dispersie?",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 44,
+    "answers": [
+      {
+        "text": "Structura arborescenta.",
+        "isCorrect": false
+      },
+      {
+        "text": "Structura Heap.",
+        "isCorrect": false
+      },
+      {
+        "text": "Matrice.",
+        "isCorrect": false
+      },
+      {
+        "text": "Lista simplu inlantuita.",
+        "isCorrect": true
+      },
+      {
+        "text": "Vector.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "question": "Ce valoare este afișată în urma rulării secvenței de cod alăturate?\nCode:\nint v[5] = { 1, 2, 3, 4, 5 };\nprintf(\"%d\", v[3]);",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 45,
+    "answers": [
+      {
+        "text": "5",
+        "isCorrect": false
+      },
+      {
+        "text": "2",
+        "isCorrect": false
+      },
+      {
+        "text": "3",
+        "isCorrect": false
+      },
+      {
+        "text": "4",
+        "isCorrect": true
+      },
+      {
+        "text": "1",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la urmatoarea secventa de cod sursa C:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#define DIM 100\n#define SPERS NULL\n\nstruct Student {\n    int id;\n    char* name;\n    float media;\n};\n\nstruct Nod* {\n    struct Student s;\n    struct Nod* next;\n};\n\nstruct Nod** stTable;\nstruct Student stKey;\n\nstTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    stTable[i] = 0;",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 46,
+    "answers": [
+      {
+        "text": "Initializarea elementelor din vector este efectuata cu valoarea unui pointer nul.",
+        "isCorrect": true
+      },
+      {
+        "text": "Initializeaza un vector de 100 de elemente de tip Nod*.",
+        "isCorrect": true
+      },
+      {
+        "text": "Aloca si initializeaza structura suport pentru o tabela de dispersie care implementeaza mecanismul de tip chaining pentru rezolvarea cazurilor de coliziune.",
+        "isCorrect": true
+      },
+      {
+        "text": "Aloca un vector cu dimensiunea 100 de elemente.",
+        "isCorrect": true
+      },
+      {
+        "text": "Initializeaza un vector de 100 de elemente de tip Nod**.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "question": "Care este afirmatia corecta cu privire la urmatoarea functie?\nCode:\nStudent* functionList(Node** head)\n{\n    Student* student = NULL;\n    if (*head != NULL)\n    {\n        student = (*head)->info;\n        Node* tmp = *head;\n        if ((*head)->next != (*head))\n        {\n            tmp->prev->next = tmp->next;\n            tmp->next->prev = tmp->prev;\n            *head = tmp->next;\n        }\n        else\n            *head = NULL;\n        free(tmp);\n    }\n    return student;\n}",
+    "source": "grile4.txt",
+    "sourceQuestionNumber": 47,
+    "answers": [
+      {
+        "text": "functia insereaza un element la inceputul unei liste simplu inlantuite",
+        "isCorrect": false
+      },
+      {
+        "text": "functia insereaza un nod la inceputul unei liste dublu inlantuite",
+        "isCorrect": false
+      },
+      {
+        "text": "capatul listei este trimis prin valoare pentru a nu-l actualiza",
+        "isCorrect": false
+      },
+      {
+        "text": "functia returneaza informatia utila existenta in capatul listei",
+        "isCorrect": true
+      },
+      {
+        "text": "stergerea containerului echivalent primul nod din lista",
+        "isCorrect": true
+      }
+    ]
+  }
+]
