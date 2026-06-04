@@ -5,47 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Structures Materials</title>
     <style>
+        :root {
+            --bg: #07111f;
+            --panel: rgba(15, 23, 42, 0.78);
+            --panel-strong: rgba(30, 41, 59, 0.92);
+            --border: rgba(148, 163, 184, 0.28);
+            --text: #eef5ff;
+            --muted: #a8b6cc;
+            --accent: #60a5fa;
+            --green: #36d98b;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
             margin: 0;
             min-height: 100vh;
-            background: linear-gradient(135deg, #07111f, #102a3f);
-            color: #eef5ff;
-            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at 18% 10%, rgba(96, 165, 250, 0.22), transparent 34%),
+                radial-gradient(circle at 86% 16%, rgba(54, 217, 139, 0.16), transparent 30%),
+                linear-gradient(135deg, var(--bg), #102a3f);
+            color: var(--text);
+            font-family: "Segoe UI", Tahoma, sans-serif;
         }
+
         main {
-            width: min(900px, calc(100% - 32px));
+            width: min(980px, calc(100% - 32px));
             margin: 0 auto;
-            padding: 48px 0;
+            padding: 48px 0 64px;
         }
-        a { color: #93c5fd; }
-        .panel {
-            border: 1px solid rgba(148, 163, 184, 0.28);
-            border-radius: 24px;
-            background: rgba(15, 23, 42, 0.74);
-            padding: 28px;
+
+        a { color: inherit; }
+
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #bfdbfe;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 24px;
         }
+
+        .hero, .card {
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            background: var(--panel);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+        }
+
+        .hero {
+            padding: clamp(28px, 5vw, 44px);
+            margin-bottom: 22px;
+        }
+
+        .eyebrow {
+            color: var(--green);
+            font-size: 0.76rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        h1 {
+            margin: 10px 0 12px;
+            font-size: clamp(2.1rem, 6vw, 4rem);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+        }
+
+        .lead {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 70ch;
+            line-height: 1.65;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--panel-strong);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+        }
+
+        .tag {
+            width: fit-content;
+            border: 1px solid rgba(96, 165, 250, 0.38);
+            background: rgba(96, 165, 250, 0.14);
+            color: #dbeafe;
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        h2 {
+            margin: 18px 0 10px;
+            font-size: 1.4rem;
+            line-height: 1.15;
+        }
+
+        .desc {
+            color: var(--muted);
+            line-height: 1.58;
+            margin: 0 0 16px;
+        }
+
+        ul {
+            color: #cbd5e1;
+            line-height: 1.55;
+            padding-left: 20px;
+            margin: 0 0 22px;
+        }
+
+        .actions {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-radius: 14px;
+            padding: 12px 14px;
+            text-decoration: none;
+            font-weight: 800;
+            border: 1px solid rgba(96, 165, 250, 0.42);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(79, 70, 229, 0.95));
+            color: white;
+        }
+
+        .button.secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: #dbeafe;
+        }
+
+        .note {
+            margin-top: 22px;
+            color: #94a3b8;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
         code {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 6px;
             padding: 2px 6px;
         }
-        li { margin: 10px 0; }
+
+        @media (max-width: 760px) {
+            .grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <main>
-        <p><a href="./index.html">Back to quiz</a></p>
-        <section class="panel">
-            <h1>Data Structures Materials</h1>
-            <p>No real course PDFs have been added yet. Add Data Structures notes, labs, summaries, or exam PDFs to <code>materials/</code>, then update this page with descriptions and download links.</p>
-            <h2>Suggested sections</h2>
-            <ul>
-                <li>Core theory notes</li>
-                <li>Practice problems</li>
-                <li>Past exam questions</li>
-                <li>Cheat sheets and complexity tables</li>
-            </ul>
+        <a class="back" href="./index.html">← Back to quiz</a>
+
+        <section class="hero">
+            <div class="eyebrow">Study Materials</div>
+            <h1>Data Structures Exam Prep</h1>
+            <p class="lead">
+                Use these files alongside the MCQ sets. The PDF is the broad course reference for theory and MCQ preparation.
+                The C cheatsheet is a practical code/theory companion for applying implementation patterns in Test 1 and Test 2.
+            </p>
         </section>
+
+        <section class="grid" aria-label="Downloadable materials">
+            <article class="card">
+                <span class="tag">PDF · All Courses</span>
+                <h2>All In One Courses</h2>
+                <p class="desc">
+                    Complete course PDF for Structuri de Date. Use it as the main theory base when preparing for MCQs,
+                    especially when a question refers to definitions, operations, structures, or complexity behavior.
+                </p>
+                <ul>
+                    <li>Best for full theory review before MCQ practice.</li>
+                    <li>Useful for checking definitions and course wording.</li>
+                    <li>Recommended when an answer key or question seems ambiguous.</li>
+                </ul>
+                <div class="actions">
+                    <a class="button" href="./materials/all_in_one_courses.pdf" download>Download PDF</a>
+                    <a class="button secondary" href="./materials/all_in_one_courses.pdf" target="_blank" rel="noopener">Open in browser</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <span class="tag">C · Code + Theory</span>
+                <h2>Complete Cheatsheet C</h2>
+                <p class="desc">
+                    C source file containing code examples plus theory explanations. Use it to understand how the structures
+                    are implemented and how code patterns should be applied for Test 1 and Test 2.
+                </p>
+                <ul>
+                    <li>Best for implementation-oriented questions.</li>
+                    <li>Useful for pointer, memory, list, tree, heap, and hash-table code patterns.</li>
+                    <li>Recommended for practicing how to read and reason about C snippets.</li>
+                </ul>
+                <div class="actions">
+                    <a class="button" href="./materials/complete_cheatsheet.c" download>Download C file</a>
+                    <a class="button secondary" href="./materials/complete_cheatsheet.c" target="_blank" rel="noopener">Open as text</a>
+                </div>
+            </article>
+        </section>
+
+        <p class="note">
+            Files are stored locally in <code>materials/</code> so GitHub Pages can serve them directly with the website.
+        </p>
     </main>
 </body>
 </html>

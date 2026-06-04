@@ -9,6 +9,8 @@ The site is built for browser-only use: no backend, no database, no build step. 
 - `index.html`: main quiz application.
 - `answers.html`: searchable correct-answer viewer.
 - `materials.html`: placeholder page for future course materials.
+- `materials/all_in_one_courses.pdf`: complete course PDF for MCQ theory preparation.
+- `materials/complete_cheatsheet.c`: C code and theory cheatsheet for Test 1 and Test 2 implementation patterns.
 - `data/config.json`: central set registry, display order, default set, labels, and file paths.
 - `sets/`: Romanian/current-language MCQ JSON sets.
 - `sets_en/`: English-mode MCQ JSON sets. For now these mirror the Romanian/current sets where no translation exists.
@@ -50,6 +52,19 @@ http://localhost:8000/
 ```
 
 Opening `index.html` directly from disk may fail in some browsers because the app loads JSON files with `fetch()`.
+
+## Study Materials
+
+The materials page is available at:
+
+```text
+materials.html
+```
+
+Available downloads:
+
+- `All In One Courses`: PDF with all course content, intended as the main theory reference for MCQ preparation.
+- `Complete Cheatsheet C`: C file with code plus theory explanations for applying implementation patterns in Test 1 and Test 2.
 
 ## Regenerate The SDD Set
 
