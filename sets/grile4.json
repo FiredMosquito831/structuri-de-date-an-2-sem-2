@@ -141,7 +141,7 @@
   },
   {
     "id": 6,
-    "question": "Care dintre urmatoarele afirmatii este corecta?\nCode:\nSe considera urmatoarea secventa de cod sursa C cu privire la operatia de cautare a unui student intr-o tabela de dispersie implementata cu mecanism avand numele studentului cu rol de cheie (functia cautaHTable)",
+    "question": "Care dintre urmatoarele afirmatii este corecta?\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#include <string.h>\n#include <stdlib.h>\n\nstruct Student {\n    int id;\n    char* nume;\n    float medie;\n};\n\nstruct Nod {\n    struct Student st;\n    struct Nod* next;\n};\n\nint calculPozitie(char* key, int size) {\n    int temp = 0;\n    for (unsigned int i = 0; i < strlen(key); i++)\n        temp += key[i];\n    return (temp % size);\n}\n\nstruct Student cautaHTable(struct Nod** hTab, int size, char* nume_student) {\n    int k = calculPozitie(nume_student, size);\n    struct Student stud;\n    stud.nume = NULL;\n    struct Nod* tmp = hTab[k];\n    while (tmp) {\n        if (!strcmp(tmp->st.nume, nume_student))\n            stud = tmp->st;\n        tmp = tmp->next;\n    }\n    return stud;\n}",
     "source": "grile4.txt",
     "sourceQuestionNumber": 6,
     "answers": [
@@ -469,7 +469,7 @@
   },
   {
     "id": 18,
-    "question": "Care dintre urmatoarele afirmatii este adevarata?\nCode:\nSe considera urmatoarea secventa de cod sursa C pentru o tabela de dispersie implementata cu linear probing (functia functieStudent)",
+    "question": "Care dintre urmatoarele afirmatii este adevarata?\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#include <string.h>\n#include <stdlib.h>\n\n#define ARRAY_SIZE 100\n\nstruct Student {\n  int id;\n  char* nume;\n  float avg;\n};\n\nint functiaStudent(struct Student* h, int size, char* studName)\n{\n  char found = 0, i;\n  for (i = 0; i < size && !found; i++)\n  {\n    if ((h[i].nume != 0) && (strcmp(h[i].nume, studName) == 0))\n    {\n      found = 1;\n    }\n  }\n\n  if (found == 1)\n    return i;\n  else\n    return -1;\n}\n\nstruct Student* HTable;\nint size = ARRAY_SIZE;\nHTable = (struct Student*)malloc(size * sizeof(struct Student));\nfor (int i = 0; i < size; i++) {\n  HTable[i].nume = NULL;\n}",
     "source": "grile4.txt",
     "sourceQuestionNumber": 18,
     "answers": [
@@ -749,7 +749,7 @@
   },
   {
     "id": 28,
-    "question": "Care dintre urmatoarele afirmatii este corecta?\nCode:\nSe considera urmatoarea secventa de cod sursa C cu privire la operatia de cautare a unui student intr-o tabela de dispersie implementata cu mecanism avand numele studentului cu rol de cheie (functia cautaHTable)",
+    "question": "Care dintre urmatoarele afirmatii este corecta?\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#include <string.h>\n#include <stdlib.h>\n\nstruct Student {\n    int id;\n    char* nume;\n    float medie;\n};\n\nstruct Nod {\n    struct Student st;\n    struct Nod* next;\n};\n\nint calculPozitie(char* key, int size) {\n    int temp = 0;\n    for (unsigned int i = 0; i < strlen(key); i++)\n        temp += key[i];\n    return (temp % size);\n}\n\nstruct Student cautaHTable(struct Nod** hTab, int size, char* nume_student) {\n    int k = calculPozitie(nume_student, size);\n    struct Student stud;\n    stud.nume = NULL;\n    struct Nod* tmp = hTab[k];\n    while (tmp) {\n        if (!strcmp(tmp->st.nume, nume_student))\n            stud = tmp->st;\n        tmp = tmp->next;\n    }\n    return stud;\n}",
     "source": "grile4.txt",
     "sourceQuestionNumber": 28,
     "answers": [
@@ -861,7 +861,7 @@
   },
   {
     "id": 32,
-    "question": "Care dintre urmatoarele afirmatii este adevarata?\nCode:\nSe considera urmatoarea secventa de cod sursa C pentru o tabela de dispersie implementata cu linear probing (functia functieStudent)",
+    "question": "Care dintre urmatoarele afirmatii este adevarata?\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#include <string.h>\n#include <stdlib.h>\n\n#define ARRAY_SIZE 100\n\nstruct Student {\n  int id;\n  char* nume;\n  float avg;\n};\n\nint functiaStudent(struct Student* h, int size, char* studName)\n{\n  char found = 0, i;\n  for (i = 0; i < size && !found; i++)\n  {\n    if ((h[i].nume != 0) && (strcmp(h[i].nume, studName) == 0))\n    {\n      found = 1;\n    }\n  }\n\n  if (found == 1)\n    return i;\n  else\n    return -1;\n}\n\nstruct Student* HTable;\nint size = ARRAY_SIZE;\nHTable = (struct Student*)malloc(size * sizeof(struct Student));\nfor (int i = 0; i < size; i++) {\n  HTable[i].nume = NULL;\n}",
     "source": "grile4.txt",
     "sourceQuestionNumber": 32,
     "answers": [

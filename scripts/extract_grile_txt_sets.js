@@ -4,19 +4,19 @@ const path = require('path');
 const SOURCES = [
   {
     id: 'grile1',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_verified_outputs\\SDD_grile_FINAL_verified\\outputs_txt_docx\\grile1.txt',
+    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\\SDD_grile_FINAL_CODE_COMPLETE_verified\\outputs_txt_docx\\grile1.txt',
   },
   {
     id: 'grile2',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_verified_outputs\\SDD_grile_FINAL_verified\\outputs_txt_docx\\grile2.txt',
+    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\\SDD_grile_FINAL_CODE_COMPLETE_verified\\outputs_txt_docx\\grile2.txt',
   },
   {
     id: 'grile3',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_verified_outputs\\SDD_grile_FINAL_verified\\outputs_txt_docx\\grile3.txt',
+    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\\SDD_grile_FINAL_CODE_COMPLETE_verified\\outputs_txt_docx\\grile3.txt',
   },
   {
     id: 'grile4',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_verified_outputs\\SDD_grile_FINAL_verified\\outputs_txt_docx\\grile4.txt',
+    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\\SDD_grile_FINAL_CODE_COMPLETE_verified\\outputs_txt_docx\\grile4.txt',
   },
 ];
 
