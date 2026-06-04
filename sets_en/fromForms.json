@@ -1,0 +1,2164 @@
+[
+  {
+    "id": 1,
+    "question": "For efficient deletion of arbitrary nodes, the most suitable structure is:",
+    "source": "Google Forms",
+    "sourceId": 416087440,
+    "images": [],
+    "answers": [
+      {
+        "text": "Binary heap",
+        "isCorrect": false
+      },
+      {
+        "text": "Doubly linked list",
+        "isCorrect": true
+      },
+      {
+        "text": "Singly linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Circular singly linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Static array",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Select all correct Heap operations with O(log n) complexity:",
+    "source": "Google Forms",
+    "sourceId": 17407032,
+    "images": [],
+    "answers": [
+      {
+        "text": "Inserting an element",
+        "isCorrect": true
+      },
+      {
+        "text": "Traversing the entire heap",
+        "isCorrect": false
+      },
+      {
+        "text": "Finding a random element",
+        "isCorrect": false
+      },
+      {
+        "text": "Accessing the root element directly",
+        "isCorrect": false
+      },
+      {
+        "text": "Deleting the root element",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "If a node in a heap is at position \"i\", its left child is typically found at position:",
+    "source": "Google Forms",
+    "sourceId": 646149325,
+    "images": [],
+    "answers": [
+      {
+        "text": "2i - 1",
+        "isCorrect": false
+      },
+      {
+        "text": "i/2",
+        "isCorrect": false
+      },
+      {
+        "text": "i - 1",
+        "isCorrect": false
+      },
+      {
+        "text": "2i + 2",
+        "isCorrect": false
+      },
+      {
+        "text": "2i + 1",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Advantages of linked lists over heaps include:",
+    "source": "Google Forms",
+    "sourceId": 761110016,
+    "images": [],
+    "answers": [
+      {
+        "text": "Faster random access",
+        "isCorrect": false
+      },
+      {
+        "text": "Highest efficiency in sorting",
+        "isCorrect": false
+      },
+      {
+        "text": "Able to preserve the order of the elements",
+        "isCorrect": true
+      },
+      {
+        "text": "Direct access to min / max element",
+        "isCorrect": false
+      },
+      {
+        "text": "Easier insertion/deletion operations at known positions",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Which data structure allows traversing in both forward and backward directions easily?",
+    "source": "Google Forms",
+    "sourceId": 981791735,
+    "images": [],
+    "answers": [
+      {
+        "text": "Stacks",
+        "isCorrect": false
+      },
+      {
+        "text": "Doubly linked list",
+        "isCorrect": true
+      },
+      {
+        "text": "Queues",
+        "isCorrect": false
+      },
+      {
+        "text": "Circular linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Simple linked list",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Which is a correct description of a heap implementation:",
+    "source": "Google Forms",
+    "sourceId": 2009750337,
+    "images": [],
+    "answers": [
+      {
+        "text": "node processing based on the last updated element",
+        "isCorrect": false
+      },
+      {
+        "text": "node processing based on the new element",
+        "isCorrect": false
+      },
+      {
+        "text": "node processing based on the first inserted element",
+        "isCorrect": false
+      },
+      {
+        "text": "node processing based on the priority of the element",
+        "isCorrect": true
+      },
+      {
+        "text": "node processing based on the oldest element",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Operations on linked lists with O(1) complexity (assuming direct node reference):",
+    "source": "Google Forms",
+    "sourceId": 437756011,
+    "images": [],
+    "answers": [
+      {
+        "text": "Node insertion at known position",
+        "isCorrect": true
+      },
+      {
+        "text": "Node deletion at known position",
+        "isCorrect": true
+      },
+      {
+        "text": "Sorting the list",
+        "isCorrect": false
+      },
+      {
+        "text": "Node search",
+        "isCorrect": false
+      },
+      {
+        "text": "Traversing the entire list",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Deleting a node from a singly linked list, given the previous node, typically has complexity:",
+    "source": "Google Forms",
+    "sourceId": 1557229503,
+    "images": [],
+    "answers": [
+      {
+        "text": "O(n²)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(n log n)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(n)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(1)",
+        "isCorrect": true
+      },
+      {
+        "text": "O(log n)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Which linked list variant doesn't have any node pointing to NULL?",
+    "source": "Google Forms",
+    "sourceId": 1795201171,
+    "images": [],
+    "answers": [
+      {
+        "text": "Doubly non-circular linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Circular linked list",
+        "isCorrect": true
+      },
+      {
+        "text": "Singly non-circular linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Stack implemented as linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Simple queue",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Select the true statements for linked lists and static arrays.",
+    "source": "Google Forms",
+    "sourceId": 1360537668,
+    "images": [],
+    "answers": [
+      {
+        "text": "List nodes are allocated at random addresses in the HEAP memory",
+        "isCorrect": true
+      },
+      {
+        "text": "Static arrays have the memory allocated at runtime",
+        "isCorrect": false
+      },
+      {
+        "text": "Accessing element i in a list is a O(1) complexity time operation",
+        "isCorrect": false
+      },
+      {
+        "text": "Memory size for static arrays is limited only by the HEAP size",
+        "isCorrect": false
+      },
+      {
+        "text": "Lookup operation in an array is a O(1) complexity time operation",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Removing the maximum element from a max-heap typically has complexity:",
+    "source": "Google Forms",
+    "sourceId": 1210388191,
+    "images": [],
+    "answers": [
+      {
+        "text": "O(n log n)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(1)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(n)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(log n)",
+        "isCorrect": true
+      },
+      {
+        "text": "O(n²)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "True statements about heaps:",
+    "source": "Google Forms",
+    "sourceId": 1172284063,
+    "images": [],
+    "answers": [
+      {
+        "text": "Allow fast random element access",
+        "isCorrect": false
+      },
+      {
+        "text": "Insertion has O(log n) complexity",
+        "isCorrect": true
+      },
+      {
+        "text": "Always sorted completely",
+        "isCorrect": false
+      },
+      {
+        "text": "Efficiently implemented with arrays",
+        "isCorrect": true
+      },
+      {
+        "text": "Can be either max-heap or min-heap",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "A binary heap is considered a:",
+    "source": "Google Forms",
+    "sourceId": 805803613,
+    "images": [],
+    "answers": [
+      {
+        "text": "Completely unordered structure",
+        "isCorrect": false
+      },
+      {
+        "text": "Unstructured set of elements",
+        "isCorrect": false
+      },
+      {
+        "text": "Circular structure",
+        "isCorrect": false
+      },
+      {
+        "text": "Fully sorted structure",
+        "isCorrect": false
+      },
+      {
+        "text": "Partially ordered structure",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Circular doubly linked list provides easy traversal in:",
+    "source": "Google Forms",
+    "sourceId": 1418886167,
+    "images": [],
+    "answers": [
+      {
+        "text": "Forward direction only",
+        "isCorrect": false
+      },
+      {
+        "text": "Neither direction effectively",
+        "isCorrect": false
+      },
+      {
+        "text": "Backward direction only",
+        "isCorrect": false
+      },
+      {
+        "text": "Both forward and backward directions indefinitely",
+        "isCorrect": true
+      },
+      {
+        "text": "Only in random directions",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Properties of binary heaps include:",
+    "source": "Google Forms",
+    "sourceId": 537982598,
+    "images": [],
+    "answers": [
+      {
+        "text": "Always implemented via linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Random access efficiency",
+        "isCorrect": false
+      },
+      {
+        "text": "Complete binary tree structure",
+        "isCorrect": true
+      },
+      {
+        "text": "Heap property for all nodes",
+        "isCorrect": true
+      },
+      {
+        "text": "Nodes fully sorted",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "question": "Suitable for heap usage:",
+    "source": "Google Forms",
+    "sourceId": 1364996697,
+    "images": [],
+    "answers": [
+      {
+        "text": "Heap sort",
+        "isCorrect": true
+      },
+      {
+        "text": "Priority queue",
+        "isCorrect": true
+      },
+      {
+        "text": "Maintaining dynamic min/max",
+        "isCorrect": true
+      },
+      {
+        "text": "Scheduling applications based on priority",
+        "isCorrect": true
+      },
+      {
+        "text": "Direct indexing of arbitrary elements",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Benefits of doubly linked lists compared to singly linked lists include:",
+    "source": "Google Forms",
+    "sourceId": 1809496291,
+    "images": [],
+    "answers": [
+      {
+        "text": "Fixed memory allocation",
+        "isCorrect": false
+      },
+      {
+        "text": "Easier node deletion when the node pointer is provided",
+        "isCorrect": true
+      },
+      {
+        "text": "Less memory usage",
+        "isCorrect": false
+      },
+      {
+        "text": "Easier random access",
+        "isCorrect": false
+      },
+      {
+        "text": "Efficient backward traversal",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Main disadvantage of doubly linked lists:",
+    "source": "Google Forms",
+    "sourceId": 2104034980,
+    "images": [],
+    "answers": [
+      {
+        "text": "Unpredictable node addresses",
+        "isCorrect": false
+      },
+      {
+        "text": "Increased memory overhead",
+        "isCorrect": true
+      },
+      {
+        "text": "Difficult random access",
+        "isCorrect": false
+      },
+      {
+        "text": "Difficult traversal",
+        "isCorrect": false
+      },
+      {
+        "text": "Slow insertion",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Primary use of a min-heap:",
+    "source": "Google Forms",
+    "sourceId": 2077542074,
+    "images": [],
+    "answers": [
+      {
+        "text": "Linked list operations",
+        "isCorrect": false
+      },
+      {
+        "text": "Fast random search",
+        "isCorrect": false
+      },
+      {
+        "text": "Rapid traversal",
+        "isCorrect": false
+      },
+      {
+        "text": "Accessing smallest element quickly",
+        "isCorrect": true
+      },
+      {
+        "text": "Accessing largest element quickly",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "question": "After inserting a new element in a heap, the structure:",
+    "source": "Google Forms",
+    "sourceId": 995669293,
+    "images": [],
+    "answers": [
+      {
+        "text": "Maintains heap property",
+        "isCorrect": true
+      },
+      {
+        "text": "Becomes completely unstructured",
+        "isCorrect": false
+      },
+      {
+        "text": "Is unchanged",
+        "isCorrect": false
+      },
+      {
+        "text": "Randomly rearranges elements",
+        "isCorrect": false
+      },
+      {
+        "text": "Becomes fully sorted",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "What is the result of executing the following code?",
+    "source": "Google Forms",
+    "sourceId": 1494307433,
+    "images": [
+      {
+        "src": "assets/fromForms/q21_01.png",
+        "alt": "Question 21 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "c = 1, d = 2, *pc = -10",
+        "isCorrect": true
+      },
+      {
+        "text": "c = 1, d = 1, *pc = -10",
+        "isCorrect": false
+      },
+      {
+        "text": "c = -10, d = 0, *pc = 1",
+        "isCorrect": false
+      },
+      {
+        "text": "Application causes runtime error",
+        "isCorrect": false
+      },
+      {
+        "text": "Application causes malloc() failure",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "If an array is declared as char mesaj[10], what is the valid index for the last element of the array?",
+    "source": "Google Forms",
+    "sourceId": 1539031707,
+    "images": [],
+    "answers": [
+      {
+        "text": "9",
+        "isCorrect": true
+      },
+      {
+        "text": "last",
+        "isCorrect": false
+      },
+      {
+        "text": "mesaj + 1",
+        "isCorrect": false
+      },
+      {
+        "text": "mesaj - 1",
+        "isCorrect": false
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "Which function is used to dynamically allocate memory for a vector in C?",
+    "source": "Google Forms",
+    "sourceId": 858425888,
+    "images": [],
+    "answers": [
+      {
+        "text": "malloc()",
+        "isCorrect": true
+      },
+      {
+        "text": "printf()",
+        "isCorrect": false
+      },
+      {
+        "text": "sizeof()",
+        "isCorrect": false
+      },
+      {
+        "text": "strlen()",
+        "isCorrect": false
+      },
+      {
+        "text": "scanf()",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Identify the problem in the code: int* p; *p = 10;",
+    "source": "Google Forms",
+    "sourceId": 981255311,
+    "images": [],
+    "answers": [
+      {
+        "text": "Variable p is in read-only segment",
+        "isCorrect": false
+      },
+      {
+        "text": "Pointer is constant",
+        "isCorrect": false
+      },
+      {
+        "text": "Memory not allocated before use",
+        "isCorrect": true
+      },
+      {
+        "text": "Variable p contains null address",
+        "isCorrect": false
+      },
+      {
+        "text": "Cannot assign value 10",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Which data structure is used to implement the chaining mechanism in a hash table?",
+    "source": "Google Forms",
+    "sourceId": 643949666,
+    "images": [],
+    "answers": [
+      {
+        "text": "Tree structure",
+        "isCorrect": false
+      },
+      {
+        "text": "Heap structure",
+        "isCorrect": false
+      },
+      {
+        "text": "Matrix",
+        "isCorrect": false
+      },
+      {
+        "text": "Singly linked list",
+        "isCorrect": true
+      },
+      {
+        "text": "Vector",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "question": "What types of rotations are used for AVL tree rebalancing?",
+    "source": "Google Forms",
+    "sourceId": 188536424,
+    "images": [],
+    "answers": [
+      {
+        "text": "Left-right rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Single right rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Right-left rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Single left rotation",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "question": "In which domains are trees used as applied data structures?",
+    "source": "Google Forms",
+    "sourceId": 46679979,
+    "images": [],
+    "answers": [
+      {
+        "text": "Defining a website’s tree structure",
+        "isCorrect": true
+      },
+      {
+        "text": "Organizing files in an operating system",
+        "isCorrect": true
+      },
+      {
+        "text": "Organizing hierarchical structures in companies",
+        "isCorrect": true
+      },
+      {
+        "text": "Implementing sequential calculations",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "question": "Which of the following are valid characteristics of statically allocated arrays?",
+    "source": "Google Forms",
+    "sourceId": 985939350,
+    "images": [],
+    "answers": [
+      {
+        "text": "Must be freed using free()",
+        "isCorrect": false
+      },
+      {
+        "text": "Vector size can be determined at runtime",
+        "isCorrect": false
+      },
+      {
+        "text": "Size is fixed",
+        "isCorrect": true
+      },
+      {
+        "text": "Are allocated in the memory stack where they are declared",
+        "isCorrect": true
+      },
+      {
+        "text": "Can be resized with realloc()",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "question": "What is true about the pointer variable p after calling free(p)?",
+    "source": "Google Forms",
+    "sourceId": 78074561,
+    "images": [],
+    "answers": [
+      {
+        "text": "It retains the content, i.e., the Heap memory address it had at allocation",
+        "isCorrect": true
+      },
+      {
+        "text": "It is deallocated from the Stack segment where it was defined",
+        "isCorrect": false
+      },
+      {
+        "text": "It is copied to the Stack where it is accessed",
+        "isCorrect": false
+      },
+      {
+        "text": "The pointer is automatically reset to NULL",
+        "isCorrect": false
+      },
+      {
+        "text": "It is reset to a different Heap address",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "question": "What is the output of the following code?",
+    "source": "Google Forms",
+    "sourceId": 1559525740,
+    "images": [
+      {
+        "src": "assets/fromForms/q30_01.png",
+        "alt": "Question 30 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "v[0] = 10, pv[0] = 10",
+        "isCorrect": true
+      },
+      {
+        "text": "Compilation error: index operator not applicable to pointers",
+        "isCorrect": false
+      },
+      {
+        "text": "Compilation error: vector address cannot be assigned to pointer",
+        "isCorrect": false
+      },
+      {
+        "text": "v[0] = 10, pv[0] = 0",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "question": "Which statements are true regarding singly linked lists?",
+    "source": "Google Forms",
+    "sourceId": 883317498,
+    "images": [],
+    "answers": [
+      {
+        "text": "A singly linked list is a linear structure",
+        "isCorrect": true
+      },
+      {
+        "text": "Nodes can be added/removed without knowing their count",
+        "isCorrect": true
+      },
+      {
+        "text": "Nodes store heterogeneous data",
+        "isCorrect": false
+      },
+      {
+        "text": "It allows sequential access",
+        "isCorrect": true
+      },
+      {
+        "text": "Always has only two nodes that are homogeneous",
+        "isCorrect": false
+      },
+      {
+        "text": "Each node stores multiple values of the same type",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "question": "What is the smallest value greater than 55 that can replace it in a BST with level-order: 55, 33, 77, 11, 44, 66, 88?",
+    "source": "Google Forms",
+    "sourceId": 1940813640,
+    "images": [],
+    "answers": [
+      {
+        "text": "44",
+        "isCorrect": false
+      },
+      {
+        "text": "66",
+        "isCorrect": true
+      },
+      {
+        "text": "77",
+        "isCorrect": false
+      },
+      {
+        "text": "88",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "question": "Which of the following are AVL tree rotations used to rebalance?",
+    "source": "Google Forms",
+    "sourceId": 281839186,
+    "images": [],
+    "answers": [
+      {
+        "text": "Left-right rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Right rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Left rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Right-left rotation",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Which of the following are true about pointer variables in C?",
+    "source": "Google Forms",
+    "sourceId": 704357713,
+    "images": [],
+    "answers": [
+      {
+        "text": "Can be used in any arithmetic calculation",
+        "isCorrect": false
+      },
+      {
+        "text": "Has special declaration syntax",
+        "isCorrect": true
+      },
+      {
+        "text": "Stores a memory address",
+        "isCorrect": true
+      },
+      {
+        "text": "Can only be used to access the data segment",
+        "isCorrect": false
+      },
+      {
+        "text": "Can only be used to access heap memory",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "question": "Choose the correct code block to add a node with value 4 to the end of a singly linked list:",
+    "source": "Google Forms",
+    "sourceId": 984279931,
+    "images": [
+      {
+        "src": "assets/fromForms/q35_01.png",
+        "alt": "Question 35 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "Opțiunea 1",
+        "isCorrect": false,
+        "images": [
+          {
+            "src": "assets/fromForms/q35_02.png",
+            "alt": "Question 35 option 1"
+          }
+        ]
+      },
+      {
+        "text": "Opțiunea 2",
+        "isCorrect": false,
+        "images": [
+          {
+            "src": "assets/fromForms/q35_03.png",
+            "alt": "Question 35 option 2"
+          }
+        ]
+      },
+      {
+        "text": "Opțiunea 3",
+        "isCorrect": true,
+        "images": [
+          {
+            "src": "assets/fromForms/q35_04.png",
+            "alt": "Question 35 option 3"
+          }
+        ]
+      },
+      {
+        "text": "Opțiunea 4",
+        "isCorrect": false,
+        "images": [
+          {
+            "src": "assets/fromForms/q35_05.png",
+            "alt": "Question 35 option 4"
+          }
+        ]
+      },
+      {
+        "text": "Opțiunea 5",
+        "isCorrect": true,
+        "images": [
+          {
+            "src": "assets/fromForms/q35_06.png",
+            "alt": "Question 35 option 5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "question": "What does chaining mean in a hash table?",
+    "source": "Google Forms",
+    "sourceId": 1531878687,
+    "images": [],
+    "answers": [
+      {
+        "text": "Using an auxiliary array",
+        "isCorrect": false
+      },
+      {
+        "text": "Computing a hash function",
+        "isCorrect": false
+      },
+      {
+        "text": "Handling collisions through a list of elements",
+        "isCorrect": true
+      },
+      {
+        "text": "Duplicating data sets in memory",
+        "isCorrect": false
+      },
+      {
+        "text": "Translating the hash value into ASCII codes",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "question": "Which operation uses the Binary Search Tree data structure?",
+    "source": "Google Forms",
+    "sourceId": 956547707,
+    "images": [],
+    "answers": [
+      {
+        "text": "Clustering nodes based on a certain key value",
+        "isCorrect": true
+      },
+      {
+        "text": "Transitive closure",
+        "isCorrect": false
+      },
+      {
+        "text": "Topological sort",
+        "isCorrect": false
+      },
+      {
+        "text": "Depth-first traversal",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "question": "What value is printed by this C code? int v[] = {1, 2, 3, 4, 5}; printf(\"%d\", v[3]);",
+    "source": "Google Forms",
+    "sourceId": 2020710584,
+    "images": [],
+    "answers": [
+      {
+        "text": "3",
+        "isCorrect": false
+      },
+      {
+        "text": "4",
+        "isCorrect": true
+      },
+      {
+        "text": "5",
+        "isCorrect": false
+      },
+      {
+        "text": "9",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "question": "Which of the following statements is true?",
+    "source": "Google Forms",
+    "sourceId": 129053611,
+    "images": [
+      {
+        "src": "assets/fromForms/q39_01.png",
+        "alt": "Question 39 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "The function correctly implements the search operation for the parameter studName if it is a key in the hash table.",
+        "isCorrect": true
+      },
+      {
+        "text": "The function incorrectly implements the search operation for the parameter studName if it is not a key in the hash table.",
+        "isCorrect": false
+      },
+      {
+        "text": "The parameters of the insertStudent(struct Student*, int, struct Student) function are incorrectly declared in relation to how they are used.",
+        "isCorrect": false
+      },
+      {
+        "text": "The function correctly implements the search operation for the parameter studName if it is not a key in the hash table.",
+        "isCorrect": false
+      },
+      {
+        "text": "The function identifies all elements of type Student stored in the hash table.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "question": "What is correct about searching in a hash table with chaining?",
+    "source": "Google Forms",
+    "sourceId": 1230762766,
+    "images": [],
+    "answers": [
+      {
+        "text": "Incorrect because hash allows direct access to a student list that caused a conflict",
+        "isCorrect": false
+      },
+      {
+        "text": "Incorrect because hash generates values outside the allocated range",
+        "isCorrect": false
+      },
+      {
+        "text": "Incorrect because hash cannot be used with string keys",
+        "isCorrect": false
+      },
+      {
+        "text": "Correct because it uses only sequential access",
+        "isCorrect": false
+      },
+      {
+        "text": "Correct because it uses the hash function followed by sequential search",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "question": "Complete the code to correctly free memory and nullify the pointer:",
+    "source": "Google Forms",
+    "sourceId": 688901595,
+    "images": [
+      {
+        "src": "assets/fromForms/q41_01.png",
+        "alt": "Question 41 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "free(v)",
+        "isCorrect": true
+      },
+      {
+        "text": "v = NULL",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "question": "What function is used to dynamically allocate memory for an array of elements in C?",
+    "source": "Google Forms",
+    "sourceId": 445487376,
+    "images": [],
+    "answers": [
+      {
+        "text": "malloc()",
+        "isCorrect": true
+      },
+      {
+        "text": "printf()",
+        "isCorrect": false
+      },
+      {
+        "text": "sizeof()",
+        "isCorrect": false
+      },
+      {
+        "text": "strlen()",
+        "isCorrect": false
+      },
+      {
+        "text": "scanf()",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "question": "Which of the following are situations where a right-left rotation is used in an AVL tree?",
+    "source": "Google Forms",
+    "sourceId": 1940120174,
+    "images": [],
+    "answers": [
+      {
+        "text": "Left imbalance with a right child",
+        "isCorrect": false
+      },
+      {
+        "text": "Root has balance factor -2 and left child +1",
+        "isCorrect": false
+      },
+      {
+        "text": "Balance factor is 0",
+        "isCorrect": false
+      },
+      {
+        "text": "Root has balance factor +2 and right child -1",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "question": "Select the characteristics of statically allocated arrays:",
+    "source": "Google Forms",
+    "sourceId": 2071174626,
+    "images": [],
+    "answers": [
+      {
+        "text": "Must be freed using free()",
+        "isCorrect": false
+      },
+      {
+        "text": "Size can be determined at runtime",
+        "isCorrect": false
+      },
+      {
+        "text": "Size is fixed",
+        "isCorrect": true
+      },
+      {
+        "text": "Allocated on the stack",
+        "isCorrect": true
+      },
+      {
+        "text": "Can be resized with realloc()",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "question": "What is the correct output of the following C code? int v[] = {10, 20}; int* pv = v; printf(\"v[0] = %d, pv[0] = %d\", v[0], pv[0]);",
+    "source": "Google Forms",
+    "sourceId": 551557684,
+    "images": [],
+    "answers": [
+      {
+        "text": "v[0] = 10, pv[0] = 10",
+        "isCorrect": true
+      },
+      {
+        "text": "v[0] = 1, pv[0] = 20",
+        "isCorrect": false
+      },
+      {
+        "text": "v[0] = 10, pv[0] = -20",
+        "isCorrect": false
+      },
+      {
+        "text": "Compilation error due to [] operator",
+        "isCorrect": false
+      },
+      {
+        "text": "Compilation error due to pointer assignment",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "question": "What is the correct statement about the function:",
+    "source": "Google Forms",
+    "sourceId": 425921515,
+    "images": [
+      {
+        "src": "assets/fromForms/q46_01.png",
+        "alt": "Question 46 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "The function inserts an element at the beginning of a singly linked list.",
+        "isCorrect": false
+      },
+      {
+        "text": "The function inserts a node at the beginning of a circular doubly linked list.",
+        "isCorrect": false
+      },
+      {
+        "text": "The head of the list is passed by value so that it is not updated.",
+        "isCorrect": false
+      },
+      {
+        "text": "The function returns the useful information stored in the head of the list.",
+        "isCorrect": true
+      },
+      {
+        "text": "Deleting the container is equivalent to deleting the first",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "question": "What are the advantages of linked lists over heaps?",
+    "source": "Google Forms",
+    "sourceId": 770659559,
+    "images": [],
+    "answers": [
+      {
+        "text": "Most efficient in sorting",
+        "isCorrect": false
+      },
+      {
+        "text": "Simplified dynamic memory management",
+        "isCorrect": true
+      },
+      {
+        "text": "Faster random access",
+        "isCorrect": false
+      },
+      {
+        "text": "Easier insertions/deletions in known positions",
+        "isCorrect": true
+      },
+      {
+        "text": "Direct access to min/max element",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "question": "What is true about pointer variable p after deallocating memory using free(p)?",
+    "source": "Google Forms",
+    "sourceId": 1989789489,
+    "images": [],
+    "answers": [
+      {
+        "text": "It keeps the heap address it had at allocation",
+        "isCorrect": true
+      },
+      {
+        "text": "It is deallocated from the stack",
+        "isCorrect": false
+      },
+      {
+        "text": "It is copied to the stack",
+        "isCorrect": false
+      },
+      {
+        "text": "It is automatically set to NULL",
+        "isCorrect": false
+      },
+      {
+        "text": "It is reset to another heap address",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "question": "What is true about the following C function using linear probing in a hash table?",
+    "source": "Google Forms",
+    "sourceId": 1691775289,
+    "images": [
+      {
+        "src": "assets/fromForms/q49_01.png",
+        "alt": "Question 49 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "The function correctly implements the search operation for the studName parameter if it is a key in the hash table.",
+        "isCorrect": true
+      },
+      {
+        "text": "The function incorrectly implements the search operation for the studName parameter if it is not a key in the hash table.",
+        "isCorrect": false
+      },
+      {
+        "text": "The parameters of the function insertStudent(struct Student*, int, struct Student) are incorrectly declared relative to their usage.",
+        "isCorrect": false
+      },
+      {
+        "text": "The function correctly implements the search operation for the studName parameter if it is not a key in the hash table.",
+        "isCorrect": false
+      },
+      {
+        "text": "The function identifies all Student elements stored in the hash table.",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "question": "Identify the problem in the following code: int* p; *p = 10;",
+    "source": "Google Forms",
+    "sourceId": 577988314,
+    "images": [],
+    "answers": [
+      {
+        "text": "Variable p is in read-only segment",
+        "isCorrect": false
+      },
+      {
+        "text": "Pointer is constant",
+        "isCorrect": false
+      },
+      {
+        "text": "Memory not allocated before use",
+        "isCorrect": true
+      },
+      {
+        "text": "Variable p contains null address",
+        "isCorrect": false
+      },
+      {
+        "text": "Cannot assign value 10",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "question": "What is the correct statement regarding the function:",
+    "source": "Google Forms",
+    "sourceId": 174769984,
+    "images": [
+      {
+        "src": "assets/fromForms/q51_01.png",
+        "alt": "Question 51 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "The function inserts an element at the beginning of a singly linked list.",
+        "isCorrect": false
+      },
+      {
+        "text": "The function inserts a node at the beginning of a circular doubly linked list.",
+        "isCorrect": false
+      },
+      {
+        "text": "The head of the list is passed by value in order not to update it.",
+        "isCorrect": false
+      },
+      {
+        "text": "The function returns the useful information already present in the head of the list.",
+        "isCorrect": true
+      },
+      {
+        "text": "The function deletes the container (node) corresponding to the first node in the list.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "question": "What does the chaining mechanism in a hash table imply?",
+    "source": "Google Forms",
+    "sourceId": 309772202,
+    "images": [],
+    "answers": [
+      {
+        "text": "Using an auxiliary array",
+        "isCorrect": false
+      },
+      {
+        "text": "Computing a hash function",
+        "isCorrect": false
+      },
+      {
+        "text": "Handling collisions through a list of elements",
+        "isCorrect": true
+      },
+      {
+        "text": "Duplicating data in memory",
+        "isCorrect": false
+      },
+      {
+        "text": "Translating hash into ASCII",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "question": "Which of the following statements are true about pointer variables in C?",
+    "source": "Google Forms",
+    "sourceId": 1269984909,
+    "images": [],
+    "answers": [
+      {
+        "text": "They can be used in any arithmetic calculation",
+        "isCorrect": false
+      },
+      {
+        "text": "They have a special syntax for declaration",
+        "isCorrect": true
+      },
+      {
+        "text": "They store a memory address",
+        "isCorrect": true
+      },
+      {
+        "text": "Only used to access the data segment",
+        "isCorrect": false
+      },
+      {
+        "text": "Only used to access heap memory",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "question": "What types of AVL rotations are used for balancing?",
+    "source": "Google Forms",
+    "sourceId": 1462407721,
+    "images": [],
+    "answers": [
+      {
+        "text": "Left-right rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Right rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Left rotation",
+        "isCorrect": true
+      },
+      {
+        "text": "Right-left rotation",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "question": "Which operation uses the data structure “binary search tree”?",
+    "source": "Google Forms",
+    "sourceId": 560606452,
+    "images": [],
+    "answers": [
+      {
+        "text": "Clustering nodes based on a certain key value",
+        "isCorrect": true
+      },
+      {
+        "text": "Transitive closure",
+        "isCorrect": false
+      },
+      {
+        "text": "Topological sort",
+        "isCorrect": false
+      },
+      {
+        "text": "Depth-first traversal",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "question": "Which data structure is used to implement chaining in a hash table?",
+    "source": "Google Forms",
+    "sourceId": 433391088,
+    "images": [],
+    "answers": [
+      {
+        "text": "Tree structure",
+        "isCorrect": false
+      },
+      {
+        "text": "Heap structure",
+        "isCorrect": false
+      },
+      {
+        "text": "Matrix",
+        "isCorrect": false
+      },
+      {
+        "text": "Singly linked list",
+        "isCorrect": true
+      },
+      {
+        "text": "Vector",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "question": "Which of the following are valid ways to declare and/or initialize a statically allocated two-dimensional (2D) array m in the C language?",
+    "source": "Google Forms",
+    "sourceId": 420091498,
+    "images": [],
+    "answers": [
+      {
+        "text": "int mat [2][3]={ (1, 2, 3},{4, 5, 6};",
+        "isCorrect": false
+      },
+      {
+        "text": "int mat[][3] = {1, 2, 3},{4, 5, 6};",
+        "isCorrect": false
+      },
+      {
+        "text": "int mat[2][3] = {1, 2, 3, 4, 5, 6};",
+        "isCorrect": true
+      },
+      {
+        "text": "int mat[2][]= {(1, 2, 3),(4, 5, 6)};",
+        "isCorrect": false
+      },
+      {
+        "text": "int mat[][] = {(1, 2, 3),(4, 5, 6)};",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "question": "Accessing the max element from a max heap typically has complexity :",
+    "source": "Google Forms",
+    "sourceId": 1888277901,
+    "images": [],
+    "answers": [
+      {
+        "text": "O(1)",
+        "isCorrect": true
+      },
+      {
+        "text": "O(N*N)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(N)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(N LOG N)",
+        "isCorrect": false
+      },
+      {
+        "text": "O(LOG N)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "question": "What type of tree traversal is used in the saveflightsVector function?",
+    "source": "Google Forms",
+    "sourceId": 1416808535,
+    "images": [
+      {
+        "src": "assets/fromForms/q59_01.png",
+        "alt": "Question 59 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "postorder",
+        "isCorrect": false
+      },
+      {
+        "text": "inorder",
+        "isCorrect": false
+      },
+      {
+        "text": "preorder",
+        "isCorrect": true
+      },
+      {
+        "text": "breadth-first",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "question": "If a node in a heap is at position \"i\" its left child is typically found at position:",
+    "source": "Google Forms",
+    "sourceId": 1621818575,
+    "images": [],
+    "answers": [
+      {
+        "text": "-2i + 2",
+        "isCorrect": false
+      },
+      {
+        "text": "b: i/2",
+        "isCorrect": false
+      },
+      {
+        "text": "2i -1.",
+        "isCorrect": false
+      },
+      {
+        "text": "2i + 1",
+        "isCorrect": true
+      },
+      {
+        "text": "i-1",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "question": "Which memory segment is used for allocating local variables?",
+    "source": "Google Forms",
+    "sourceId": 1757551530,
+    "images": [],
+    "answers": [
+      {
+        "text": "BSS (Block Started by Symbol)",
+        "isCorrect": false
+      },
+      {
+        "text": "Stack",
+        "isCorrect": true
+      },
+      {
+        "text": "Data",
+        "isCorrect": false
+      },
+      {
+        "text": "Heap",
+        "isCorrect": false
+      },
+      {
+        "text": "Code",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "question": "A singly linked list is best suited for:",
+    "source": "Google Forms",
+    "sourceId": 412167875,
+    "images": [],
+    "answers": [
+      {
+        "text": "Random access",
+        "isCorrect": false
+      },
+      {
+        "text": "Fixed-size data storage",
+        "isCorrect": false
+      },
+      {
+        "text": "c Frequent random searching",
+        "isCorrect": false
+      },
+      {
+        "text": "Binary searches",
+        "isCorrect": false
+      },
+      {
+        "text": "Sequential access and frequent modification",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "question": "Which data structure allows traversing in both forward and backward directions easily?",
+    "source": "Google Forms",
+    "sourceId": 389330241,
+    "images": [],
+    "answers": [
+      {
+        "text": "Stacks",
+        "isCorrect": false
+      },
+      {
+        "text": "Doubly linked list",
+        "isCorrect": true
+      },
+      {
+        "text": "Circular linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Queues",
+        "isCorrect": false
+      },
+      {
+        "text": "Simple linked list",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "question": "What role does the parameter int* nr in the saveflightsvector function?",
+    "source": "Google Forms",
+    "sourceId": 674684883,
+    "images": [
+      {
+        "src": "assets/fromForms/q64_01.png",
+        "alt": "Question 64 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "Remembers the address of the tree for traversal",
+        "isCorrect": false
+      },
+      {
+        "text": "Checks if the flight year is valid",
+        "isCorrect": false
+      },
+      {
+        "text": "Remembers the number of flights saved in the vector",
+        "isCorrect": true
+      },
+      {
+        "text": "Stores the code of the last flight inserted into the vector",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "question": "A heap is usually visualized as:",
+    "source": "Google Forms",
+    "sourceId": 1737623376,
+    "images": [],
+    "answers": [
+      {
+        "text": "Array of pointers",
+        "isCorrect": false
+      },
+      {
+        "text": "Binary Tree",
+        "isCorrect": true
+      },
+      {
+        "text": "Graph",
+        "isCorrect": false
+      },
+      {
+        "text": "Linked list",
+        "isCorrect": false
+      },
+      {
+        "text": "Hash table",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "question": "After inserting a new element in a heap, the structure:",
+    "source": "Google Forms",
+    "sourceId": 697091307,
+    "images": [],
+    "answers": [
+      {
+        "text": "a Is unchanged",
+        "isCorrect": false
+      },
+      {
+        "text": "Becomes fully sorted",
+        "isCorrect": false
+      },
+      {
+        "text": "Becomes completely unstructured",
+        "isCorrect": false
+      },
+      {
+        "text": "Maintains heap property",
+        "isCorrect": true
+      },
+      {
+        "text": "Randomly rearranges elements",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "question": "In a circular singly linked list, the last node points to:",
+    "source": "Google Forms",
+    "sourceId": 693543619,
+    "images": [],
+    "answers": [
+      {
+        "text": "Second node",
+        "isCorrect": false
+      },
+      {
+        "text": "First node",
+        "isCorrect": true
+      },
+      {
+        "text": "Itself",
+        "isCorrect": false
+      },
+      {
+        "text": "A random middle node",
+        "isCorrect": false
+      },
+      {
+        "text": "NULL",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "question": "In a binary search tree (BST) that maintains the total order relation(left key < parent key < right key),if a node that has two subtrees needs to be deleted, what steps are taken?",
+    "source": "Google Forms",
+    "sourceId": 1926136705,
+    "images": [],
+    "answers": [
+      {
+        "text": "The maximum value in the left subtree is located.",
+        "isCorrect": true
+      },
+      {
+        "text": "The maximum value in the right subtree is located.",
+        "isCorrect": false
+      },
+      {
+        "text": "The node is deleted directly without any additional actions.",
+        "isCorrect": false
+      },
+      {
+        "text": "The rightmost node in the left subtree is located.",
+        "isCorrect": true
+      },
+      {
+        "text": "The minimum value in the right subtree is located.",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "question": "Identify the true statements about singly linked lists.",
+    "source": "Google Forms",
+    "sourceId": 445327789,
+    "images": [],
+    "answers": [
+      {
+        "text": "Allows quick random access",
+        "isCorrect": false
+      },
+      {
+        "text": "Efficient backward traversal",
+        "isCorrect": false
+      },
+      {
+        "text": "Each node has exactly two pointers",
+        "isCorrect": false
+      },
+      {
+        "text": "Efficient insertion if node position is known",
+        "isCorrect": true
+      },
+      {
+        "text": "Memory allocation is dynamic",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "question": "In the postorder traversal of a tree, the order of visiting is:",
+    "source": "Google Forms",
+    "sourceId": 2035393515,
+    "images": [],
+    "answers": [
+      {
+        "text": "Current node - subtrees",
+        "isCorrect": false
+      },
+      {
+        "text": "Current node - leaves",
+        "isCorrect": false
+      },
+      {
+        "text": "Right subtree - left subtree → current node",
+        "isCorrect": false
+      },
+      {
+        "text": "Left subtree - right subtree - current node",
+        "isCorrect": true
+      },
+      {
+        "text": "Current node - right subtree - left subtree",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "question": "Where the int data type is a long(4 bytes per int)?",
+    "source": "Google Forms",
+    "sourceId": 1452178263,
+    "images": [
+      {
+        "src": "assets/fromForms/q71_01.png",
+        "alt": "Question 71 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "0x00C7FED8",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "question": "Arrange the C code:",
+    "source": "Google Forms",
+    "sourceId": 1343927041,
+    "images": [
+      {
+        "src": "assets/fromForms/q72_01.png",
+        "alt": "Question 72 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "i=0;",
+        "isCorrect": true
+      },
+      {
+        "text": "ht[i]=s",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "question": "What is wrong with the following code snippet?",
+    "source": "Google Forms",
+    "sourceId": 1704473192,
+    "images": [
+      {
+        "src": "assets/fromForms/q73_01.png",
+        "alt": "Question 73 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "No pounter was used for dynamic allocation",
+        "isCorrect": false
+      },
+      {
+        "text": "Exceeds the arrays bounds",
+        "isCorrect": true
+      },
+      {
+        "text": "The element at position i is accessed incorrectly using the [] operator",
+        "isCorrect": false
+      },
+      {
+        "text": "Allocation error because realloc() should be used instead of malloc()",
+        "isCorrect": false
+      },
+      {
+        "text": "The variable i was not declared",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "question": "Which are correct?",
+    "source": "Google Forms",
+    "sourceId": 1469931967,
+    "images": [
+      {
+        "src": "assets/fromForms/q74_01.png",
+        "alt": "Question 74 image 1"
+      }
+    ],
+    "answers": [
+      {
+        "text": "deletion of an element from a list",
+        "isCorrect": false
+      },
+      {
+        "text": "adding a node at the end of the list",
+        "isCorrect": true
+      },
+      {
+        "text": "adding a node at the begging of the list",
+        "isCorrect": false
+      },
+      {
+        "text": "searching for a node with payload info",
+        "isCorrect": false
+      },
+      {
+        "text": "inserting into a circular list",
+        "isCorrect": true
+      }
+    ]
+  }
+]

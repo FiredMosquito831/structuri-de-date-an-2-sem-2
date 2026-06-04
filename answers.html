@@ -290,6 +290,25 @@
             margin-bottom: 14px;
         }
 
+        .result-images,
+        .answer-images {
+            display: grid;
+            gap: 10px;
+            margin: 10px 0 14px;
+        }
+
+        .result-images img,
+        .answer-images img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            background: #fff;
+        }
+
+        .answer-images {
+            margin: 8px 0 0;
+        }
+
         .answers {
             display: grid;
             gap: 8px;
@@ -384,8 +403,8 @@
     </main>
 
     <script>
-        const APP_DATA_VERSION = 'data-structures-sdd-test-answer-search-2026-06-04';
-        const TOP_SET_IDS = ['sdd_test', 'arrays', 'linked_lists'];
+        const APP_DATA_VERSION = 'data-structures-fromforms-answer-search-2026-06-04';
+        const TOP_SET_IDS = ['sdd_test', 'fromForms', 'arrays'];
         const state = {
             config: null,
             language: 'ro',
@@ -444,6 +463,16 @@
         }
 
         function normalizeQuestion(rawQuestion) {
+            const normalizeImages = (images) => (Array.isArray(images) ? images : [])
+                .map((image, index) => {
+                    if (typeof image === 'string') return { src: image, alt: `Question image ${index + 1}` };
+                    return {
+                        src: String(image?.src || '').trim(),
+                        alt: String(image?.alt || `Question image ${index + 1}`).trim(),
+                    };
+                })
+                .filter(image => image.src);
+
             const rawAnswers = Array.isArray(rawQuestion.answers)
                 ? rawQuestion.answers
                 : Object.entries(rawQuestion.answers || {}).map(([key, text]) => ({
@@ -455,11 +484,13 @@
                     id: String.fromCharCode(97 + index),
                     text: String(answer.text || '').replace(/^[a-zA-Z]\)\s*/, '').trim(),
                     isCorrect: Boolean(answer.isCorrect),
+                    images: normalizeImages(answer.images),
                 }))
-                .filter(answer => answer.text && !/^[,.;:"'`]+$/.test(answer.text));
+                .filter(answer => (answer.text && !/^[,.;:"'`]+$/.test(answer.text)) || answer.images.length);
             return {
                 id: rawQuestion.id,
                 question: rawQuestion.question || rawQuestion.text || '',
+                images: normalizeImages(rawQuestion.images),
                 answers,
             };
         }
@@ -506,9 +537,20 @@
             const haystack = normalize([
                 question.question,
                 ...question.answers.map(answer => answer.text),
+                ...(question.images || []).map(image => image.alt),
+                ...question.answers.flatMap(answer => (answer.images || []).map(image => image.alt)),
                 ...question.answers.filter(answer => answer.isCorrect).map(answer => answer.text),
             ].join(' '));
             return query.split(/\s+/).filter(Boolean).every(term => haystack.includes(term));
+        }
+
+        function renderImages(images, className = 'result-images') {
+            if (!Array.isArray(images) || images.length === 0) return '';
+            return `<div class="${className}">
+                ${images.map(image => `
+                    <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || 'Question image')}" loading="lazy">
+                `).join('')}
+            </div>`;
         }
 
         async function runSearch() {
@@ -558,11 +600,15 @@
                         <span>Question ID: ${escapeHtml(question.id)}</span>
                     </div>
                     <div class="question">${highlight(question.question, query)}</div>
+                    ${renderImages(question.images)}
                     <div class="answers">
                         ${question.answers.map(answer => `
                             <div class="answer ${answer.isCorrect ? 'correct' : ''}">
                                 <strong>${escapeHtml(answer.id.toUpperCase())}</strong>
-                                <span>${highlight(answer.text, query)}</span>
+                                <span>
+                                    ${answer.text ? highlight(answer.text, query) : ''}
+                                    ${renderImages(answer.images, 'answer-images')}
+                                </span>
                                 ${answer.isCorrect ? '<strong>Correct</strong>' : ''}
                             </div>
                         `).join('')}

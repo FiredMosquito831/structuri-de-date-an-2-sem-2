@@ -85,7 +85,7 @@
 
     <script type="text/babel">
         const { useState, useEffect, useMemo, useRef } = React;
-        const APP_DATA_VERSION = 'data-structures-sdd-test-2026-06-04';
+        const APP_DATA_VERSION = 'data-structures-fromforms-2026-06-04';
         const fetchJson = (path) => fetch(`${path}?v=${encodeURIComponent(APP_DATA_VERSION)}`, { cache: 'no-store' }).then(res => res.json());
         const LANGUAGE_OPTIONS = {
             ro: { label: 'Romana', short: 'RO', subtitle: 'Seturile romanesti curente' },
@@ -356,6 +356,16 @@
         };
 
         function processQuestions(rawData) {
+            const normalizeImages = (images) => (Array.isArray(images) ? images : [])
+                .map((image, index) => {
+                    if (typeof image === 'string') return { src: image, alt: `Question image ${index + 1}` };
+                    return {
+                        src: String(image?.src || '').trim(),
+                        alt: String(image?.alt || `Question image ${index + 1}`).trim()
+                    };
+                })
+                .filter(image => image.src);
+
             const questions = getQuestionList(rawData);
             return questions
                 .filter(q => q && q.question && q.answers)
@@ -370,15 +380,16 @@
                 const normalizedAnswers = rawAnswers
                     .map((ans) => {
                         const cleanText = String(ans.text || '').replace(/^[a-zA-Z]\)\s*/, '').trim();
-                        return { text: cleanText, isCorrect: Boolean(ans.isCorrect) };
+                        return { text: cleanText, isCorrect: Boolean(ans.isCorrect), images: normalizeImages(ans.images) };
                     })
-                    .filter(ans => ans.text && !/^[,.;:"'`]+$/.test(ans.text));
+                    .filter(ans => (ans.text && !/^[,.;:"'`]+$/.test(ans.text)) || ans.images.length);
 
                 const options = shuffleArray(normalizedAnswers)
                     .map((ans, index) => ({
                         id: String.fromCharCode(97 + index),
                         text: ans.text,
-                        isCorrect: ans.isCorrect
+                        isCorrect: ans.isCorrect,
+                        images: ans.images
                     }));
 
                 const correctAnswers = options.filter(o => o.isCorrect).map(o => o.id);
@@ -388,6 +399,7 @@
                 return {
                     id: q.id,
                     text: q.question,
+                    images: normalizeImages(q.images),
                     options: options,
                     correctAnswers: correctAnswers,
                     isMultiple: correctAnswers.length > 1
@@ -479,6 +491,19 @@
                         <h2 className="text-base md:text-lg font-bold text-gray-800 dark:text-gray-100 leading-tight whitespace-pre-wrap">
                             {question.text}
                         </h2>
+                        {Array.isArray(question.images) && question.images.length > 0 && (
+                            <div className="mt-3 space-y-3">
+                                {question.images.map((image, imageIndex) => (
+                                    <img
+                                        key={`${question.id}-image-${imageIndex}`}
+                                        src={image.src}
+                                        alt={image.alt || `Question ${index + 1} image ${imageIndex + 1}`}
+                                        className="max-w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white object-contain"
+                                        loading="lazy"
+                                    />
+                                ))}
+                            </div>
+                        )}
                     </div>
 
                     <div className="space-y-2 flex-grow">
@@ -526,7 +551,22 @@
                                         {!question.isMultiple && isSelected && <div className="w-2 h-2 bg-white rounded-full"></div>}
                                         {!isSelected && <span className="text-[10px]">{opt.id.toUpperCase()}</span>}
                                     </div>
-                                    <span className="mt-0.5 flex-grow font-medium text-sm leading-snug">{opt.text}</span>
+                                    <span className="mt-0.5 flex-grow font-medium text-sm leading-snug">
+                                        {opt.text && <span className="block">{opt.text}</span>}
+                                        {Array.isArray(opt.images) && opt.images.length > 0 && (
+                                            <span className="mt-2 block space-y-2">
+                                                {opt.images.map((image, imageIndex) => (
+                                                    <img
+                                                        key={`${opt.id}-image-${imageIndex}`}
+                                                        src={image.src}
+                                                        alt={image.alt || `Option ${opt.id.toUpperCase()} image ${imageIndex + 1}`}
+                                                        className="max-w-full rounded-md border border-gray-200 dark:border-gray-700 bg-white object-contain"
+                                                        loading="lazy"
+                                                    />
+                                                ))}
+                                            </span>
+                                        )}
+                                    </span>
 
                                     {showFeedback && (
                                         <div className="w-5 flex-shrink-0 self-center">

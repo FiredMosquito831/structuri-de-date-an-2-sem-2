@@ -13,6 +13,8 @@ The site is built for browser-only use: no backend, no database, no build step. 
 - `sets/`: Romanian/current-language MCQ JSON sets.
 - `sets_en/`: English-mode MCQ JSON sets. For now these mirror the Romanian/current sets where no translation exists.
 - `scripts/extract_test_sdd_html.js`: extractor used to regenerate the SDD test set from the original HTML source.
+- `scripts/extract_from_forms.js`: extractor/normalizer for the Google Forms-derived `fromForms` set.
+- `assets/fromForms/`: local copies of images embedded in the Google Form questions.
 
 ## Current Question Sets
 
@@ -25,11 +27,13 @@ C:\Users\fgghk\Downloads\sdd\test_SDD.html
 Current counts:
 
 - `sdd_test`: 74 questions
+- `fromForms`: 74 questions, including 14 questions with images
 - `arrays`: 3 placeholder questions
 - `linked_lists`: 3 placeholder questions
 - `trees`: 3 placeholder questions
 
 `sdd_test` contains 62 single-correct questions and 12 multi-correct questions.
+`fromForms` is extracted from a public Google Form. The public form does not expose its answer key, so correctness is maintained in `scripts/extract_from_forms.js` using a reviewed answer map and local image assets.
 
 ## Local Run
 
@@ -64,6 +68,21 @@ sets_en/sdd_test.json
 
 It also validates that every extracted question has text, answers, and at least one correct answer.
 
+## Regenerate The Google Forms Set
+
+The `fromForms` set is generated with:
+
+```powershell
+node scripts/extract_from_forms.js
+```
+
+Important details:
+
+- The script reads the public Google Forms model from the form URL.
+- Question images are referenced from local files under `assets/fromForms/`.
+- Correct answers are not exposed by the public Google Form, so they are maintained in the extractor's `CORRECT_BY_INDEX` map.
+- If the Google Form changes, inspect and update the answer map before trusting regenerated output.
+
 ## Add A New Question Set
 
 1. Add the JSON file under `sets/`.
@@ -81,9 +100,18 @@ Preferred JSON format:
   {
     "id": 1,
     "question": "Question text?",
+    "images": [
+      { "src": "assets/fromForms/q21_01.png", "alt": "Question image" }
+    ],
     "answers": [
       { "text": "Option A", "isCorrect": false },
-      { "text": "Option B", "isCorrect": true }
+      {
+        "text": "Option B",
+        "isCorrect": true,
+        "images": [
+          { "src": "assets/fromForms/q35_04.png", "alt": "Option image" }
+        ]
+      }
     ]
   }
 ]

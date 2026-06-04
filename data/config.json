@@ -3,6 +3,7 @@
   "subtitle": "Data Structures and Algorithms",
   "displayOrder": [
     "sdd_test",
+    "fromForms",
     "arrays",
     "linked_lists",
     "trees"
@@ -20,6 +21,23 @@
       "colorClass": "blue",
       "dataFile": "sets/sdd_test.json",
       "englishDataFile": "sets_en/sdd_test.json",
+      "chapters": null,
+      "presets": [
+        30,
+        50,
+        74,
+        "all"
+      ],
+      "defaultCount": 30
+    },
+    "fromForms": {
+      "id": "fromForms",
+      "displayName": "From Forms",
+      "shortName": "Forms",
+      "icon": "ph-list-checks",
+      "colorClass": "green",
+      "dataFile": "sets/fromForms.json",
+      "englishDataFile": "sets_en/fromForms.json",
       "chapters": null,
       "presets": [
         30,
