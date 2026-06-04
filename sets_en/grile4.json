@@ -306,7 +306,7 @@
         "isCorrect": true
       },
       {
-        "text": "Lista simpla cotine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
+        "text": "Lista simpla contine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
         "isCorrect": false
       }
     ]
@@ -350,7 +350,7 @@
         "isCorrect": true
       },
       {
-        "text": "Organizarea fișierelor în cadrul unui sistem de de operare",
+        "text": "Organizarea fișierelor în cadrul unui sistem de operare",
         "isCorrect": true
       },
       {
@@ -441,7 +441,7 @@
   },
   {
     "id": 17,
-    "question": "Considerându-se următoarea secvență, care dintre fragmentele procedurale adaugă un nou nod la sfârșitul listei?\nCode:\n// Existing list: 9 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a",
+    "question": "Considerându-se următoarea secvență, care dintre fragmentele procedurale adaugă un nou nod la sfârșitul listei?\nCode:\n// Existing list: 9 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a new node with value 4",
     "source": "grile4.txt",
     "sourceQuestionNumber": 17,
     "answers": [
@@ -553,7 +553,7 @@
   },
   {
     "id": 21,
-    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la urmatoarea secventa de cod sursa C:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#define DIM 100\n#define SPERS NULL\n\nstruct Student {\n    int id;\n    char* name;\n    float media;\n};\n\nstruct Nod* {\n    struct Student s;\n    struct Nod* next;\n};\n\nstruct Nod** stTable;\nstruct Student stKey;\n\nstTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    stTable[i] = 0;",
+    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la urmatoarea secventa de cod sursa C:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#define DIM 100\n#define SPERS NULL\n\nstruct Student {\n    int id;\n    char* name;\n    float media;\n};\n\nstruct Nod {\n    struct Student s;\n    struct Nod* next;\n};\n\nstruct Nod** stTable;\nstruct Student stKey;\n\nstTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    stTable[i] = 0;",
     "source": "grile4.txt",
     "sourceQuestionNumber": 21,
     "answers": [
@@ -942,7 +942,7 @@
         "isCorrect": true
       },
       {
-        "text": "Lista simpla cotine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
+        "text": "Lista simpla contine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
         "isCorrect": false
       }
     ]
@@ -986,7 +986,7 @@
         "isCorrect": true
       },
       {
-        "text": "Organizarea fișierelor în cadrul unui sistem de de operare",
+        "text": "Organizarea fișierelor în cadrul unui sistem de operare",
         "isCorrect": true
       },
       {
@@ -1077,7 +1077,7 @@
   },
   {
     "id": 40,
-    "question": "Considerand ca urmatoarea secventa care de mai jos reprezinta procedeul utilizat de catre nodul de valoare 4 la sfarsitul secventei curente:\nCode:\n// Existing list: 3 -> 2 -> 1\nstruct node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a",
+    "question": "Considerand ca urmatoarea secventa care de mai jos reprezinta procedeul utilizat de catre nodul de valoare 4 la sfarsitul secventei curente:\nCode:\n// Existing list: 3 -> 2 -> 1\nstruct node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a new node with value 4",
     "source": "grile4.txt",
     "sourceQuestionNumber": 40,
     "answers": [
@@ -1245,7 +1245,7 @@
   },
   {
     "id": 46,
-    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la urmatoarea secventa de cod sursa C:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#define DIM 100\n#define SPERS NULL\n\nstruct Student {\n    int id;\n    char* name;\n    float media;\n};\n\nstruct Nod* {\n    struct Student s;\n    struct Nod* next;\n};\n\nstruct Nod** stTable;\nstruct Student stKey;\n\nstTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    stTable[i] = 0;",
+    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la urmatoarea secventa de cod sursa C:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#define DIM 100\n#define SPERS NULL\n\nstruct Student {\n    int id;\n    char* name;\n    float media;\n};\n\nstruct Nod {\n    struct Student s;\n    struct Nod* next;\n};\n\nstruct Nod** stTable;\nstruct Student stKey;\n\nstTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    stTable[i] = 0;",
     "source": "grile4.txt",
     "sourceQuestionNumber": 46,
     "answers": [

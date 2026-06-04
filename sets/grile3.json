@@ -109,7 +109,7 @@
   },
   {
     "id": 5,
-    "question": "Completează codul pentru eliberarea corectăa spațiului ocupat de un vector alocat dinamic\nCode:\nint nrEl = 10; int* v = malloc(nrEl * sizeof(int)); for (int i = 0; i < nrEl; i++) { v[i] = i; } ___(v); v = ___;",
+    "question": "Completează codul pentru eliberarea corectă a spațiului ocupat de un vector alocat dinamic\nCode:\nint nrEl = 10; int* v = malloc(nrEl * sizeof(int)); for (int i = 0; i < nrEl; i++) { v[i] = i; } ___(v); v = ___;",
     "source": "grile3.txt",
     "sourceQuestionNumber": 5,
     "answers": [
@@ -386,7 +386,7 @@
         "isCorrect": true
       },
       {
-        "text": "Lista simpla cotine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
+        "text": "Lista simpla contine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
         "isCorrect": false
       }
     ]
@@ -445,7 +445,7 @@
   },
   {
     "id": 17,
-    "question": "Considerandu-se urmatoarea secventa, care din raspunsurile prezentate adauga un nou nod cu valoarea 4 la sfarsitul listei:\nCode:\n// Existing list: 1 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a",
+    "question": "Considerandu-se urmatoarea secventa, care din raspunsurile prezentate adauga un nou nod cu valoarea 4 la sfarsitul listei:\nCode:\n// Existing list: 1 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a new node with value 4",
     "source": "grile3.txt",
     "sourceQuestionNumber": 17,
     "answers": [

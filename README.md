@@ -109,10 +109,10 @@ Important details:
 The corrected verified grile sets are generated from:
 
 ```text
-C:\Users\fgghk\Downloads\SDD_grile_corrected_verified_outputs\SDD_grile_corrected_verified\outputs_txt_docx\grile1.txt
-C:\Users\fgghk\Downloads\SDD_grile_corrected_verified_outputs\SDD_grile_corrected_verified\outputs_txt_docx\grile2.txt
-C:\Users\fgghk\Downloads\SDD_grile_corrected_verified_outputs\SDD_grile_corrected_verified\outputs_txt_docx\grile3.txt
-C:\Users\fgghk\Downloads\SDD_grile_corrected_verified_outputs\SDD_grile_corrected_verified\outputs_txt_docx\grile4.txt
+C:\Users\fgghk\Downloads\SDD_grile_FINAL_verified_outputs\SDD_grile_FINAL_verified\outputs_txt_docx\grile1.txt
+C:\Users\fgghk\Downloads\SDD_grile_FINAL_verified_outputs\SDD_grile_FINAL_verified\outputs_txt_docx\grile2.txt
+C:\Users\fgghk\Downloads\SDD_grile_FINAL_verified_outputs\SDD_grile_FINAL_verified\outputs_txt_docx\grile3.txt
+C:\Users\fgghk\Downloads\SDD_grile_FINAL_verified_outputs\SDD_grile_FINAL_verified\outputs_txt_docx\grile4.txt
 ```
 
 Regenerate them with:

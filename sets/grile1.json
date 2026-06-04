@@ -197,7 +197,7 @@
   },
   {
     "id": 8,
-    "question": "Care dintre urmatoarele afirmatii este adevarata? (se considera secventa de cod C pentru o tabela de dispersie implementata cu linear probing)\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#include <string.h>\n#include <stdlib.h>\n\n#define ARRAY_SIZE 100\n\nstruct Student {\n    int id;\n    char* nume;\n    float avg;\n};\n\nint insertStudent(struct Student* h[], int size, char* studName)\n{\n    char found = 0, i;\n    for (i = 0; i < size && !found; i++)\n    {\n        if ((h[i].nume != 0) && (strcmp(h[i].nume, studName) == 0))\n        {\n            found = 1;\n        }\n    }\n    if (found == 1)\n        return 1;\n    else\n        return -1;\n}\n\nstruct Student* HTable;\nint size = ARRAY_SIZE;\nHTable = (struct Student*)malloc(size * sizeof(struct Student));\nfor (int i = 0; i < size; i++) {\n    HTable[i].nume = NULL;\n}",
+    "question": "Care dintre urmatoarele afirmatii este adevarata? (se considera secventa de cod C pentru o tabela de dispersie implementata cu linear probing)\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#include <string.h>\n#include <stdlib.h>\n\n#define ARRAY_SIZE 100\n\nstruct Student {\n    int id;\n    char* nume;\n    float avg;\n};\n\nint insertStudent(struct Student* h, int size, char* studName)\n{\n    char found = 0, i;\n    for (i = 0; i < size && !found; i++)\n    {\n        if ((h[i].nume != 0) && (strcmp(h[i].nume, studName) == 0))\n        {\n            found = 1;\n        }\n    }\n    if (found == 1)\n        return 1;\n    else\n        return -1;\n}\n\nstruct Student* HTable;\nint size = ARRAY_SIZE;\nHTable = (struct Student*)malloc(size * sizeof(struct Student));\nfor (int i = 0; i < size; i++) {\n    HTable[i].nume = NULL;\n}",
     "source": "grile1.txt",
     "sourceQuestionNumber": 8,
     "answers": [
@@ -330,7 +330,7 @@
         "isCorrect": true
       },
       {
-        "text": "Lista simpla cotine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
+        "text": "Lista simpla contine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
         "isCorrect": false
       }
     ]
@@ -501,7 +501,7 @@
   },
   {
     "id": 19,
-    "question": "Se considera urmatoarea secventa de cod sursa C cu privire la operatia de cautare a unui student intr-o tabela de dispersie implementata cu mecanismul de tip chaining pentru tratarea coliziunilor [...] avand numele studentului cu rol de cheie: Care dintre urmatoarele afirmatii este corecta?\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#include <string.h>\n#include <stdlib.h>\n\nstruct Student {\n  int id;\n  char* nume;\n  float medie;\n};\n\nstruct Nod {\n  struct Student st;\n  struct Nod* next;\n};\n\nint calculPozitie(char* key, int size) {\n  int temp = 0;\n  for (unsigned int i = 0; i < strlen(key); i++)\n    temp += key[i];\n\n  return (temp % size);\n}\n\nstruct Student cautInTable(struct Nod** hTab, int size, char* nume_student) {\n  int k = calculPozitie(nume_student, size);\n\n  struct Student stud;\n  stud.nume = NULL;\n\n  struct Nod* tmp = hTab[k];\n  while (tmp) {\n\n    if (!strcmp(tmp->st.nume, nume_student))\n      stud = tmp->st;\n\n    tmp = tmp->next;\n  }\n\n  return stud;\n}",
+    "question": "Se considera urmatoarea secventa de cod sursa C cu privire la operatia de cautare a unui student intr-o tabela de dispersie implementata cu mecanismul de tip chaining pentru tratarea coliziunilor avand numele studentului cu rol de cheie: Care dintre urmatoarele afirmatii este corecta?\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#include <string.h>\n#include <stdlib.h>\n\nstruct Student {\n  int id;\n  char* nume;\n  float medie;\n};\n\nstruct Nod {\n  struct Student st;\n  struct Nod* next;\n};\n\nint calculPozitie(char* key, int size) {\n  int temp = 0;\n  for (unsigned int i = 0; i < strlen(key); i++)\n    temp += key[i];\n\n  return (temp % size);\n}\n\nstruct Student cautInTable(struct Nod** hTab, int size, char* nume_student) {\n  int k = calculPozitie(nume_student, size);\n\n  struct Student stud;\n  stud.nume = NULL;\n\n  struct Nod* tmp = hTab[k];\n  while (tmp) {\n\n    if (!strcmp(tmp->st.nume, nume_student))\n      stud = tmp->st;\n\n    tmp = tmp->next;\n  }\n\n  return stud;\n}",
     "source": "grile1.txt",
     "sourceQuestionNumber": 19,
     "answers": [
@@ -550,7 +550,7 @@
         "isCorrect": false
       },
       {
-        "text": "Se rescie cu o adresa de memorie Heap diferita.",
+        "text": "Se rescrie cu o adresa de memorie Heap diferita.",
         "isCorrect": false
       }
     ]
@@ -613,7 +613,7 @@
   },
   {
     "id": 23,
-    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la urmatoarea secventa de cod sursa C:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#define DIM 100\n#define SPERS NULL\n\nstruct Student {\n    int id;\n    char* name;\n    float media;\n};\n\nstruct Nod* {\n    struct Student s;\n    struct Nod* next;\n};\n\nstruct Nod** stTable;\nstruct Student stKey;\n\nstTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    stTable[i] = 0;",
+    "question": "Care dintre urmatoarele afirmatii sunt adevarate cu privire la urmatoarea secventa de cod sursa C:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n#define DIM 100\n#define SPERS NULL\n\nstruct Student {\n    int id;\n    char* name;\n    float media;\n};\n\nstruct Nod {\n    struct Student s;\n    struct Nod* next;\n};\n\nstruct Nod** stTable;\nstruct Student stKey;\n\nstTable = (struct Nod**)malloc(sizeof(struct Nod*) * DIM);\nfor (int i = 0; i < DIM; i++)\n    stTable[i] = 0;",
     "source": "grile1.txt",
     "sourceQuestionNumber": 23,
     "answers": [
@@ -753,7 +753,7 @@
   },
   {
     "id": 28,
-    "question": "Considerand ca urmatoarea secventa care de mai jos reprezinta procedeul utilizat de catre nodul de valoare 4 la sfarsitul secventei curente:\nCode:\n// Existing list: 3 -> 2 -> 1\nstruct node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a",
+    "question": "Considerand ca urmatoarea secventa care de mai jos reprezinta procedeul utilizat de catre nodul de valoare 4 la sfarsitul secventei curente:\nCode:\n// Existing list: 3 -> 2 -> 1\nstruct node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a new node with value 4",
     "source": "grile1.txt",
     "sourceQuestionNumber": 28,
     "answers": [
@@ -837,7 +837,7 @@
   },
   {
     "id": 31,
-    "question": "Considerându-se următoarea secvență, care dintre fragmentele procedurale adaugă un nou nod la sfârșitul listei?\nCode:\n// Existing list: 9 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a",
+    "question": "Considerându-se următoarea secvență, care dintre fragmentele procedurale adaugă un nou nod la sfârșitul listei?\nCode:\n// Existing list: 9 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a new node with value 4",
     "source": "grile1.txt",
     "sourceQuestionNumber": 31,
     "answers": [
@@ -954,7 +954,7 @@
         "isCorrect": true
       },
       {
-        "text": "Organizarea fișierelor în cadrul unui sistem de de operare",
+        "text": "Organizarea fișierelor în cadrul unui sistem de operare",
         "isCorrect": true
       },
       {
@@ -1018,7 +1018,7 @@
         "isCorrect": true
       },
       {
-        "text": "Lista simpla cotine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
+        "text": "Lista simpla contine noduri, iar fiecare nod stocheaza mai multe elemente de acelasi tip.",
         "isCorrect": false
       }
     ]
