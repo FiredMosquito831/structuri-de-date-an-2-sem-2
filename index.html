@@ -584,6 +584,89 @@
 
         // --- 4. SCREENS ---
 
+        function SetupGuidePanel({ side }) {
+            const isLeft = side === 'left';
+            const items = isLeft ? [
+                {
+                    icon: 'ph-number-circle-one',
+                    title: 'Choose what to study',
+                    text: 'Use Question Sets to select one source or combine multiple sets into one mixed quiz.'
+                },
+                {
+                    icon: 'ph-translate',
+                    title: 'Language switch',
+                    text: 'Romana and English load matching set files when translations or mirrors are available.'
+                },
+                {
+                    icon: 'ph-cards',
+                    title: 'Exam vs Practice',
+                    text: 'Exam shows one question at a time with Check/Next flow. Practice shows the full list and grades after submit.'
+                },
+                {
+                    icon: 'ph-dice-five',
+                    title: 'Question selection',
+                    text: 'Pick a preset, all available questions, or a custom amount. The site prioritizes unseen questions for variety.'
+                }
+            ] : [
+                {
+                    icon: 'ph-database',
+                    title: 'Main contents',
+                    text: 'Includes the SDD HTML test, Google Forms questions, verified Grile 1-4, and small starter sets.'
+                },
+                {
+                    icon: 'ph-check-circle',
+                    title: 'Correct Answers',
+                    text: 'Opens a searchable answer viewer where you can select sets and look up question text or answer text.'
+                },
+                {
+                    icon: 'ph-download-simple',
+                    title: 'Study Materials',
+                    text: 'Contains course PDFs, C cheatsheet, full MCQ corpus files, and downloadable JSON question sets.'
+                },
+                {
+                    icon: 'ph-floppy-disk',
+                    title: 'Saved session',
+                    text: 'If you leave mid-quiz, the browser saves progress locally and offers Continue Previous Session.'
+                }
+            ];
+
+            return (
+                <aside className="w-full xl:sticky xl:top-6 text-left">
+                    <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur border border-gray-100 dark:border-gray-700 rounded-2xl shadow-xl p-5">
+                        <div className="flex items-center gap-2 mb-4">
+                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isLeft ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-300' : 'bg-amber-50 text-amber-600 dark:bg-amber-900/30 dark:text-amber-300'}`}>
+                                <i className={`ph-bold ${isLeft ? 'ph-compass' : 'ph-books'} text-lg`}></i>
+                            </div>
+                            <div>
+                                <p className="text-[10px] uppercase tracking-[0.18em] font-black text-gray-400 dark:text-gray-500">{isLeft ? 'Quick Tutorial' : 'Contents Guide'}</p>
+                                <h2 className="text-sm font-black text-gray-800 dark:text-white">{isLeft ? 'How to use the site' : 'What the buttons open'}</h2>
+                            </div>
+                        </div>
+
+                        <div className="space-y-3">
+                            {items.map((item) => (
+                                <div key={item.title} className="flex gap-3">
+                                    <div className="mt-0.5 w-7 h-7 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center flex-shrink-0">
+                                        <i className={`ph-bold ${item.icon} text-gray-600 dark:text-gray-200 text-sm`}></i>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xs font-black text-gray-800 dark:text-gray-100">{item.title}</h3>
+                                        <p className="text-[11px] leading-relaxed text-gray-500 dark:text-gray-400 mt-0.5">{item.text}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <p className="text-[11px] leading-relaxed text-gray-500 dark:text-gray-400">
+                                Tip: for single-answer questions, click one option. For multi-answer questions, select every correct option before checking or submitting.
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+            );
+        }
+
         // SetupScreen - Now uses config and allQuestionData props for dynamic set management
         // Props changed: difficulty -> currentSetId, setDifficulty -> setCurrentSetId
         function SetupScreen({ totalPool, onStart, hasSavedSession, onResume, currentSetId, setCurrentSetId, config, allQuestionData, websiteConfig, language, setLanguage }) {
@@ -670,8 +753,13 @@
             }, [currentSetId, totalAvailable]);
 
             return (
-                <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center fade-in">
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl max-w-md w-full border border-gray-100 dark:border-gray-700">
+                <div className="min-h-screen p-4 xl:p-6 fade-in">
+                    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 xl:grid-cols-[minmax(230px,1fr)_minmax(420px,448px)_minmax(230px,1fr)] gap-4 xl:gap-6 items-start xl:pt-4">
+                    <div className="order-2 xl:order-1">
+                        <SetupGuidePanel side="left" />
+                    </div>
+                    <div className="order-1 xl:order-2 flex justify-center">
+                    <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl max-w-md w-full border border-gray-100 dark:border-gray-700 text-center">
                         <div className="mb-5">
                             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-3">
                                 <i className="ph-fill ph-student text-2xl"></i>
@@ -811,6 +899,11 @@
                             <span>Start New Quiz</span>
                             <i className="ph-bold ph-caret-right"></i>
                         </button>
+                    </div>
+                    </div>
+                    <div className="order-3">
+                        <SetupGuidePanel side="right" />
+                    </div>
                     </div>
                 </div>
             );
