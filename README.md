@@ -11,6 +11,9 @@ The site is built for browser-only use: no backend, no database, no build step. 
 - `materials.html`: placeholder page for future course materials.
 - `materials/all_in_one_courses.pdf`: complete course PDF for MCQ theory preparation.
 - `materials/complete_cheatsheet.c`: C code and theory cheatsheet for Test 1 and Test 2 implementation patterns.
+- `materials/data_structures_mcq_corpus.json`: full Data Structures MCQ corpus in machine-readable JSON format.
+- `materials/data_structures_mcq_corpus.pdf`: full Data Structures MCQ corpus in PDF format.
+- `materials/data_structures_mcq_corpus.docx`: full Data Structures MCQ corpus in editable DOCX format.
 - `data/config.json`: central set registry, display order, default set, labels, and file paths.
 - `sets/`: Romanian/current-language MCQ JSON sets.
 - `sets_en/`: English-mode MCQ JSON sets. For now these mirror the Romanian/current sets where no translation exists.
@@ -71,6 +74,7 @@ Available downloads:
 
 - `All In One Courses`: PDF with all course content, intended as the main theory reference for MCQ preparation.
 - `Complete Cheatsheet C`: C file with code plus theory explanations for applying implementation patterns in Test 1 and Test 2.
+- `Full MCQ Corpus`: complete question corpus in JSON, PDF, and DOCX formats.
 - `MCQ JSON Question Sets`: direct downloads for every active quiz set plus `data/config.json`, useful for backup, review, migration, or rebuilding the site.
 
 ## Regenerate The SDD Set
