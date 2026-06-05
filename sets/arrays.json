@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "What is the time complexity of accessing an array element by index?",
+    "question": "Care este complexitatea temporală a accesării unui element de tablou prin index?",
     "answers": [
       {
         "text": "O(1)",
@@ -23,44 +23,44 @@
   },
   {
     "id": 2,
-    "question": "Which operation is expensive in a fixed-size array when inserting near the beginning?",
+    "question": "Ce operație este costisitoare într-un tablou de dimensiune fixă la inserarea în apropierea începutului?",
     "answers": [
       {
-        "text": "Shifting following elements to make room",
+        "text": "Deplasarea elementelor următoare pentru a face loc",
         "isCorrect": true
       },
       {
-        "text": "Reading the first element",
+        "text": "Citirea primului element",
         "isCorrect": false
       },
       {
-        "text": "Reading the array length",
+        "text": "Citirea lungimii tabloului",
         "isCorrect": false
       },
       {
-        "text": "Comparing two indexes",
+        "text": "Compararea a două indexuri",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 3,
-    "question": "What does contiguous storage usually improve?",
+    "question": "Ce îmbunătățește de obicei stocarea contiguă?",
     "answers": [
       {
-        "text": "Cache locality",
+        "text": "Localitatea cache",
         "isCorrect": true
       },
       {
-        "text": "Pointer chasing",
+        "text": "Urmărirea pointerilor",
         "isCorrect": false
       },
       {
-        "text": "Hash collisions",
+        "text": "Coliziuni hash",
         "isCorrect": false
       },
       {
-        "text": "Tree balancing",
+        "text": "Echilibrarea arborelui",
         "isCorrect": false
       }
     ]

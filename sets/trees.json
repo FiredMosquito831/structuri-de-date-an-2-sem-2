@@ -1,66 +1,66 @@
 [
   {
     "id": 1,
-    "question": "In a binary search tree, where are values smaller than a node usually stored?",
+    "question": "Într-un arbore binar de căutare, unde sunt de obicei stocate valorile mai mici decât un nod?",
     "answers": [
       {
-        "text": "In the left subtree",
+        "text": "În subarborele stâng",
         "isCorrect": true
       },
       {
-        "text": "In the right subtree",
+        "text": "În subarborele drept",
         "isCorrect": false
       },
       {
-        "text": "Only at the root",
+        "text": "Numai la rădăcină",
         "isCorrect": false
       },
       {
-        "text": "Outside the tree",
+        "text": "În afara arborelui",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 2,
-    "question": "What traversal visits left subtree, node, then right subtree?",
+    "question": "Ce parcurgere vizitează subarborele stâng, nodul, apoi subarborele drept?",
     "answers": [
       {
-        "text": "In-order traversal",
+        "text": "Parcurgere în ordine",
         "isCorrect": true
       },
       {
-        "text": "Pre-order traversal",
+        "text": "Parcurgere în preordine",
         "isCorrect": false
       },
       {
-        "text": "Post-order traversal",
+        "text": "Parcurgere postordine",
         "isCorrect": false
       },
       {
-        "text": "Level-order traversal",
+        "text": "Parcurgere pe nivel",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 3,
-    "question": "What is the main risk of an unbalanced binary search tree?",
+    "question": "Care este principalul risc al unui arbore binar de căutare dezechilibrat?",
     "answers": [
       {
-        "text": "Operations can degrade to O(n)",
+        "text": "Operațiunile se pot degrada la O(n)",
         "isCorrect": true
       },
       {
-        "text": "It cannot store keys",
+        "text": "Nu poate stoca chei",
         "isCorrect": false
       },
       {
-        "text": "It always uses no memory",
+        "text": "Nu folosește niciodată memorie",
         "isCorrect": false
       },
       {
-        "text": "It becomes a hash table",
+        "text": "Devine o tabelă hash",
         "isCorrect": false
       }
     ]

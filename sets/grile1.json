@@ -113,12 +113,12 @@
   },
   {
     "id": 5,
-    "question": "Pentru stergere eficienta a nodurilor arbitrare, cea mai potrivita structura este:",
+    "question": "Pentru ștergerea eficientă a nodurilor arbitrare, structura cea mai potrivită este:",
     "source": "grile1.txt",
     "sourceQuestionNumber": 5,
     "answers": [
       {
-        "text": "Heap binar",
+        "text": "Grămadă binară",
         "isCorrect": false
       },
       {
@@ -162,7 +162,7 @@
         "isCorrect": true
       },
       {
-        "text": "Initializeaza un vector de 100 de elemente de tip Nod**.",
+        "text": "Initializeaza un vector de 100 de elemente de tip Nod**",
         "isCorrect": false
       }
     ]
@@ -174,19 +174,19 @@
     "sourceQuestionNumber": 7,
     "answers": [
       {
-        "text": "delete",
+        "text": "Șterge",
         "isCorrect": false
       },
       {
-        "text": "clear",
+        "text": "Clar",
         "isCorrect": false
       },
       {
-        "text": "free",
+        "text": "liber",
         "isCorrect": true
       },
       {
-        "text": "clean",
+        "text": "curat",
         "isCorrect": false
       },
       {
@@ -234,7 +234,7 @@
         "isCorrect": true
       },
       {
-        "text": "last",
+        "text": "ultima",
         "isCorrect": false
       },
       {
@@ -342,7 +342,7 @@
     "sourceQuestionNumber": 13,
     "answers": [
       {
-        "text": "Cea mai mare eficiență în sortare",
+        "text": "Cea mai mare eficiență la sortare",
         "isCorrect": false
       },
       {
@@ -354,7 +354,7 @@
         "isCorrect": false
       },
       {
-        "text": "Inserți/ștergeri mai simple in poziții cunoscute",
+        "text": "Simpler insertions/deletions in known positions",
         "isCorrect": true
       },
       {
@@ -473,7 +473,7 @@
   },
   {
     "id": 18,
-    "question": "Se considera urmatoarea secventa de cod sursa in limbajul C: Precizati rezultatul executiei aplicatiei de mai sus:\nCode:\n#include <stdio.h>\n#include <malloc.h>\n\nint main()\n{\n  int v[] = {10, 20};\n  int *pv = v;\n\n  printf(\"v[0] = %d, pv[0] = %d\\n\", v[0], pv[0]);\n\n  return 0;\n}",
+    "question": "Se considera urmatoarea secventa de cod sursa in limbajul C: Precizati rezultatul executiei aplicatiei de mai sus:",
     "source": "grile1.txt",
     "sourceQuestionNumber": 18,
     "answers": [
@@ -550,7 +550,7 @@
         "isCorrect": false
       },
       {
-        "text": "Se rescrie cu o adresa de memorie Heap diferita.",
+        "text": "Rewritten with a different Heap memory address.",
         "isCorrect": false
       }
     ]
@@ -590,7 +590,7 @@
     "sourceQuestionNumber": 22,
     "answers": [
       {
-        "text": "Poate fi utilizata in orice calcul aritmetic.",
+        "text": "It can be used in any arithmetic calculation.",
         "isCorrect": false
       },
       {
@@ -634,7 +634,7 @@
         "isCorrect": true
       },
       {
-        "text": "Initializeaza un vector de 100 de elemente de tip Nod**.",
+        "text": "Initializeaza un vector de 100 de elemente de tip Nod**",
         "isCorrect": false
       }
     ]
@@ -662,7 +662,7 @@
         "isCorrect": true
       },
       {
-        "text": "N/A",
+        "text": "Nu se aplică",
         "isCorrect": false
       }
     ]
@@ -690,7 +690,7 @@
         "isCorrect": false
       },
       {
-        "text": "N/A",
+        "text": "Nu se aplică",
         "isCorrect": false
       }
     ]
@@ -753,7 +753,7 @@
   },
   {
     "id": 28,
-    "question": "Considerand ca urmatoarea secventa care de mai jos reprezinta procedeul utilizat de catre nodul de valoare 4 la sfarsitul secventei curente:\nCode:\n// Existing list: 3 -> 2 -> 1\nstruct node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a new node with value 4",
+    "question": "Considerand ca urmatoarea secventa care de mai jos reprezinta procedeul utilizat de catre nodul de valoare 4 la sfarsitul secventei curente:\nCode:\n// Lista existentă: 3 -> 2 -> 1\nstruct node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Adăugați cod aici pentru a atașa un nod nou cu valoarea 4",
     "source": "grile1.txt",
     "sourceQuestionNumber": 28,
     "answers": [
@@ -830,14 +830,14 @@
         "isCorrect": true
       },
       {
-        "text": "N/A",
+        "text": "Nu se aplică",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 31,
-    "question": "Considerându-se următoarea secvență, care dintre fragmentele procedurale adaugă un nou nod la sfârșitul listei?\nCode:\n// Existing list: 9 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Add code here to append a new node with value 4",
+    "question": "Considerându-se următoarea secvență, care dintre fragmentele procedurale adaugă un nou nod la sfârșitul listei?\nCode:\n// Lista existentă: 9 -> 2 -> 3\nstruct Node* current = head;\nwhile (current->next != NULL) {\n    current = current->next;\n}\n// Adăugați cod aici pentru a atașa un nod nou cu valoarea 4",
     "source": "grile1.txt",
     "sourceQuestionNumber": 31,
     "answers": [
@@ -934,7 +934,7 @@
         "isCorrect": true
       },
       {
-        "text": "Poate fi utilizată doar pentru accesul la segmente de date.",
+        "text": "It can be used only for access to data segments.",
         "isCorrect": false
       },
       {
@@ -1102,7 +1102,7 @@
         "isCorrect": false
       },
       {
-        "text": "Se rescrie cu o adresa de memorie Heap diferita.",
+        "text": "Rewritten with a different Heap memory address.",
         "isCorrect": false
       }
     ]
@@ -1142,7 +1142,7 @@
     "sourceQuestionNumber": 42,
     "answers": [
       {
-        "text": "Cea mai mare eficiență în sortare",
+        "text": "Cea mai mare eficiență la sortare",
         "isCorrect": false
       },
       {
@@ -1170,19 +1170,19 @@
     "sourceQuestionNumber": 43,
     "answers": [
       {
-        "text": "delete",
+        "text": "Șterge",
         "isCorrect": false
       },
       {
-        "text": "clear",
+        "text": "Clar",
         "isCorrect": false
       },
       {
-        "text": "free",
+        "text": "liber",
         "isCorrect": true
       },
       {
-        "text": "clean",
+        "text": "curat",
         "isCorrect": false
       },
       {
@@ -1214,19 +1214,19 @@
         "isCorrect": true
       },
       {
-        "text": "(none)",
+        "text": "(niciunul)",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 45,
-    "question": "Pentru ștergere eficientă a nodurilor arbitrare, cea mai potrivită structură este:",
+    "question": "Pentru ștergerea eficientă a nodurilor arbitrare, structura cea mai potrivită este:",
     "source": "grile1.txt",
     "sourceQuestionNumber": 45,
     "answers": [
       {
-        "text": "Heap binar",
+        "text": "Grămadă binară",
         "isCorrect": false
       },
       {
@@ -1258,7 +1258,7 @@
         "isCorrect": true
       },
       {
-        "text": "last",
+        "text": "ultima",
         "isCorrect": false
       },
       {

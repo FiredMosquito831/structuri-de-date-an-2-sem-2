@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "question": "What is a linked list node typically composed of?",
+    "question": "Din ce este compus de obicei un nod de listă înlănțuită?",
     "answers": [
       {
-        "text": "Stored data plus one or more links to other nodes",
+        "text": "Datele stocate plus una sau mai multe legături către alte noduri",
         "isCorrect": true
       },
       {
-        "text": "Only contiguous memory cells",
+        "text": "Doar celule de memorie adiacente",
         "isCorrect": false
       },
       {
-        "text": "Only a hash function",
+        "text": "Doar o funcție hash",
         "isCorrect": false
       },
       {
-        "text": "Only a comparison function",
+        "text": "Doar o funcție de comparație",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 2,
-    "question": "What is the cost of searching an unsorted singly linked list by value?",
+    "question": "Care este costul căutării unei liste simplu înlănțuită nesortate după valoare?",
     "answers": [
       {
         "text": "O(n)",
@@ -45,22 +45,22 @@
   },
   {
     "id": 3,
-    "question": "Which linked list operation can be O(1) if the target position/node is already known?",
+    "question": "Ce operație pe listă înlănțuită poate fi O(1) dacă poziția/nodul țintă este deja cunoscut?",
     "answers": [
       {
-        "text": "Insertion after a known node",
+        "text": "Inserare după un nod cunoscut",
         "isCorrect": true
       },
       {
-        "text": "Searching by value",
+        "text": "Căutarea după valoare",
         "isCorrect": false
       },
       {
-        "text": "Sorting the list",
+        "text": "Sortarea listei",
         "isCorrect": false
       },
       {
-        "text": "Finding the middle without extra information",
+        "text": "Găsirea mijlocului fără informații suplimentare",
         "isCorrect": false
       }
     ]

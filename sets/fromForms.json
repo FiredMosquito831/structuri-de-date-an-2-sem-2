@@ -1,65 +1,65 @@
 [
   {
     "id": 1,
-    "question": "For efficient deletion of arbitrary nodes, the most suitable structure is:",
+    "question": "Pentru ștergerea eficientă a nodurilor arbitrare, structura cea mai potrivită este:",
     "source": "Google Forms",
     "sourceId": 416087440,
     "images": [],
     "answers": [
       {
-        "text": "Binary heap",
+        "text": "Heap binar",
         "isCorrect": false
       },
       {
-        "text": "Doubly linked list",
+        "text": "Listă dublu înlănțuită",
         "isCorrect": true
       },
       {
-        "text": "Singly linked list",
+        "text": "Listă simplu înlănțuită",
         "isCorrect": false
       },
       {
-        "text": "Circular singly linked list",
+        "text": "Listă circulară simplu înlănțuită",
         "isCorrect": false
       },
       {
-        "text": "Static array",
+        "text": "Tablou static",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 2,
-    "question": "Select all correct Heap operations with O(log n) complexity:",
+    "question": "Selectați toate operațiile Heap corecte cu complexitatea O(log n):",
     "source": "Google Forms",
     "sourceId": 17407032,
     "images": [],
     "answers": [
       {
-        "text": "Inserting an element",
+        "text": "Inserarea unui element",
         "isCorrect": true
       },
       {
-        "text": "Traversing the entire heap",
+        "text": "Traversarea întregului heap",
         "isCorrect": false
       },
       {
-        "text": "Finding a random element",
+        "text": "Găsirea unui element aleatoriu",
         "isCorrect": false
       },
       {
-        "text": "Accessing the root element directly",
+        "text": "Accesarea elementului rădăcină direct",
         "isCorrect": false
       },
       {
-        "text": "Deleting the root element",
+        "text": "Ștergerea elementului rădăcină",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 3,
-    "question": "If a node in a heap is at position \"i\", its left child is typically found at position:",
+    "question": "Dacă un nod dintr-o grămadă se află la poziția \"i\", copilul său stâng se găsește de obicei la poziția:",
     "source": "Google Forms",
     "sourceId": 646149325,
     "images": [],
@@ -88,123 +88,123 @@
   },
   {
     "id": 4,
-    "question": "Advantages of linked lists over heaps include:",
+    "question": "Avantajele listelor înlănțuite față de heap-uri includ:",
     "source": "Google Forms",
     "sourceId": 761110016,
     "images": [],
     "answers": [
       {
-        "text": "Faster random access",
+        "text": "Acces aleatoriu mai rapid",
         "isCorrect": false
       },
       {
-        "text": "Highest efficiency in sorting",
+        "text": "Cea mai mare eficiență în sortare",
         "isCorrect": false
       },
       {
-        "text": "Able to preserve the order of the elements",
+        "text": "Capabil să păstreze ordinea elementelor",
         "isCorrect": true
       },
       {
-        "text": "Direct access to min / max element",
+        "text": "Acces direct la elementul min / max",
         "isCorrect": false
       },
       {
-        "text": "Easier insertion/deletion operations at known positions",
+        "text": "Operațiuni de inserare/ștergere mai ușoare la poziții cunoscute",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 5,
-    "question": "Which data structure allows traversing in both forward and backward directions easily?",
+    "question": "Care structură de date permite parcurgerea ușoară în ambele direcții?",
     "source": "Google Forms",
     "sourceId": 981791735,
     "images": [],
     "answers": [
       {
-        "text": "Stacks",
+        "text": "Stive",
         "isCorrect": false
       },
       {
-        "text": "Doubly linked list",
+        "text": "Listă dublu înlănțuită",
         "isCorrect": true
       },
       {
-        "text": "Queues",
+        "text": "Cozi",
         "isCorrect": false
       },
       {
-        "text": "Circular linked list",
+        "text": "Listă înlănțuită circulară",
         "isCorrect": false
       },
       {
-        "text": "Simple linked list",
+        "text": "Listă înlănțuită simplă",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 6,
-    "question": "Which is a correct description of a heap implementation:",
+    "question": "Care este o descriere corectă a unei implementări heap:",
     "source": "Google Forms",
     "sourceId": 2009750337,
     "images": [],
     "answers": [
       {
-        "text": "node processing based on the last updated element",
+        "text": "Procesarea nodurilor bazată pe ultimul element actualizat",
         "isCorrect": false
       },
       {
-        "text": "node processing based on the new element",
+        "text": "procesarea nodului bazată pe elementul nou",
         "isCorrect": false
       },
       {
-        "text": "node processing based on the first inserted element",
+        "text": "Procesarea nodurilor bazată pe primul element inserat",
         "isCorrect": false
       },
       {
-        "text": "node processing based on the priority of the element",
+        "text": "Procesarea nodurilor în funcție de prioritatea elementului",
         "isCorrect": true
       },
       {
-        "text": "node processing based on the oldest element",
+        "text": "Procesarea nodului pe baza celui mai vechi element",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 7,
-    "question": "Operations on linked lists with O(1) complexity (assuming direct node reference):",
+    "question": "Operațiuni pe liste înlănțuite cu complexitate O(1) (presupunând referință directă la nod):",
     "source": "Google Forms",
     "sourceId": 437756011,
     "images": [],
     "answers": [
       {
-        "text": "Node insertion at known position",
+        "text": "Inserare nod la poziție cunoscută",
         "isCorrect": true
       },
       {
-        "text": "Node deletion at known position",
+        "text": "Ștergerea nodului la poziție cunoscută",
         "isCorrect": true
       },
       {
-        "text": "Sorting the list",
+        "text": "Sortarea listei",
         "isCorrect": false
       },
       {
-        "text": "Node search",
+        "text": "Căutare nod",
         "isCorrect": false
       },
       {
-        "text": "Traversing the entire list",
+        "text": "Parcurgerea întregii liste",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 8,
-    "question": "Deleting a node from a singly linked list, given the previous node, typically has complexity:",
+    "question": "Ștergerea unui nod dintr-o listă simplu înlănțuită, având dat nodul anterior, are de obicei complexitatea:",
     "source": "Google Forms",
     "sourceId": 1557229503,
     "images": [],
@@ -233,65 +233,65 @@
   },
   {
     "id": 9,
-    "question": "Which linked list variant doesn't have any node pointing to NULL?",
+    "question": "Care variantă de listă înlănțuită nu are niciun nod care să pointeze către NULL?",
     "source": "Google Forms",
     "sourceId": 1795201171,
     "images": [],
     "answers": [
       {
-        "text": "Doubly non-circular linked list",
+        "text": "Listă înlănțuită dublă necirculară",
         "isCorrect": false
       },
       {
-        "text": "Circular linked list",
+        "text": "Listă înlănțuită circulară",
         "isCorrect": true
       },
       {
-        "text": "Singly non-circular linked list",
+        "text": "Listă înlănțuită simplă necirculară",
         "isCorrect": false
       },
       {
-        "text": "Stack implemented as linked list",
+        "text": "Stivă implementată ca listă înlănțuită",
         "isCorrect": false
       },
       {
-        "text": "Simple queue",
+        "text": "Coada simplă",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 10,
-    "question": "Select the true statements for linked lists and static arrays.",
+    "question": "Selectați afirmațiile adevărate pentru listele înlănțuite și tablourile statice.",
     "source": "Google Forms",
     "sourceId": 1360537668,
     "images": [],
     "answers": [
       {
-        "text": "List nodes are allocated at random addresses in the HEAP memory",
+        "text": "Nodurile de listă sunt alocate la adrese aleatorii în memoria HEAP",
         "isCorrect": true
       },
       {
-        "text": "Static arrays have the memory allocated at runtime",
+        "text": "Array-urile statice au memoria alocată la rulare",
         "isCorrect": false
       },
       {
-        "text": "Accessing element i in a list is a O(1) complexity time operation",
+        "text": "Accesarea elementului i într-o listă este o operație cu complexitate temporală O(1)",
         "isCorrect": false
       },
       {
-        "text": "Memory size for static arrays is limited only by the HEAP size",
+        "text": "Dimensiunea memoriei pentru tablourile statice este limitată doar de dimensiunea HEAP-ului",
         "isCorrect": false
       },
       {
-        "text": "Lookup operation in an array is a O(1) complexity time operation",
+        "text": "Operațiunea de căutare într-un tablou este o operațiune cu complexitate temporală O(1)",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 11,
-    "question": "Removing the maximum element from a max-heap typically has complexity:",
+    "question": "Eliminarea elementului maxim dintr-un heap maxim are de obicei complexitatea:",
     "source": "Google Forms",
     "sourceId": 1210388191,
     "images": [],
@@ -320,268 +320,268 @@
   },
   {
     "id": 12,
-    "question": "True statements about heaps:",
+    "question": "Afirmații adevărate despre heap-uri:",
     "source": "Google Forms",
     "sourceId": 1172284063,
     "images": [],
     "answers": [
       {
-        "text": "Allow fast random element access",
+        "text": "Permite acces rapid aleatoriu la elemente",
         "isCorrect": false
       },
       {
-        "text": "Insertion has O(log n) complexity",
+        "text": "Inserarea are complexitate $O(\\log n)$",
         "isCorrect": true
       },
       {
-        "text": "Always sorted completely",
+        "text": "Întotdeauna sortat complet",
         "isCorrect": false
       },
       {
-        "text": "Efficiently implemented with arrays",
+        "text": "Implementat eficient cu tablouri",
         "isCorrect": true
       },
       {
-        "text": "Can be either max-heap or min-heap",
+        "text": "Poate fi fie max-heap, fie min-heap",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 13,
-    "question": "A binary heap is considered a:",
+    "question": "Un heap binar este considerat un:",
     "source": "Google Forms",
     "sourceId": 805803613,
     "images": [],
     "answers": [
       {
-        "text": "Completely unordered structure",
+        "text": "Structură complet neordonată",
         "isCorrect": false
       },
       {
-        "text": "Unstructured set of elements",
+        "text": "Mulțime nestructurată de elemente",
         "isCorrect": false
       },
       {
-        "text": "Circular structure",
+        "text": "Structură circulară",
         "isCorrect": false
       },
       {
-        "text": "Fully sorted structure",
+        "text": "Structură complet sortată",
         "isCorrect": false
       },
       {
-        "text": "Partially ordered structure",
+        "text": "Structură parțial ordonată",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 14,
-    "question": "Circular doubly linked list provides easy traversal in:",
+    "question": "Lista dublu înlănțuită circulară oferă traversare ușoară în:",
     "source": "Google Forms",
     "sourceId": 1418886167,
     "images": [],
     "answers": [
       {
-        "text": "Forward direction only",
+        "text": "Numai direcția înainte",
         "isCorrect": false
       },
       {
-        "text": "Neither direction effectively",
+        "text": "Niciuna dintre direcții eficient",
         "isCorrect": false
       },
       {
-        "text": "Backward direction only",
+        "text": "Numai direcția inversă",
         "isCorrect": false
       },
       {
-        "text": "Both forward and backward directions indefinitely",
+        "text": "Ambele direcții, înainte și înapoi, pe termen nelimitat",
         "isCorrect": true
       },
       {
-        "text": "Only in random directions",
+        "text": "Numai în direcții aleatorii",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 15,
-    "question": "Properties of binary heaps include:",
+    "question": "Proprietățile heap-urilor binare includ:",
     "source": "Google Forms",
     "sourceId": 537982598,
     "images": [],
     "answers": [
       {
-        "text": "Always implemented via linked list",
+        "text": "Întotdeauna implementat prin listă înlănțuită",
         "isCorrect": false
       },
       {
-        "text": "Random access efficiency",
+        "text": "Eficiența accesului aleatoriu",
         "isCorrect": false
       },
       {
-        "text": "Complete binary tree structure",
+        "text": "Structura arborelui binar complet",
         "isCorrect": true
       },
       {
-        "text": "Heap property for all nodes",
+        "text": "Proprietatea heap pentru toți nodurile",
         "isCorrect": true
       },
       {
-        "text": "Nodes fully sorted",
+        "text": "Noduri complet sortate",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 16,
-    "question": "Suitable for heap usage:",
+    "question": "Potrivit pentru utilizarea heap:",
     "source": "Google Forms",
     "sourceId": 1364996697,
     "images": [],
     "answers": [
       {
-        "text": "Heap sort",
+        "text": "Sortare heap",
         "isCorrect": true
       },
       {
-        "text": "Priority queue",
+        "text": "Coada de priorități",
         "isCorrect": true
       },
       {
-        "text": "Maintaining dynamic min/max",
+        "text": "Menținerea dinamică min/max",
         "isCorrect": true
       },
       {
-        "text": "Scheduling applications based on priority",
+        "text": "Programarea aplicațiilor în funcție de prioritate",
         "isCorrect": true
       },
       {
-        "text": "Direct indexing of arbitrary elements",
+        "text": "Indexare directă a elementelor arbitrare",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 17,
-    "question": "Benefits of doubly linked lists compared to singly linked lists include:",
+    "question": "Avantajele listelor dublu înlănțuite comparativ cu listele simplu înlănțuite includ:",
     "source": "Google Forms",
     "sourceId": 1809496291,
     "images": [],
     "answers": [
       {
-        "text": "Fixed memory allocation",
+        "text": "Alocare de memorie fixă",
         "isCorrect": false
       },
       {
-        "text": "Easier node deletion when the node pointer is provided",
+        "text": "Ștergere mai ușoară a nodului când este furnizat pointerul nodului",
         "isCorrect": true
       },
       {
-        "text": "Less memory usage",
+        "text": "Mai puțină utilizare a memoriei",
         "isCorrect": false
       },
       {
-        "text": "Easier random access",
+        "text": "Acces aleatoriu mai ușor",
         "isCorrect": false
       },
       {
-        "text": "Efficient backward traversal",
+        "text": "Traversare inversă eficientă",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 18,
-    "question": "Main disadvantage of doubly linked lists:",
+    "question": "Cel mai mare dezavantaj al listelor dublu înlănțuite:",
     "source": "Google Forms",
     "sourceId": 2104034980,
     "images": [],
     "answers": [
       {
-        "text": "Unpredictable node addresses",
+        "text": "Adrese de nod imprevizibile",
         "isCorrect": false
       },
       {
-        "text": "Increased memory overhead",
+        "text": "Suprasolicitare de memorie crescută",
         "isCorrect": true
       },
       {
-        "text": "Difficult random access",
+        "text": "Acces aleatoriu dificil",
         "isCorrect": false
       },
       {
-        "text": "Difficult traversal",
+        "text": "Traversare dificilă",
         "isCorrect": false
       },
       {
-        "text": "Slow insertion",
+        "text": "Inserție lentă",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 19,
-    "question": "Primary use of a min-heap:",
+    "question": "Utilizarea principală a unui min-heap:",
     "source": "Google Forms",
     "sourceId": 2077542074,
     "images": [],
     "answers": [
       {
-        "text": "Linked list operations",
+        "text": "Operații pe listă înlănțuită",
         "isCorrect": false
       },
       {
-        "text": "Fast random search",
+        "text": "Căutare aleatorie rapidă",
         "isCorrect": false
       },
       {
-        "text": "Rapid traversal",
+        "text": "Parcurgere rapidă",
         "isCorrect": false
       },
       {
-        "text": "Accessing smallest element quickly",
+        "text": "Accesarea rapidă a celui mai mic element",
         "isCorrect": true
       },
       {
-        "text": "Accessing largest element quickly",
+        "text": "Accesarea rapidă a elementului maxim",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 20,
-    "question": "After inserting a new element in a heap, the structure:",
+    "question": "După inserarea unui nou element într-un heap, structura:",
     "source": "Google Forms",
     "sourceId": 995669293,
     "images": [],
     "answers": [
       {
-        "text": "Maintains heap property",
+        "text": "Menține proprietatea heap",
         "isCorrect": true
       },
       {
-        "text": "Becomes completely unstructured",
+        "text": "Devine complet nestructurat",
         "isCorrect": false
       },
       {
-        "text": "Is unchanged",
+        "text": "Rămâne neschimbat",
         "isCorrect": false
       },
       {
-        "text": "Randomly rearranges elements",
+        "text": "Rearanjează aleatoriu elemente",
         "isCorrect": false
       },
       {
-        "text": "Becomes fully sorted",
+        "text": "Devine complet sortat",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 21,
-    "question": "What is the result of executing the following code?",
+    "question": "Care este rezultatul executării următorului cod?",
     "source": "Google Forms",
     "sourceId": 1494307433,
     "images": [
@@ -604,18 +604,18 @@
         "isCorrect": false
       },
       {
-        "text": "Application causes runtime error",
+        "text": "Aplicația provoacă eroare de rulare",
         "isCorrect": false
       },
       {
-        "text": "Application causes malloc() failure",
+        "text": "Aplicația provoacă eșecul malloc()",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 22,
-    "question": "If an array is declared as char mesaj[10], what is the valid index for the last element of the array?",
+    "question": "Dacă un tablou este declarat ca char mesaj[10], care este indicele valid pentru ultimul element al tabloului?",
     "source": "Google Forms",
     "sourceId": 1539031707,
     "images": [],
@@ -625,7 +625,7 @@
         "isCorrect": true
       },
       {
-        "text": "last",
+        "text": "ultimul",
         "isCorrect": false
       },
       {
@@ -644,7 +644,7 @@
   },
   {
     "id": 23,
-    "question": "Which function is used to dynamically allocate memory for a vector in C?",
+    "question": "Ce funcție este folosită pentru a aloca dinamic memorie pentru un vector în C?",
     "source": "Google Forms",
     "sourceId": 858425888,
     "images": [],
@@ -673,54 +673,54 @@
   },
   {
     "id": 24,
-    "question": "Identify the problem in the code: int* p; *p = 10;",
+    "question": "Identifică problema din cod: int* p; *p = 10;",
     "source": "Google Forms",
     "sourceId": 981255311,
     "images": [],
     "answers": [
       {
-        "text": "Variable p is in read-only segment",
+        "text": "Variabila p este în segmentul doar pentru citire",
         "isCorrect": false
       },
       {
-        "text": "Pointer is constant",
+        "text": "Pointerul este constant",
         "isCorrect": false
       },
       {
-        "text": "Memory not allocated before use",
+        "text": "Memorie nealocată înainte de utilizare",
         "isCorrect": true
       },
       {
-        "text": "Variable p contains null address",
+        "text": "Variabila p conține adresa nulă",
         "isCorrect": false
       },
       {
-        "text": "Cannot assign value 10",
+        "text": "Nu se poate atribui valoarea 10",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 25,
-    "question": "Which data structure is used to implement the chaining mechanism in a hash table?",
+    "question": "Ce structură de date este folosită pentru a implementa mecanismul de înlănțuire într-o tabelă de dispersie?",
     "source": "Google Forms",
     "sourceId": 643949666,
     "images": [],
     "answers": [
       {
-        "text": "Tree structure",
+        "text": "Structură de arbore",
         "isCorrect": false
       },
       {
-        "text": "Heap structure",
+        "text": "Structură heap",
         "isCorrect": false
       },
       {
-        "text": "Matrix",
+        "text": "Matrice",
         "isCorrect": false
       },
       {
-        "text": "Singly linked list",
+        "text": "Listă simplu înlănțuită",
         "isCorrect": true
       },
       {
@@ -731,115 +731,115 @@
   },
   {
     "id": 26,
-    "question": "What types of rotations are used for AVL tree rebalancing?",
+    "question": "Ce tipuri de rotații sunt folosite pentru reechilibrarea arborelui AVL?",
     "source": "Google Forms",
     "sourceId": 188536424,
     "images": [],
     "answers": [
       {
-        "text": "Left-right rotation",
+        "text": "Rotație stânga-dreapta",
         "isCorrect": true
       },
       {
-        "text": "Single right rotation",
+        "text": "Rotație simplă la dreapta",
         "isCorrect": true
       },
       {
-        "text": "Right-left rotation",
+        "text": "Rotație dreapta-stânga",
         "isCorrect": true
       },
       {
-        "text": "Single left rotation",
+        "text": "Rotație simplă la stânga",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 27,
-    "question": "In which domains are trees used as applied data structures?",
+    "question": "În ce domenii sunt arborii utilizați ca structuri de date aplicate?",
     "source": "Google Forms",
     "sourceId": 46679979,
     "images": [],
     "answers": [
       {
-        "text": "Defining a website’s tree structure",
+        "text": "Definirea structurii arborescente a unui site web",
         "isCorrect": true
       },
       {
-        "text": "Organizing files in an operating system",
+        "text": "Organizarea fișierelor într-un sistem de operare",
         "isCorrect": true
       },
       {
-        "text": "Organizing hierarchical structures in companies",
+        "text": "Organizarea structurilor ierarhice în companii",
         "isCorrect": true
       },
       {
-        "text": "Implementing sequential calculations",
+        "text": "Implementarea calculelor secvențiale",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 28,
-    "question": "Which of the following are valid characteristics of statically allocated arrays?",
+    "question": "Care dintre următoarele sunt caracteristici valide ale tablourilor alocate static?",
     "source": "Google Forms",
     "sourceId": 985939350,
     "images": [],
     "answers": [
       {
-        "text": "Must be freed using free()",
+        "text": "Trebuie eliberat folosind free()",
         "isCorrect": false
       },
       {
-        "text": "Vector size can be determined at runtime",
+        "text": "Dimensiunea vectorului poate fi determinată în timpul execuției",
         "isCorrect": false
       },
       {
-        "text": "Size is fixed",
+        "text": "Dimensiunea este fixă",
         "isCorrect": true
       },
       {
-        "text": "Are allocated in the memory stack where they are declared",
+        "text": "Sunt alocate în stiva de memorie unde sunt declarate",
         "isCorrect": true
       },
       {
-        "text": "Can be resized with realloc()",
+        "text": "Se poate redimensiona cu realloc()",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 29,
-    "question": "What is true about the pointer variable p after calling free(p)?",
+    "question": "Ce este adevărat despre variabila pointer p după apelarea free(p)?",
     "source": "Google Forms",
     "sourceId": 78074561,
     "images": [],
     "answers": [
       {
-        "text": "It retains the content, i.e., the Heap memory address it had at allocation",
+        "text": "Păstrează conținutul, adică adresa de memorie Heap pe care o avea la alocare",
         "isCorrect": true
       },
       {
-        "text": "It is deallocated from the Stack segment where it was defined",
+        "text": "Este dezalocat din segmentul Stack unde a fost definit",
         "isCorrect": false
       },
       {
-        "text": "It is copied to the Stack where it is accessed",
+        "text": "Este copiat în Stack unde este accesat",
         "isCorrect": false
       },
       {
-        "text": "The pointer is automatically reset to NULL",
+        "text": "Pointerul este resetat automat la NULL",
         "isCorrect": false
       },
       {
-        "text": "It is reset to a different Heap address",
+        "text": "Este resetat la o altă adresă Heap",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 30,
-    "question": "What is the output of the following code?",
+    "question": "Care este rezultatul următorului cod?",
     "source": "Google Forms",
     "sourceId": 1559525740,
     "images": [
@@ -854,11 +854,11 @@
         "isCorrect": true
       },
       {
-        "text": "Compilation error: index operator not applicable to pointers",
+        "text": "Eroare de compilare: operatorul de indexare nu este aplicabil pointerelor",
         "isCorrect": false
       },
       {
-        "text": "Compilation error: vector address cannot be assigned to pointer",
+        "text": "Eroare de compilare: adresa vectorului nu poate fi atribuită unui pointer",
         "isCorrect": false
       },
       {
@@ -869,40 +869,40 @@
   },
   {
     "id": 31,
-    "question": "Which statements are true regarding singly linked lists?",
+    "question": "Care afirmații sunt adevărate cu privire la listele simplu înlănțuite?",
     "source": "Google Forms",
     "sourceId": 883317498,
     "images": [],
     "answers": [
       {
-        "text": "A singly linked list is a linear structure",
+        "text": "O listă simplu înlănțuită este o structură liniară",
         "isCorrect": true
       },
       {
-        "text": "Nodes can be added/removed without knowing their count",
+        "text": "Nodurile pot fi adăugate/eliminate fără a le cunoaște numărul",
         "isCorrect": true
       },
       {
-        "text": "Nodes store heterogeneous data",
+        "text": "Nodurile stochează date eterogene",
         "isCorrect": false
       },
       {
-        "text": "It allows sequential access",
+        "text": "Permite accesul secvențial",
         "isCorrect": true
       },
       {
-        "text": "Always has only two nodes that are homogeneous",
+        "text": "Întotdeauna are doar două noduri omogene",
         "isCorrect": false
       },
       {
-        "text": "Each node stores multiple values of the same type",
+        "text": "Fiecare nod stochează mai multe valori de același tip",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 32,
-    "question": "What is the smallest value greater than 55 that can replace it in a BST with level-order: 55, 33, 77, 11, 44, 66, 88?",
+    "question": "Care este cea mai mică valoare mai mare decât 55 care o poate înlocui în BST-ul cu parcurgerea pe niveluri: 55, 33, 77, 11, 44, 66, 88?",
     "source": "Google Forms",
     "sourceId": 1940813640,
     "images": [],
@@ -927,61 +927,61 @@
   },
   {
     "id": 33,
-    "question": "Which of the following are AVL tree rotations used to rebalance?",
+    "question": "Care dintre următoarele rotații ale arborelui AVL sunt folosite pentru reechilibrare?",
     "source": "Google Forms",
     "sourceId": 281839186,
     "images": [],
     "answers": [
       {
-        "text": "Left-right rotation",
+        "text": "Rotație stânga-dreapta",
         "isCorrect": true
       },
       {
-        "text": "Right rotation",
+        "text": "Rotație dreaptă",
         "isCorrect": true
       },
       {
-        "text": "Left rotation",
+        "text": "Rotație stângă",
         "isCorrect": true
       },
       {
-        "text": "Right-left rotation",
+        "text": "Rotație dreapta-stânga",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 34,
-    "question": "Which of the following are true about pointer variables in C?",
+    "question": "Care dintre următoarele sunt adevărate despre variabilele pointer în C?",
     "source": "Google Forms",
     "sourceId": 704357713,
     "images": [],
     "answers": [
       {
-        "text": "Can be used in any arithmetic calculation",
+        "text": "Poate fi utilizat în orice calcul aritmetic",
         "isCorrect": false
       },
       {
-        "text": "Has special declaration syntax",
+        "text": "Sintaxă de declarare specială",
         "isCorrect": true
       },
       {
-        "text": "Stores a memory address",
+        "text": "Stochează o adresă de memorie",
         "isCorrect": true
       },
       {
-        "text": "Can only be used to access the data segment",
+        "text": "Se poate folosi doar pentru a accesa segmentul de date",
         "isCorrect": false
       },
       {
-        "text": "Can only be used to access heap memory",
+        "text": "Se poate folosi doar pentru a accesa memoria heap",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 35,
-    "question": "Choose the correct code block to add a node with value 4 to the end of a singly linked list:",
+    "question": "Alegeți blocul de cod corect pentru a adăuga un nod cu valoarea 4 la sfârșitul unei liste simplu înlănțuite:",
     "source": "Google Forms",
     "sourceId": 984279931,
     "images": [
@@ -1045,61 +1045,61 @@
   },
   {
     "id": 36,
-    "question": "What does chaining mean in a hash table?",
+    "question": "Ce înseamnă înlănțuirea într-un tabel de dispersie?",
     "source": "Google Forms",
     "sourceId": 1531878687,
     "images": [],
     "answers": [
       {
-        "text": "Using an auxiliary array",
+        "text": "Folosind un tablou auxiliar",
         "isCorrect": false
       },
       {
-        "text": "Computing a hash function",
+        "text": "Calcularea unei funcții hash",
         "isCorrect": false
       },
       {
-        "text": "Handling collisions through a list of elements",
+        "text": "Tratarea coliziunilor printr-o listă de elemente",
         "isCorrect": true
       },
       {
-        "text": "Duplicating data sets in memory",
+        "text": "Duplicarea seturilor de date în memorie",
         "isCorrect": false
       },
       {
-        "text": "Translating the hash value into ASCII codes",
+        "text": "Traducerea valorii hash în coduri ASCII",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 37,
-    "question": "Which operation uses the Binary Search Tree data structure?",
+    "question": "Ce operație utilizează structura de date Arbore Binar de Căutare?",
     "source": "Google Forms",
     "sourceId": 956547707,
     "images": [],
     "answers": [
       {
-        "text": "Clustering nodes based on a certain key value",
+        "text": "Gruparea nodurilor pe baza unei anumite valori cheie",
         "isCorrect": true
       },
       {
-        "text": "Transitive closure",
+        "text": "Închiderea tranzitivă",
         "isCorrect": false
       },
       {
-        "text": "Topological sort",
+        "text": "Sortare topologică",
         "isCorrect": false
       },
       {
-        "text": "Depth-first traversal",
+        "text": "Parcurgere în adâncime",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 38,
-    "question": "What value is printed by this C code? int v[] = {1, 2, 3, 4, 5}; printf(\"%d\", v[3]);",
+    "question": "Ce valoare este afișată de acest cod C? int v[] = {1, 2, 3, 4, 5}; printf(\"%d\", v[3]);",
     "source": "Google Forms",
     "sourceId": 2020710584,
     "images": [],
@@ -1124,7 +1124,7 @@
   },
   {
     "id": 39,
-    "question": "Which of the following statements is true?",
+    "question": "Care dintre următoarele afirmații este adevărată?",
     "source": "Google Forms",
     "sourceId": 129053611,
     "images": [
@@ -1135,59 +1135,59 @@
     ],
     "answers": [
       {
-        "text": "The function correctly implements the search operation for the parameter studName if it is a key in the hash table.",
+        "text": "Funcția implementează corect operația de căutare pentru parametrul studName dacă acesta este o cheie în tabela de dispersie.",
         "isCorrect": true
       },
       {
-        "text": "The function incorrectly implements the search operation for the parameter studName if it is not a key in the hash table.",
+        "text": "Funcția implementează incorect operația de căutare pentru parametrul studName dacă acesta nu este o cheie în tabela hash.",
         "isCorrect": false
       },
       {
-        "text": "The parameters of the insertStudent(struct Student*, int, struct Student) function are incorrectly declared in relation to how they are used.",
+        "text": "Parametrii funcției insertStudent(struct Student*, int, struct Student) sunt declarați incorect în raport cu modul în care sunt utilizați.",
         "isCorrect": false
       },
       {
-        "text": "The function correctly implements the search operation for the parameter studName if it is not a key in the hash table.",
+        "text": "Funcția implementează corect operația de căutare pentru parametrul studName dacă acesta nu este o cheie în tabela hash.",
         "isCorrect": false
       },
       {
-        "text": "The function identifies all elements of type Student stored in the hash table.",
+        "text": "Funcția identifică toate elementele de tip Student stocate în tabela hash.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 40,
-    "question": "What is correct about searching in a hash table with chaining?",
+    "question": "Ce este corect în legătură cu căutarea într-un tabel de dispersie cu înlănțuire?",
     "source": "Google Forms",
     "sourceId": 1230762766,
     "images": [],
     "answers": [
       {
-        "text": "Incorrect because hash allows direct access to a student list that caused a conflict",
+        "text": "Incorect deoarece hash permite acces direct la o listă de studenți care a cauzat un conflict",
         "isCorrect": false
       },
       {
-        "text": "Incorrect because hash generates values outside the allocated range",
+        "text": "Incorect deoarece hash generează valori în afara intervalului alocat",
         "isCorrect": false
       },
       {
-        "text": "Incorrect because hash cannot be used with string keys",
+        "text": "Incorect deoarece hash nu poate fi utilizat cu chei de tip string",
         "isCorrect": false
       },
       {
-        "text": "Correct because it uses only sequential access",
+        "text": "Corect deoarece folosește doar acces secvențial",
         "isCorrect": false
       },
       {
-        "text": "Correct because it uses the hash function followed by sequential search",
+        "text": "Corect deoarece utilizează funcția hash urmată de căutare secvențială",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 41,
-    "question": "Complete the code to correctly free memory and nullify the pointer:",
+    "question": "Completează codul pentru a elibera corect memoria și a anula pointerul:",
     "source": "Google Forms",
     "sourceId": 688901595,
     "images": [
@@ -1209,7 +1209,7 @@
   },
   {
     "id": 42,
-    "question": "What function is used to dynamically allocate memory for an array of elements in C?",
+    "question": "Ce funcție este folosită pentru a aloca dinamic memorie pentru un tablou de elemente în C?",
     "source": "Google Forms",
     "sourceId": 445487376,
     "images": [],
@@ -1238,61 +1238,61 @@
   },
   {
     "id": 43,
-    "question": "Which of the following are situations where a right-left rotation is used in an AVL tree?",
+    "question": "Care dintre următoarele sunt situații în care o rotație dreapta-stânga este utilizată într-un arbore AVL?",
     "source": "Google Forms",
     "sourceId": 1940120174,
     "images": [],
     "answers": [
       {
-        "text": "Left imbalance with a right child",
+        "text": "Dezechilibru stâng cu un copil drept",
         "isCorrect": false
       },
       {
-        "text": "Root has balance factor -2 and left child +1",
+        "text": "Rădăcina are factor de echilibru -2 și copil stâng +1",
         "isCorrect": false
       },
       {
-        "text": "Balance factor is 0",
+        "text": "Factor de echilibru este 0",
         "isCorrect": false
       },
       {
-        "text": "Root has balance factor +2 and right child -1",
+        "text": "Rădăcina are factor de echilibru +2 și copil drept -1",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 44,
-    "question": "Select the characteristics of statically allocated arrays:",
+    "question": "Selectați caracteristicile tablourilor alocate static:",
     "source": "Google Forms",
     "sourceId": 2071174626,
     "images": [],
     "answers": [
       {
-        "text": "Must be freed using free()",
+        "text": "Trebuie eliberat folosind free()",
         "isCorrect": false
       },
       {
-        "text": "Size can be determined at runtime",
+        "text": "Dimensiunea poate fi determinată la rulare",
         "isCorrect": false
       },
       {
-        "text": "Size is fixed",
+        "text": "Dimensiunea este fixă",
         "isCorrect": true
       },
       {
-        "text": "Allocated on the stack",
+        "text": "Alocată pe stivă",
         "isCorrect": true
       },
       {
-        "text": "Can be resized with realloc()",
+        "text": "Se poate redimensiona cu realloc()",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 45,
-    "question": "What is the correct output of the following C code? int v[] = {10, 20}; int* pv = v; printf(\"v[0] = %d, pv[0] = %d\", v[0], pv[0]);",
+    "question": "Care este rezultatul corect al următorului cod C? int v[] = {10, 20}; int* pv = v; printf(\"v[0] = %d, pv[0] = %d\", v[0], pv[0]);",
     "source": "Google Forms",
     "sourceId": 551557684,
     "images": [],
@@ -1310,18 +1310,18 @@
         "isCorrect": false
       },
       {
-        "text": "Compilation error due to [] operator",
+        "text": "Eroare de compilare din cauza operatorului []",
         "isCorrect": false
       },
       {
-        "text": "Compilation error due to pointer assignment",
+        "text": "Eroare de compilare din cauza atribuirii pointerului",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 46,
-    "question": "What is the correct statement about the function:",
+    "question": "Care este afirmația corectă despre funcție:",
     "source": "Google Forms",
     "sourceId": 425921515,
     "images": [
@@ -1332,88 +1332,88 @@
     ],
     "answers": [
       {
-        "text": "The function inserts an element at the beginning of a singly linked list.",
+        "text": "Funcția inserează un element la începutul unei liste simplu înlănțuite.",
         "isCorrect": false
       },
       {
-        "text": "The function inserts a node at the beginning of a circular doubly linked list.",
+        "text": "Funcția inserează un nod la începutul unei liste dublu-înlănțuite circulare.",
         "isCorrect": false
       },
       {
-        "text": "The head of the list is passed by value so that it is not updated.",
+        "text": "Capul listei este transmis prin valoare astfel încât să nu fie actualizat.",
         "isCorrect": false
       },
       {
-        "text": "The function returns the useful information stored in the head of the list.",
+        "text": "Funcția returnează informația utilă stocată în capul listei.",
         "isCorrect": true
       },
       {
-        "text": "Deleting the container is equivalent to deleting the first",
+        "text": "Ștergerea containerului este echivalent cu ștergerea primului",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 47,
-    "question": "What are the advantages of linked lists over heaps?",
+    "question": "Care sunt avantajele listelor înlănțuite față de heap-uri?",
     "source": "Google Forms",
     "sourceId": 770659559,
     "images": [],
     "answers": [
       {
-        "text": "Most efficient in sorting",
+        "text": "Cea mai eficientă în sortare",
         "isCorrect": false
       },
       {
-        "text": "Simplified dynamic memory management",
+        "text": "Managementul dinamic simplificat al memoriei",
         "isCorrect": true
       },
       {
-        "text": "Faster random access",
+        "text": "Acces aleatoriu mai rapid",
         "isCorrect": false
       },
       {
-        "text": "Easier insertions/deletions in known positions",
+        "text": "Mai ușoare inserări/ștergeri în poziții cunoscute",
         "isCorrect": true
       },
       {
-        "text": "Direct access to min/max element",
+        "text": "Acces direct la elementul min/max",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 48,
-    "question": "What is true about pointer variable p after deallocating memory using free(p)?",
+    "question": "Ce este adevărat despre pointerul p după eliberarea memoriei prin free(p)?",
     "source": "Google Forms",
     "sourceId": 1989789489,
     "images": [],
     "answers": [
       {
-        "text": "It keeps the heap address it had at allocation",
+        "text": "Păstrează adresa din heap pe care o avea la alocare",
         "isCorrect": true
       },
       {
-        "text": "It is deallocated from the stack",
+        "text": "Este dezalocat de pe stivă",
         "isCorrect": false
       },
       {
-        "text": "It is copied to the stack",
+        "text": "Se copiază în stivă",
         "isCorrect": false
       },
       {
-        "text": "It is automatically set to NULL",
+        "text": "Este setat automat la NULL",
         "isCorrect": false
       },
       {
-        "text": "It is reset to another heap address",
+        "text": "Este resetat la o altă adresă de heap",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 49,
-    "question": "What is true about the following C function using linear probing in a hash table?",
+    "question": "Ce este adevărat despre următoarea funcție C care utilizează sondarea liniară într-un tabel de dispersie?",
     "source": "Google Forms",
     "sourceId": 1691775289,
     "images": [
@@ -1424,59 +1424,59 @@
     ],
     "answers": [
       {
-        "text": "The function correctly implements the search operation for the studName parameter if it is a key in the hash table.",
+        "text": "Funcția implementează corect operația de căutare pentru parametrul studName dacă este o cheie în tabela hash.",
         "isCorrect": true
       },
       {
-        "text": "The function incorrectly implements the search operation for the studName parameter if it is not a key in the hash table.",
+        "text": "Funcția implementează incorect operația de căutare pentru parametrul studName dacă acesta nu este o cheie în tabela hash.",
         "isCorrect": false
       },
       {
-        "text": "The parameters of the function insertStudent(struct Student*, int, struct Student) are incorrectly declared relative to their usage.",
+        "text": "Parametrii funcției insertStudent(struct Student*, int, struct Student) sunt declarați incorect în raport cu utilizarea lor.",
         "isCorrect": false
       },
       {
-        "text": "The function correctly implements the search operation for the studName parameter if it is not a key in the hash table.",
+        "text": "Funcția implementează corect operația de căutare pentru parametrul studName dacă nu este o cheie în tabela de dispersie.",
         "isCorrect": false
       },
       {
-        "text": "The function identifies all Student elements stored in the hash table.",
+        "text": "Funcția identifică toate elementele Student stocate în tabela de dispersie.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 50,
-    "question": "Identify the problem in the following code: int* p; *p = 10;",
+    "question": "Identificați problema în codul următor: int* p; *p = 10;",
     "source": "Google Forms",
     "sourceId": 577988314,
     "images": [],
     "answers": [
       {
-        "text": "Variable p is in read-only segment",
+        "text": "Variabila p este în segmentul doar pentru citire",
         "isCorrect": false
       },
       {
-        "text": "Pointer is constant",
+        "text": "Pointerul este constant",
         "isCorrect": false
       },
       {
-        "text": "Memory not allocated before use",
+        "text": "Memorie nealocată înainte de utilizare",
         "isCorrect": true
       },
       {
-        "text": "Variable p contains null address",
+        "text": "Variabila p conține adresa nulă",
         "isCorrect": false
       },
       {
-        "text": "Cannot assign value 10",
+        "text": "Nu se poate atribui valoarea 10",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 51,
-    "question": "What is the correct statement regarding the function:",
+    "question": "Care este afirmația corectă referitoare la funcție:",
     "source": "Google Forms",
     "sourceId": 174769984,
     "images": [
@@ -1487,156 +1487,156 @@
     ],
     "answers": [
       {
-        "text": "The function inserts an element at the beginning of a singly linked list.",
+        "text": "Funcția inserează un element la începutul unei liste simplu înlănțuite.",
         "isCorrect": false
       },
       {
-        "text": "The function inserts a node at the beginning of a circular doubly linked list.",
+        "text": "Funcția inserează un nod la începutul unei liste dublu-înlănțuite circulare.",
         "isCorrect": false
       },
       {
-        "text": "The head of the list is passed by value in order not to update it.",
+        "text": "Capul listei este transmis prin valoare pentru a nu fi actualizat.",
         "isCorrect": false
       },
       {
-        "text": "The function returns the useful information already present in the head of the list.",
+        "text": "Funcția returnează informațiile utile deja prezente în capul listei.",
         "isCorrect": true
       },
       {
-        "text": "The function deletes the container (node) corresponding to the first node in the list.",
+        "text": "Funcția elimină containerul (nodul) corespunzător primului nod din listă.",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 52,
-    "question": "What does the chaining mechanism in a hash table imply?",
+    "question": "Ce implică mecanismul de înlănțuire într-un tabel hash?",
     "source": "Google Forms",
     "sourceId": 309772202,
     "images": [],
     "answers": [
       {
-        "text": "Using an auxiliary array",
+        "text": "Folosind un tablou auxiliar",
         "isCorrect": false
       },
       {
-        "text": "Computing a hash function",
+        "text": "Calcularea unei funcții hash",
         "isCorrect": false
       },
       {
-        "text": "Handling collisions through a list of elements",
+        "text": "Tratarea coliziunilor printr-o listă de elemente",
         "isCorrect": true
       },
       {
-        "text": "Duplicating data in memory",
+        "text": "Duplicarea datelor în memorie",
         "isCorrect": false
       },
       {
-        "text": "Translating hash into ASCII",
+        "text": "Traducerea hash-ului în ASCII",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 53,
-    "question": "Which of the following statements are true about pointer variables in C?",
+    "question": "Care dintre următoarele afirmații sunt adevărate despre variabilele pointer în C?",
     "source": "Google Forms",
     "sourceId": 1269984909,
     "images": [],
     "answers": [
       {
-        "text": "They can be used in any arithmetic calculation",
+        "text": "Pot fi folosite în orice calcul aritmetic",
         "isCorrect": false
       },
       {
-        "text": "They have a special syntax for declaration",
+        "text": "Ei au o sintaxă specială pentru declarare",
         "isCorrect": true
       },
       {
-        "text": "They store a memory address",
+        "text": "Stochează o adresă de memorie",
         "isCorrect": true
       },
       {
-        "text": "Only used to access the data segment",
+        "text": "Folosit doar pentru a accesa segmentul de date",
         "isCorrect": false
       },
       {
-        "text": "Only used to access heap memory",
+        "text": "Folosit doar pentru a accesa memoria heap",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 54,
-    "question": "What types of AVL rotations are used for balancing?",
+    "question": "Ce tipuri de rotații AVL sunt folosite pentru echilibrare?",
     "source": "Google Forms",
     "sourceId": 1462407721,
     "images": [],
     "answers": [
       {
-        "text": "Left-right rotation",
+        "text": "Rotație stânga-dreapta",
         "isCorrect": true
       },
       {
-        "text": "Right rotation",
+        "text": "Rotație dreaptă",
         "isCorrect": true
       },
       {
-        "text": "Left rotation",
+        "text": "Rotație stângă",
         "isCorrect": true
       },
       {
-        "text": "Right-left rotation",
+        "text": "Rotație dreapta-stânga",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 55,
-    "question": "Which operation uses the data structure “binary search tree”?",
+    "question": "Care operație folosește structura de date „arbore binar de căutare”?",
     "source": "Google Forms",
     "sourceId": 560606452,
     "images": [],
     "answers": [
       {
-        "text": "Clustering nodes based on a certain key value",
+        "text": "Gruparea nodurilor pe baza unei anumite valori cheie",
         "isCorrect": true
       },
       {
-        "text": "Transitive closure",
+        "text": "Închiderea tranzitivă",
         "isCorrect": false
       },
       {
-        "text": "Topological sort",
+        "text": "Sortare topologică",
         "isCorrect": false
       },
       {
-        "text": "Depth-first traversal",
+        "text": "Parcurgere în adâncime",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 56,
-    "question": "Which data structure is used to implement chaining in a hash table?",
+    "question": "Ce structură de date este folosită pentru a implementa înlănțuirea într-o tabelă de dispersie?",
     "source": "Google Forms",
     "sourceId": 433391088,
     "images": [],
     "answers": [
       {
-        "text": "Tree structure",
+        "text": "Structură de arbore",
         "isCorrect": false
       },
       {
-        "text": "Heap structure",
+        "text": "Structură heap",
         "isCorrect": false
       },
       {
-        "text": "Matrix",
+        "text": "Matrice",
         "isCorrect": false
       },
       {
-        "text": "Singly linked list",
+        "text": "Listă simplu înlănțuită",
         "isCorrect": true
       },
       {
@@ -1647,7 +1647,7 @@
   },
   {
     "id": 57,
-    "question": "Which of the following are valid ways to declare and/or initialize a statically allocated two-dimensional (2D) array m in the C language?",
+    "question": "Care dintre următoarele sunt moduri valide de a declara și/sau inițializa o matrice bidimensională (2D) alocată static, m, în limbajul C?",
     "source": "Google Forms",
     "sourceId": 420091498,
     "images": [],
@@ -1676,7 +1676,7 @@
   },
   {
     "id": 58,
-    "question": "Accessing the max element from a max heap typically has complexity :",
+    "question": "Accesarea elementului maxim dintr-un heap maxim are de obicei complexitatea:",
     "source": "Google Forms",
     "sourceId": 1888277901,
     "images": [],
@@ -1705,7 +1705,7 @@
   },
   {
     "id": 59,
-    "question": "What type of tree traversal is used in the saveflightsVector function?",
+    "question": "Ce tip de parcurgere a arborelui este utilizat în funcția saveflightsVector?",
     "source": "Google Forms",
     "sourceId": 1416808535,
     "images": [
@@ -1716,7 +1716,7 @@
     ],
     "answers": [
       {
-        "text": "postorder",
+        "text": "postordine",
         "isCorrect": false
       },
       {
@@ -1724,18 +1724,18 @@
         "isCorrect": false
       },
       {
-        "text": "preorder",
+        "text": "preordine",
         "isCorrect": true
       },
       {
-        "text": "breadth-first",
+        "text": "în lățime",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 60,
-    "question": "If a node in a heap is at position \"i\" its left child is typically found at position:",
+    "question": "Dacă un nod dintr-o grămadă se află la poziția \"i\", copilul său stâng se găsește de obicei la poziția:",
     "source": "Google Forms",
     "sourceId": 1621818575,
     "images": [],
@@ -1764,21 +1764,21 @@
   },
   {
     "id": 61,
-    "question": "Which memory segment is used for allocating local variables?",
+    "question": "Care segment de memorie este folosit pentru alocarea variabilelor locale?",
     "source": "Google Forms",
     "sourceId": 1757551530,
     "images": [],
     "answers": [
       {
-        "text": "BSS (Block Started by Symbol)",
+        "text": "BSS (Bloc Început de Simbol)",
         "isCorrect": false
       },
       {
-        "text": "Stack",
+        "text": "Stivă",
         "isCorrect": true
       },
       {
-        "text": "Data",
+        "text": "Date",
         "isCorrect": false
       },
       {
@@ -1786,72 +1786,72 @@
         "isCorrect": false
       },
       {
-        "text": "Code",
+        "text": "Cod",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 62,
-    "question": "A singly linked list is best suited for:",
+    "question": "O listă simplu înlănțuită este cea mai potrivită pentru:",
     "source": "Google Forms",
     "sourceId": 412167875,
     "images": [],
     "answers": [
       {
-        "text": "Random access",
+        "text": "Acces aleatoriu",
         "isCorrect": false
       },
       {
-        "text": "Fixed-size data storage",
+        "text": "Stocare de date de dimensiune fixă",
         "isCorrect": false
       },
       {
-        "text": "c Frequent random searching",
+        "text": "c Căutare aleatorie frecventă",
         "isCorrect": false
       },
       {
-        "text": "Binary searches",
+        "text": "Căutări binare",
         "isCorrect": false
       },
       {
-        "text": "Sequential access and frequent modification",
+        "text": "Acces secvențial și modificare frecventă",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 63,
-    "question": "Which data structure allows traversing in both forward and backward directions easily?",
+    "question": "Care structură de date permite parcurgerea ușoară în ambele direcții?",
     "source": "Google Forms",
     "sourceId": 389330241,
     "images": [],
     "answers": [
       {
-        "text": "Stacks",
+        "text": "Stive",
         "isCorrect": false
       },
       {
-        "text": "Doubly linked list",
+        "text": "Listă dublu înlănțuită",
         "isCorrect": true
       },
       {
-        "text": "Circular linked list",
+        "text": "Listă înlănțuită circulară",
         "isCorrect": false
       },
       {
-        "text": "Queues",
+        "text": "Cozi",
         "isCorrect": false
       },
       {
-        "text": "Simple linked list",
+        "text": "Listă înlănțuită simplă",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 64,
-    "question": "What role does the parameter int* nr in the saveflightsvector function?",
+    "question": "Care este rolul parametrului int* nr în funcția saveflightsvector?",
     "source": "Google Forms",
     "sourceId": 674684883,
     "images": [
@@ -1862,102 +1862,102 @@
     ],
     "answers": [
       {
-        "text": "Remembers the address of the tree for traversal",
+        "text": "Reține adresa arborelui pentru parcurgere",
         "isCorrect": false
       },
       {
-        "text": "Checks if the flight year is valid",
+        "text": "Verifică dacă anul de zbor este valid",
         "isCorrect": false
       },
       {
-        "text": "Remembers the number of flights saved in the vector",
+        "text": "Reține numărul de zboruri salvat în vector",
         "isCorrect": true
       },
       {
-        "text": "Stores the code of the last flight inserted into the vector",
+        "text": "Stochează codul ultimului zbor inserat în vector",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 65,
-    "question": "A heap is usually visualized as:",
+    "question": "Un heap este de obicei vizualizat ca:",
     "source": "Google Forms",
     "sourceId": 1737623376,
     "images": [],
     "answers": [
       {
-        "text": "Array of pointers",
+        "text": "Tablou de pointeri",
         "isCorrect": false
       },
       {
-        "text": "Binary Tree",
+        "text": "Arbore binar",
         "isCorrect": true
       },
       {
-        "text": "Graph",
+        "text": "Graf",
         "isCorrect": false
       },
       {
-        "text": "Linked list",
+        "text": "Listă înlănțuită",
         "isCorrect": false
       },
       {
-        "text": "Hash table",
+        "text": "Tabelă de dispersie",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 66,
-    "question": "After inserting a new element in a heap, the structure:",
+    "question": "După inserarea unui nou element într-un heap, structura:",
     "source": "Google Forms",
     "sourceId": 697091307,
     "images": [],
     "answers": [
       {
-        "text": "a Is unchanged",
+        "text": "a Este neschimbat",
         "isCorrect": false
       },
       {
-        "text": "Becomes fully sorted",
+        "text": "Devine complet sortat",
         "isCorrect": false
       },
       {
-        "text": "Becomes completely unstructured",
+        "text": "Devine complet nestructurat",
         "isCorrect": false
       },
       {
-        "text": "Maintains heap property",
+        "text": "Menține proprietatea heap",
         "isCorrect": true
       },
       {
-        "text": "Randomly rearranges elements",
+        "text": "Rearanjează aleatoriu elemente",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 67,
-    "question": "In a circular singly linked list, the last node points to:",
+    "question": "Într-o listă simplu înlănțuită circulară, ultimul nod indică spre:",
     "source": "Google Forms",
     "sourceId": 693543619,
     "images": [],
     "answers": [
       {
-        "text": "Second node",
+        "text": "Al doilea nod",
         "isCorrect": false
       },
       {
-        "text": "First node",
+        "text": "Primul nod",
         "isCorrect": true
       },
       {
-        "text": "Itself",
+        "text": "Însuși",
         "isCorrect": false
       },
       {
-        "text": "A random middle node",
+        "text": "Un nod de mijloc aleatoriu",
         "isCorrect": false
       },
       {
@@ -1968,94 +1968,94 @@
   },
   {
     "id": 68,
-    "question": "In a binary search tree (BST) that maintains the total order relation(left key < parent key < right key),if a node that has two subtrees needs to be deleted, what steps are taken?",
+    "question": "Într-un arbore binar de căutare (ABC) care menține relația de ordine totală (cheie stângă < cheie părinte < cheie dreaptă), dacă un nod care are doi subarbori trebuie șters, ce pași se întreprind?",
     "source": "Google Forms",
     "sourceId": 1926136705,
     "images": [],
     "answers": [
       {
-        "text": "The maximum value in the left subtree is located.",
+        "text": "Valoarea maximă în subarborele stâng este localizată.",
         "isCorrect": true
       },
       {
-        "text": "The maximum value in the right subtree is located.",
+        "text": "Valoarea maximă în subarborele drept este localizată.",
         "isCorrect": false
       },
       {
-        "text": "The node is deleted directly without any additional actions.",
+        "text": "Nodul este șters direct fără acțiuni suplimentare.",
         "isCorrect": false
       },
       {
-        "text": "The rightmost node in the left subtree is located.",
+        "text": "Nodul cel mai din dreapta din subarborele stâng este localizat.",
         "isCorrect": true
       },
       {
-        "text": "The minimum value in the right subtree is located.",
+        "text": "Valoarea minimă din subarborele drept este localizată.",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 69,
-    "question": "Identify the true statements about singly linked lists.",
+    "question": "Identificați afirmațiile adevărate despre listele simplu înlănțuite.",
     "source": "Google Forms",
     "sourceId": 445327789,
     "images": [],
     "answers": [
       {
-        "text": "Allows quick random access",
+        "text": "Permite acces aleatoriu rapid",
         "isCorrect": false
       },
       {
-        "text": "Efficient backward traversal",
+        "text": "Traversare inversă eficientă",
         "isCorrect": false
       },
       {
-        "text": "Each node has exactly two pointers",
+        "text": "Fiecare nod are exact două pointere",
         "isCorrect": false
       },
       {
-        "text": "Efficient insertion if node position is known",
+        "text": "Inserare eficientă dacă poziția nodului este cunoscută",
         "isCorrect": true
       },
       {
-        "text": "Memory allocation is dynamic",
+        "text": "Alocarea memoriei este dinamică",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 70,
-    "question": "In the postorder traversal of a tree, the order of visiting is:",
+    "question": "În parcurgerea postordine a unui arbore, ordinea de vizitare este:",
     "source": "Google Forms",
     "sourceId": 2035393515,
     "images": [],
     "answers": [
       {
-        "text": "Current node - subtrees",
+        "text": "Nodul curent - subarbori",
         "isCorrect": false
       },
       {
-        "text": "Current node - leaves",
+        "text": "Nodul curent - frunze",
         "isCorrect": false
       },
       {
-        "text": "Right subtree - left subtree → current node",
+        "text": "Subarbore drept - subarbore stâng → nodul curent",
         "isCorrect": false
       },
       {
-        "text": "Left subtree - right subtree - current node",
+        "text": "Subarbore stâng - subarbore drept - nod curent",
         "isCorrect": true
       },
       {
-        "text": "Current node - right subtree - left subtree",
+        "text": "Nodul curent - subarborele drept - subarborele stâng",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 71,
-    "question": "Where the int data type is a long(4 bytes per int)?",
+    "question": "Unde tipul de date int este un long (4 octeți per int)?",
     "source": "Google Forms",
     "sourceId": 1452178263,
     "images": [
@@ -2073,7 +2073,7 @@
   },
   {
     "id": 72,
-    "question": "Arrange the C code:",
+    "question": "Aranjați codul C:",
     "source": "Google Forms",
     "sourceId": 1343927041,
     "images": [
@@ -2095,7 +2095,7 @@
   },
   {
     "id": 73,
-    "question": "What is wrong with the following code snippet?",
+    "question": "Ce este în neregulă cu următorul fragment de cod?",
     "source": "Google Forms",
     "sourceId": 1704473192,
     "images": [
@@ -2106,30 +2106,30 @@
     ],
     "answers": [
       {
-        "text": "No pounter was used for dynamic allocation",
+        "text": "Nu s-a folosit niciun pointer pentru alocare dinamică",
         "isCorrect": false
       },
       {
-        "text": "Exceeds the arrays bounds",
+        "text": "Depășirea limitelor tablourilor",
         "isCorrect": true
       },
       {
-        "text": "The element at position i is accessed incorrectly using the [] operator",
+        "text": "Elementul de la poziția i este accesat incorect folosind operatorul []",
         "isCorrect": false
       },
       {
-        "text": "Allocation error because realloc() should be used instead of malloc()",
+        "text": "Eroare de alocare deoarece ar trebui utilizat realloc() în locul malloc()",
         "isCorrect": false
       },
       {
-        "text": "The variable i was not declared",
+        "text": "Variabila i nu a fost declarată",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 74,
-    "question": "Which are correct?",
+    "question": "Care sunt corecte?",
     "source": "Google Forms",
     "sourceId": 1469931967,
     "images": [
@@ -2140,23 +2140,23 @@
     ],
     "answers": [
       {
-        "text": "deletion of an element from a list",
+        "text": "Ștergerea unui element dintr-o listă",
         "isCorrect": false
       },
       {
-        "text": "adding a node at the end of the list",
+        "text": "adăugarea unui nod la sfârșitul listei",
         "isCorrect": true
       },
       {
-        "text": "adding a node at the begging of the list",
+        "text": "adăugarea unui nod la începutul listei",
         "isCorrect": false
       },
       {
-        "text": "searching for a node with payload info",
+        "text": "Căutând un nod cu informații despre sarcină utilă",
         "isCorrect": false
       },
       {
-        "text": "inserting into a circular list",
+        "text": "Inserarea într-o listă circulară",
         "isCorrect": true
       }
     ]

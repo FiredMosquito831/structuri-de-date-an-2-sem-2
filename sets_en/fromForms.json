@@ -629,11 +629,11 @@
         "isCorrect": false
       },
       {
-        "text": "mesaj + 1",
+        "text": "message + 1",
         "isCorrect": false
       },
       {
-        "text": "mesaj - 1",
+        "text": "message - 1",
         "isCorrect": false
       },
       {
@@ -992,7 +992,7 @@
     ],
     "answers": [
       {
-        "text": "Opțiunea 1",
+        "text": "Option 1",
         "isCorrect": false,
         "images": [
           {
@@ -1002,7 +1002,7 @@
         ]
       },
       {
-        "text": "Opțiunea 2",
+        "text": "Option 2",
         "isCorrect": false,
         "images": [
           {
@@ -1012,7 +1012,7 @@
         ]
       },
       {
-        "text": "Opțiunea 3",
+        "text": "Option 3",
         "isCorrect": true,
         "images": [
           {
@@ -1022,7 +1022,7 @@
         ]
       },
       {
-        "text": "Opțiunea 4",
+        "text": "Option 4",
         "isCorrect": false,
         "images": [
           {
@@ -1032,7 +1032,7 @@
         ]
       },
       {
-        "text": "Opțiunea 5",
+        "text": "Option 5",
         "isCorrect": true,
         "images": [
           {
@@ -2106,7 +2106,7 @@
     ],
     "answers": [
       {
-        "text": "No pounter was used for dynamic allocation",
+        "text": "No pointer was used for dynamic allocation",
         "isCorrect": false
       },
       {
@@ -2148,7 +2148,7 @@
         "isCorrect": true
       },
       {
-        "text": "adding a node at the begging of the list",
+        "text": "adding a node at the beginning of the list",
         "isCorrect": false
       },
       {

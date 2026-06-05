@@ -122,19 +122,19 @@
     "code": "int* v = malloc(nrEl * sizeof(int));\n/* ... */\n[ spațiu 1 ](v);\nv = [ spațiu 2 ];",
     "answers": [
       {
-        "text": "free(v);  v = NULL;",
+        "text": "free(v);\nv = NULL;",
         "isCorrect": true
       },
       {
-        "text": "delete(v);  v = NULL;",
+        "text": "delete(v);\nv = NULL;",
         "isCorrect": false
       },
       {
-        "text": "free(v);  v = malloc(nrEl);",
+        "text": "free(v); v = malloc(nrEl);",
         "isCorrect": false
       },
       {
-        "text": "clear(v);  v = NULL;",
+        "text": "clear(v); v = NULL;",
         "isCorrect": false
       },
       {
@@ -211,7 +211,7 @@
         "isCorrect": true
       },
       {
-        "text": "last",
+        "text": "ultimul",
         "isCorrect": false
       },
       {
@@ -433,7 +433,7 @@
   },
   {
     "id": 16,
-    "question": "Pentru ștergerea eficientă a nodurilor arbitrare, cea mai potrivită structură este:",
+    "question": "Pentru ștergerea eficientă a nodurilor arbitrare, structura cea mai potrivită este:",
     "category": "Liste înlănțuite",
     "sourceType": "s",
     "answers": [
@@ -552,11 +552,11 @@
     "sourceType": "m",
     "answers": [
       {
-        "text": "Căutare nod după o anumită valoare a cheii",
+        "text": "Search node by a specific key value",
         "isCorrect": true
       },
       {
-        "text": "Traversare postordine",
+        "text": "Parcurgere în postordine",
         "isCorrect": true
       },
       {
@@ -571,7 +571,7 @@
   },
   {
     "id": 21,
-    "question": "În ce domenii se folosesc arborii ca structuri de date aplicate?",
+    "question": "In what fields are trees used as applied data structures?",
     "category": "Arbori",
     "sourceType": "m",
     "answers": [
@@ -632,7 +632,7 @@
         "isCorrect": false
       },
       {
-        "text": "Divide et Impera",
+        "text": "Dezbine și stăpânește",
         "isCorrect": true
       },
       {
@@ -676,7 +676,7 @@
         "isCorrect": false
       },
       {
-        "text": "Y are 2 copii",
+        "text": "Sunt 2 copii",
         "isCorrect": false
       }
     ]
@@ -712,7 +712,7 @@
     "sourceType": "s",
     "answers": [
       {
-        "text": "Inordine",
+        "text": "în ordine",
         "isCorrect": true
       },
       {
@@ -755,7 +755,7 @@
   },
   {
     "id": 29,
-    "question": "Înălțimea unui arbore binar de căutare construit aleator este:",
+    "question": "The height of a randomly constructed binary search tree is:",
     "category": "Arbori BST",
     "sourceType": "s",
     "answers": [
@@ -779,7 +779,7 @@
   },
   {
     "id": 30,
-    "question": "Într-o traversare postordine, nodurile rădăcină apar la final.",
+    "question": "In a postorder traversal, the root nodes appear at the end.",
     "category": "Arbori BST",
     "sourceType": "s",
     "answers": [
@@ -907,7 +907,7 @@
   },
   {
     "id": 36,
-    "question": "Toți arborii binari de căutare sunt echilibrați.",
+    "question": "All binary search trees are balanced.",
     "category": "Arbori BST",
     "sourceType": "s",
     "answers": [
@@ -1135,7 +1135,7 @@
   },
   {
     "id": 46,
-    "question": "Care afirmație legată de caracteristicile arborilor de echilibru este corectă?",
+    "question": "Which statement regarding the characteristics of balanced trees is correct?",
     "category": "Arbori AVL",
     "sourceType": "s",
     "answers": [
@@ -1295,7 +1295,7 @@
   },
   {
     "id": 53,
-    "question": "Înălțimea unui arbore este:",
+    "question": "The height of a tree is:",
     "category": "Arbori AVL",
     "sourceType": "s",
     "answers": [
@@ -1391,7 +1391,7 @@
   },
   {
     "id": 57,
-    "question": "Proprietatea de echilibru a arborilor AVL este valabilă pentru:",
+    "question": "The balance property of AVL trees is valid for:",
     "category": "Arbori AVL",
     "sourceType": "s",
     "answers": [
@@ -1524,7 +1524,7 @@
         "isCorrect": false
       },
       {
-        "text": "min-heap & max-heap",
+        "text": "heap min & heap max",
         "isCorrect": true
       },
       {
@@ -1588,11 +1588,11 @@
     "sourceType": "s",
     "answers": [
       {
-        "text": "bubble sort",
+        "text": "Sortare cu bule",
         "isCorrect": false
       },
       {
-        "text": "heap sort",
+        "text": "Sortare heap",
         "isCorrect": true
       },
       {
@@ -1612,7 +1612,7 @@
     "sourceType": "s",
     "answers": [
       {
-        "text": "ultimul părinte al heap-ului",
+        "text": "the last parent of the heap",
         "isCorrect": false
       },
       {
@@ -1751,7 +1751,7 @@
   },
   {
     "id": 72,
-    "question": "Legat de min-heap, este fals faptul că:",
+    "question": "Regarding the min-heap, it is false that:",
     "category": "Heap",
     "sourceType": "s",
     "answers": [

@@ -10,7 +10,7 @@
         "isCorrect": true
       },
       {
-        "text": "last",
+        "text": "ultimul",
         "isCorrect": false
       },
       {
@@ -81,7 +81,7 @@
   },
   {
     "id": 4,
-    "question": "Pentru ștergere eficientă a nodurilor arbitrare, cea mai potrivită structură este:",
+    "question": "Pentru ștergerea eficientă a nodurilor arbitrare, structura cea mai potrivită este:",
     "source": "grile3.txt",
     "sourceQuestionNumber": 4,
     "answers": [
@@ -109,24 +109,24 @@
   },
   {
     "id": 5,
-    "question": "Completează codul pentru eliberarea corectă a spațiului ocupat de un vector alocat dinamic\nCode:\nint nrEl = 10; int* v = malloc(nrEl * sizeof(int)); for (int i = 0; i < nrEl; i++) { v[i] = i; } ___(v); v = ___;",
+    "question": "Completează codul pentru eliberarea corectă a spațiului ocupat de un vector alocat dinamic\nCode:\nint nrEl = 10; int* v = malloc(nrEl * sizeof(int)); for (int i = 0; i < nrEl; i++) { v[i] = i; } free(v); v = NULL;",
     "source": "grile3.txt",
     "sourceQuestionNumber": 5,
     "answers": [
       {
-        "text": "delete",
+        "text": "șterge",
         "isCorrect": false
       },
       {
-        "text": "clear",
+        "text": "clar",
         "isCorrect": false
       },
       {
-        "text": "free",
+        "text": "liber",
         "isCorrect": true
       },
       {
-        "text": "clean",
+        "text": "curat",
         "isCorrect": false
       },
       {
@@ -274,7 +274,7 @@
         "isCorrect": false
       },
       {
-        "text": "Se rescrie cu o adresa de memorie Heap diferita.",
+        "text": "It is rewritten with a different Heap memory address.",
         "isCorrect": false
       }
     ]
@@ -430,7 +430,7 @@
         "isCorrect": true
       },
       {
-        "text": "Stocheaza o adresa de memorie.",
+        "text": "Stores a memory address.",
         "isCorrect": true
       },
       {
@@ -518,7 +518,7 @@
         "isCorrect": false
       },
       {
-        "text": "Translatarea in coduri ASCII a valorii hash.",
+        "text": "Translatarea în coduri ASCII a valorii hash.",
         "isCorrect": false
       }
     ]
@@ -574,146 +574,146 @@
         "isCorrect": true
       },
       {
-        "text": "Sa elimine duplicatele de date stocate in tabela.",
+        "text": "Pentru a elimina datele duplicate stocate în tabelă.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 22,
-    "question": "In an AVL tree, what condition triggers a rebalancing operation?",
+    "question": "Într-un arbore AVL, ce condiție declanșează o operațiune de reechilibrare?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 22,
     "answers": [
       {
-        "text": "The height of the tree exceeds log2(n).",
+        "text": "Înălțimea arborelui depășește log2(n).",
         "isCorrect": false
       },
       {
-        "text": "A node's left and right subtree heights differ by more than 1.",
+        "text": "Înălțimile subarborelui stâng și drept ale unui nod diferă cu mai mult de 1.",
         "isCorrect": true
       },
       {
-        "text": "The tree contains duplicate values.",
+        "text": "Arborele conține valori duplicate.",
         "isCorrect": false
       },
       {
-        "text": "The in-order traversal does not produce a sorted sequence.",
+        "text": "Parcurgerea în ordine nu produce o secvență sortată.",
         "isCorrect": false
       },
       {
-        "text": "The depth of a leaf is exactly 1.",
+        "text": "Adâncimea unei frunze este exact 1.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 23,
-    "question": "Which of the following best describes an AVL tree?",
+    "question": "Care dintre următoarele descrie cel mai bine un arbore AVL?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 23,
     "answers": [
       {
-        "text": "A binary search tree where the height of left and right subtrees of any node differs by at most 1.",
+        "text": "Un arbore binar de căutare în care înălțimea subarborelui stâng și a celui drept al oricărui nod diferă cu cel mult 1.",
         "isCorrect": true
       },
       {
-        "text": "A binary tree where every level is completely filled except possibly the last.",
+        "text": "Un arbore binar în care fiecare nivel este complet umplut, cu excepția, eventual, a ultimului.",
         "isCorrect": false
       },
       {
-        "text": "A tree where the depth of the left subtree is always greater than the right subtree.",
+        "text": "Un arbore în care adâncimea subarborelui stâng este întotdeauna mai mare decât cea a subarborelui drept.",
         "isCorrect": false
       },
       {
-        "text": "A self-organizing search tree that uses splay operations on every access.",
+        "text": "Un arbore de căutare auto-organizat care utilizează operații splay la fiecare accesare.",
         "isCorrect": false
       },
       {
-        "text": "A binary tree where the in-order traversal yields a sorted sequence.",
+        "text": "Un arbore binar unde parcurgerea în ordine produce o secvență sortată.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 24,
-    "question": "Which of the following is true about chaining in hash tables?",
+    "question": "Care dintre următoarele este adevărat despre înlănțuire în tabelele de dispersie?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 24,
     "answers": [
       {
-        "text": "Chaining cannot handle more than 2 collisions per slot.",
+        "text": "Înlănțuirea nu poate gestiona mai mult de 2 coliziuni pe slot.",
         "isCorrect": false
       },
       {
-        "text": "Chaining uses an array of linked lists to handle collisions.",
+        "text": "Lanțuirea folosește un tablou de liste înlănțuite pentru a gestiona coliziunile.",
         "isCorrect": true
       },
       {
-        "text": "Chaining replaces the array with a single linked list.",
+        "text": "Chaining înlocuiește tabloul cu o listă simplu înlănțuită.",
         "isCorrect": false
       },
       {
-        "text": "Chaining only works for integer keys.",
+        "text": "Înlănțuirea funcționează doar pentru chei întregi.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 25,
-    "question": "When implementing a hash table with separate chaining, which statement is true?",
+    "question": "Când se implementează un tabel de dispersie cu înlănțuire separată, care afirmație este adevărată?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 25,
     "answers": [
       {
-        "text": "Each key is stored directly at the index computed by the hash function.",
+        "text": "Fiecare cheie este stocată direct la indexul calculat de funcția hash.",
         "isCorrect": false
       },
       {
-        "text": "Collisions are resolved by probing the next available slot in the array.",
+        "text": "Coliziunile sunt rezolvate prin sondarea următorului slot disponibil în tablou.",
         "isCorrect": false
       },
       {
-        "text": "The hash table can be implemented without an array, using only linked lists.",
+        "text": "Tabelul hash poate fi implementat fără un tablou, folosind doar liste înlănțuite.",
         "isCorrect": false
       },
       {
-        "text": "Each array slot contains a linked list of all keys that hash to that slot.",
+        "text": "Fiecare slot de tablou conține o listă înlănțuită cu toate cheile care se mapează prin hash la acel slot.",
         "isCorrect": true
       }
     ]
   },
   {
     "id": 26,
-    "question": "What happens during a right rotation in an AVL tree?",
+    "question": "Ce se întâmplă în timpul unei rotații la dreapta într-un arbore AVL?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 26,
     "answers": [
       {
-        "text": "The left child becomes the new root, and the previous root becomes its right child.",
+        "text": "Fiul stâng devine noua rădăcină, iar rădăcina anterioară devine fiul său drept.",
         "isCorrect": true
       },
       {
-        "text": "The right child becomes the new root, and the previous root becomes its left child.",
+        "text": "Copilul drept devine noua rădăcină, iar rădăcina anterioară devine copilul său stâng.",
         "isCorrect": false
       },
       {
-        "text": "Both children of the unbalanced node are swapped.",
+        "text": "Ambii copii ai nodului dezechilibrat sunt schimbați.",
         "isCorrect": false
       },
       {
-        "text": "All nodes in the subtree are shifted one level down.",
+        "text": "Toate nodurile din subarbore sunt deplasate cu un nivel în jos.",
         "isCorrect": false
       },
       {
-        "text": "The root pointer is updated to point to the right subtree.",
+        "text": "Pointerul rădăcină este actualizat să indice către subarborele drept.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 27,
-    "question": "What is the worst-case time complexity of searching in a hash table with chaining?",
+    "question": "Care este complexitatea temporală în cazul cel mai defavorabil a căutării într-o tabelă de dispersie cu înlănțuire?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 27,
     "answers": [
@@ -737,76 +737,76 @@
   },
   {
     "id": 28,
-    "question": "Which property must a hash function satisfy to be considered good?",
+    "question": "Ce proprietate trebuie să îndeplinească o funcție hash pentru a fi considerată bună?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 28,
     "answers": [
       {
-        "text": "It must produce a unique value for every input.",
+        "text": "Trebuie să producă o valoare unică pentru fiecare intrare.",
         "isCorrect": false
       },
       {
-        "text": "It must always map distinct keys to the same value.",
+        "text": "Trebuie să mapeze întotdeauna chei distincte la aceeași valoare.",
         "isCorrect": false
       },
       {
-        "text": "It must be deterministic and distribute keys uniformly across the table.",
+        "text": "Trebuie să fie deterministic și să distribuie cheile uniform în tabel.",
         "isCorrect": true
       },
       {
-        "text": "It must be a one-way function.",
+        "text": "Trebuie să fie o funcție unidirecțională.",
         "isCorrect": false
       },
       {
-        "text": "It must be reversible for all inputs.",
+        "text": "Trebuie să fie reversibil pentru toate intrările.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 29,
-    "question": "What does the load factor of a hash table measure?",
+    "question": "Ce măsoară factorul de încărcare al unui tabel de dispersie?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 29,
     "answers": [
       {
-        "text": "The ratio of empty slots to occupied slots.",
+        "text": "Raportul dintre spațiile goale și spațiile ocupate.",
         "isCorrect": false
       },
       {
-        "text": "The ratio of keys to the number of slots in the table.",
+        "text": "Raportul dintre chei și numărul de sloturi din tabel.",
         "isCorrect": true
       },
       {
-        "text": "The total memory used by the table in bytes.",
+        "text": "Memoria totală utilizată de tabel în octeți.",
         "isCorrect": false
       },
       {
-        "text": "The maximum number of collisions possible.",
+        "text": "Numărul maxim de coliziuni posibile.",
         "isCorrect": false
       }
     ]
   },
   {
     "id": 30,
-    "question": "Which of the following operations is NOT supported by a standard binary search tree in O(log n) time when balanced?",
+    "question": "Care dintre următoarele operații NU este suportată de un arbore binar de căutare standard în timp O(log n) când este echilibrat?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 30,
     "answers": [
       {
-        "text": "Insertion",
+        "text": "Inserție",
         "isCorrect": false
       },
       {
-        "text": "Search",
+        "text": "Căutare",
         "isCorrect": false
       },
       {
-        "text": "Deletion",
+        "text": "Ștergere",
         "isCorrect": false
       },
       {
-        "text": "Finding the minimum element in O(1) time without any pointer modifications.",
+        "text": "Găsirea elementului minim în timp O(1) fără nicio modificare a pointerilor.",
         "isCorrect": true
       }
     ]
@@ -861,7 +861,7 @@
   },
   {
     "id": 33,
-    "question": "Care este complexitatea operatiei de inserare intr-o lista simplu inlantuita, cand se cunoaste referinta la nodul predecesor?",
+    "question": "Care este complexitatea operației de inserare într-o listă simplu înlănțuită, când se cunoaște referința la nodul predecesor?",
     "source": "grile3.txt",
     "sourceQuestionNumber": 33,
     "answers": [
@@ -1022,7 +1022,7 @@
         "isCorrect": false
       },
       {
-        "text": "Sortarea datelor intr-o maniera ce necesita O(n log n) cu garantie asupra limitei superioare.",
+        "text": "Sortarea datelor într-o manieră ce necesită O(n log n) cu garanție asupra limitei superioare.",
         "isCorrect": false
       },
       {
