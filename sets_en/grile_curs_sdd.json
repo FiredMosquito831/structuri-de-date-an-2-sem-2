@@ -1,0 +1,606 @@
+[
+  {
+    "id": 1,
+    "question": "Which of the following statements is true for a one-dimensional array?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 1,
+    "answers": [
+      {
+        "text": "occupies a contiguous space of memory.",
+        "isCorrect": true
+      },
+      {
+        "text": "contains elements allocated in separate memory zones;",
+        "isCorrect": false
+      },
+      {
+        "text": "allows only sequential access to elements;",
+        "isCorrect": false
+      },
+      {
+        "text": "is a dynamic heterogeneous data structure;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Consider the structures and the function below, whose call is: prim = functie(prim, stud); Which of the following statements is true?\nCode:\ntypedef struct {\n    int id;\n    char* nume;\n    float medie;\n} Student;\n\ntypedef struct {\n    Student st;\n    struct Nod* next;\n} Nod;\n\nvoid functie(Nod *p, Student s) {\n    Nod* nou;\n    nou = (Nod*)malloc(1 * sizeof(Nod));\n    nou->st = s;\n    nou->next = p;\n    p = nou;\n}\n\nprim = functie(prim, stud);",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 2,
+    "answers": [
+      {
+        "text": "The function allows the insertion of a node into a simple list of students; the address of the first node in the list is updated after each insertion",
+        "isCorrect": false
+      },
+      {
+        "text": "The function allows the insertion of a node into a simple list of students; the address of the first node in the list is updated only upon the insertion of the first student into the list",
+        "isCorrect": false
+      },
+      {
+        "text": "The function call causes compilation errors",
+        "isCorrect": true
+      },
+      {
+        "text": "The function does not correctly return the update of the head address of the singly linked list",
+        "isCorrect": true
+      },
+      {
+        "text": "The function does not correctly allocate the node necessary for storing a student's data",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Consider the structures and the function below, whose call is: functie(prim); Which of the following statements is true?\nCode:\ntypedef struct {\n    int id;\n    char* nume;\n    float medie;\n} Student;\n\ntypedef struct {\n    Student st;\n    struct Nod* next;\n} Nod;\n\nvoid functie(Nod *p) {\n    while(p) {\n        printf(\"%d %s %5.2f\\n\", p->st.id, p->st.nume, p->st.medie);\n    }\n}\n\nfunctie(prim);",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 3,
+    "answers": [
+      {
+        "text": "The function displays the content of the first node endlessly",
+        "isCorrect": true
+      },
+      {
+        "text": "The function incorrectly accesses parameter p and causes a compilation error",
+        "isCorrect": false
+      },
+      {
+        "text": "the function modifies the address of the first node of the list",
+        "isCorrect": false
+      },
+      {
+        "text": "The function causes a run-time error (execution error)",
+        "isCorrect": false
+      },
+      {
+        "text": "the function does not modify the address of the first node of the list",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "What does the following code sequence display/return?\nCode:\nfloat s = 0;\nfor (int i = 0; i < nrlin; i++)\n    for (int j = 0; j < nrcol; j++)\n        if (mat[i][j] != 0) s++;\nif (s / (float)(nrlin * nrcol) < 0.3) return s;",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 4,
+    "answers": [
+      {
+        "text": "fill factor of a matrix;",
+        "isCorrect": false
+      },
+      {
+        "text": "the degree of sparsity of a matrix.",
+        "isCorrect": false
+      },
+      {
+        "text": "the number of non-zero elements in a matrix;",
+        "isCorrect": true
+      },
+      {
+        "text": "matrix density;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Which of the following statements correctly allocates memory for an array with 5 integer elements, where n = 5?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 5,
+    "answers": [
+      {
+        "text": "int* v = (int*)malloc(int * sizeof(n));",
+        "isCorrect": false
+      },
+      {
+        "text": "int* n = (int*)malloc(n * sizeof(int));",
+        "isCorrect": true
+      },
+      {
+        "text": "int* v = (int)malloc(n * sizeof(int));",
+        "isCorrect": false
+      },
+      {
+        "text": "int* v = (int)malloc(n * sizeof(int*));",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Consider the structures and the function below. Which of the following statements is true?\nCode:\ntypedef struct {\n    int id;\n    char* nume;\n    float medie;\n} Student;\n\ntypedef struct {\n    Student* st;\n    struct Nod *next, *prev;\n} Nod;\n\ntypedef struct {\n    struct Nod *p, *u;\n} lst;\n\nlst functie(lst l, Student *pStd) {\n    Nod *nou;\n    nou = (Nod*)malloc(sizeof(Nod));\n    nou->st = pStd;\n    nou->next = 0;\n    nou->prev = l.u;\n    if(!l.p) l.u = nou;\n    else { l.u->next = nou; l.u = nou; }\n    return l;\n}",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 6,
+    "answers": [
+      {
+        "text": "The function allows the creation of a doubly linked list that cannot be parsed starting from the last node",
+        "isCorrect": false
+      },
+      {
+        "text": "The function allows the creation of a double list that can be parsed starting from the first node",
+        "isCorrect": false
+      },
+      {
+        "text": "The function causes execution errors (run-time errors)",
+        "isCorrect": false
+      },
+      {
+        "text": "The function does not correctly update the address of the first node",
+        "isCorrect": true
+      },
+      {
+        "text": "The function inserts a student into a doubly linked list, at the beginning of the list",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What is the value of the element mat[1][1] from the matrix: int mat[2][5] = {{10}, {20, 30}};?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 7,
+    "answers": [
+      {
+        "text": "0",
+        "isCorrect": false
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      },
+      {
+        "text": "30",
+        "isCorrect": true
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Which of the following application areas is not specific to the stack data structure?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 8,
+    "answers": [
+      {
+        "text": "simulation of serving processes;",
+        "isCorrect": true
+      },
+      {
+        "text": "conversion between number bases",
+        "isCorrect": false
+      },
+      {
+        "text": "evaluation of mathematical expressions;",
+        "isCorrect": false
+      },
+      {
+        "text": "implementation of sorting algorithms (quicksort);",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Which of the following statements correctly allocates memory for an int pointer and initializes that variable with the value 5?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 9,
+    "answers": [
+      {
+        "text": "int* n = (int)malloc(sizeof(int*)); n = 5;",
+        "isCorrect": false
+      },
+      {
+        "text": "int* n = (int*)malloc(sizeof(int)); n = 5;",
+        "isCorrect": false
+      },
+      {
+        "text": "int* n = (int*)malloc(n * sizeof(int)); *n = 5;",
+        "isCorrect": false
+      },
+      {
+        "text": "int* n = (int*)malloc(sizeof(int)); *n = 5;",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What does the following code sequence achieve?\nCode:\nvoid dezalocare(nod *cap)\n{\n    nod *p = cap, *q;\n    while(p)\n    {\n        q = p->next;\n        p = q;\n        free(p);\n    }\n}",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 10,
+    "answers": [
+      {
+        "text": "deallocation of a simple list;",
+        "isCorrect": false
+      },
+      {
+        "text": "deallocation of a stack structure;",
+        "isCorrect": false
+      },
+      {
+        "text": "an erroneous deallocation;",
+        "isCorrect": true
+      },
+      {
+        "text": "deallocation of a queue type structure;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Which of the following options performs a complete deallocation of a node in the doubly linked list below?\nCode:\ntypedef struct\n{\n    int* cod;\n    char* denumire;\n    float* cant;\n    float* pret;\n} produs;\n\ntypedef struct\n{\n    produs pr;\n    struct nod* prev, *next;\n} nod;",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 11,
+    "answers": [
+      {
+        "text": "free(p->pr.code); free(p->pr.name); free(p->pr.quantity); free(p->pr.price); free(p);",
+        "isCorrect": true
+      },
+      {
+        "text": "free(p->pr.name); free(p);",
+        "isCorrect": false
+      },
+      {
+        "text": "free(p->pr.code); free(p->pr.name); free(p->pr.quantity); free(p->pr.price);",
+        "isCorrect": false
+      },
+      {
+        "text": "free(p->pr.cod); free(p->pr.cant); free(p->pr.pret); free(p);",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Which of the collision avoidance mechanisms in a hash table avoids the creation of collision groups (cluster zones) within the table?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 12,
+    "answers": [
+      {
+        "text": "overflow area;",
+        "isCorrect": false
+      },
+      {
+        "text": "linear probing;",
+        "isCorrect": false
+      },
+      {
+        "text": "quadratic probing;",
+        "isCorrect": false
+      },
+      {
+        "text": "chaining;",
+        "isCorrect": false
+      },
+      {
+        "text": "re-hashing;",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "Which of the examples below correctly and completely initializes a matrix with 3 rows and 2 columns?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 13,
+    "answers": [
+      {
+        "text": "int m1[][2] = {{1, 2}, {3, 4}, {5, 6}};",
+        "isCorrect": true
+      },
+      {
+        "text": "int m1[3][] = {{1, 2, 3}, {4, 5, 6}};",
+        "isCorrect": false
+      },
+      {
+        "text": "int m1[2][3] = {{1, 2}, {3, 4}, {5, 6}};",
+        "isCorrect": false
+      },
+      {
+        "text": "int m1[2][] = {{1, 2}, {3, 4}, {5, 6}};",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Consider the structures and functions below. Which of the following statements is true?\nCode:\ntypedef struct {\n    int id;\n    char* nume;\n    float medie;\n} Student;\n\ntypedef struct {\n    Student st;\n    struct Nod* next;\n} Nod;\n\nNod* f1(Nod *p, Student s) {\n    Nod* nou;\n    nou = (Nod*)malloc(1 * sizeof(Nod));\n    nou->st.id = s.id;\n    nou->st.nume = (char*)malloc((strlen(s.nume) + 1) * sizeof(char));\n    strcpy(nou->st.nume, s.nume);\n    nou->next = p;\n    return nou;\n}\n\nint f2(char* str, int s) {\n    int temp = 0, poz;\n    for(int i = 0; i < strlen(str); i++)\n        temp += str[i];\n    poz = temp % s;\n    return poz;\n}\n\nvoid f3(Nod** x, Student s, int st) {\n    int k;\n    k = f2(s.nume, st);\n    x[k] = f1(x[k], s);\n}",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 14,
+    "answers": [
+      {
+        "text": "Function f1 incorrectly implements the chaining mechanism for collision avoidance",
+        "isCorrect": false
+      },
+      {
+        "text": "Function f2 incorrectly implements string handling",
+        "isCorrect": false
+      },
+      {
+        "text": "function f3 inserts a student into a hash table with a linear probing mechanism for collision avoidance",
+        "isCorrect": false
+      },
+      {
+        "text": "Function f1 incorrectly implements the linear probing mechanism for collision avoidance",
+        "isCorrect": false
+      },
+      {
+        "text": "The function f3 inserts a student into a hash table with a chaining mechanism for collision avoidance",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "What does the following code sequence accomplish?\nCode:\ndenumire = (char*)malloc(strlen(buffer+1)*sizeof(char));",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 15,
+    "answers": [
+      {
+        "text": "allocation of a memory space with the buffer length for the variable name;",
+        "isCorrect": false
+      },
+      {
+        "text": "copying the characters occupied by the buffer string into the name string;",
+        "isCorrect": false
+      },
+      {
+        "text": "An erroneous allocation of memory space for the variable denumire;",
+        "isCorrect": true
+      },
+      {
+        "text": "Initialization of the variable denumire with the corresponding memory space allocation;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "question": "Which of the following options correctly indicates the element at row i and column j of a matrix?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 16,
+    "answers": [
+      {
+        "text": "*((pnumem+i)+j)",
+        "isCorrect": false
+      },
+      {
+        "text": "*(*(pnumem+i)+j)",
+        "isCorrect": true
+      },
+      {
+        "text": "*(pnumem+i+j)",
+        "isCorrect": false
+      },
+      {
+        "text": "*(*(*pnumem+i)+j)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Consider the structure and the source code sequence below.\nWhich of the following statements is true?\nCode:\ntypedef struct {\n    int id;\n    char *nume;\n    float medie;\n} Student;\n\nStudent stud;\nstud.nume = (char*)malloc((strlen(\"Ionescu\") + 1) * sizeof(char));\nstrcpy(stud.nume, \"Ionescu\");\nif(stud.nume)\n    free(stud.nume);\nstud.nume = (char*)malloc((strlen(\"Vasilescu\") + 1) * sizeof(char));\nstrcpy(stud.nume, \"Vasilescu\");",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 17,
+    "answers": [
+      {
+        "text": "The sequence is incorrect because it allocates a number of bytes larger than the one necessary for storing a string in heap memory",
+        "isCorrect": false
+      },
+      {
+        "text": "the sequence is incorrect because it deallocates the heap memory space for the student named \"Ionescu\"",
+        "isCorrect": false
+      },
+      {
+        "text": "The code sequence is correct and allows accessing the string \"Vasilescu\" through the expression stud.nume",
+        "isCorrect": true
+      },
+      {
+        "text": "The sequence is incorrect because it copies the string \"Vasilescu\" over the heap memory location allocated for the string \"Ionescu\"",
+        "isCorrect": false
+      },
+      {
+        "text": "The sequence is incorrect because it generates source code compilation errors",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Which of the following statements is true in a stack data structure?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 18,
+    "answers": [
+      {
+        "text": "succ(Z[j]) = Z[j+1];",
+        "isCorrect": true
+      },
+      {
+        "text": "succ(Z[j]) = Z[j-1];",
+        "isCorrect": false
+      },
+      {
+        "text": "pred(Z[j]) = Z[j-1];",
+        "isCorrect": true
+      },
+      {
+        "text": "pred(Z[j+1]) = Z[j];",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "question": "How many bytes does a node of the simple list whose useful information is of type \"produs\" occupy?\nCode:\ntypedef struct\n{\n    int cod;\n    char* denumire;\n    float cantitate;\n    float pret;\n} produs;\n\ntypedef struct\n{\n    produs inf;\n    struct nodls* next;\n} nodls;",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 19,
+    "answers": [
+      {
+        "text": "16 bytes;",
+        "isCorrect": false
+      },
+      {
+        "text": "24 bytes;",
+        "isCorrect": false
+      },
+      {
+        "text": "20 bytes;",
+        "isCorrect": true
+      },
+      {
+        "text": "8 bytes;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "question": "Consider the following function header: void citire(float ***mat, int *l, int *c). The function returns:",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 20,
+    "answers": [
+      {
+        "text": "a pointer to a matrix",
+        "isCorrect": false
+      },
+      {
+        "text": "returns nothing",
+        "isCorrect": true
+      },
+      {
+        "text": "a vector",
+        "isCorrect": false
+      },
+      {
+        "text": "matrix",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "Which of the collision avoidance mechanisms in a hash table involves grouping the collisions into a secondary area allocated to the elements that generate collisions?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 21,
+    "answers": [
+      {
+        "text": "chaining;",
+        "isCorrect": false
+      },
+      {
+        "text": "overflow area;",
+        "isCorrect": true
+      },
+      {
+        "text": "re-hashing;",
+        "isCorrect": false
+      },
+      {
+        "text": "quadratic probing;",
+        "isCorrect": false
+      },
+      {
+        "text": "linear probing;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Which of the following statements is false for the simple list?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 22,
+    "answers": [
+      {
+        "text": "allows only sequential access to elements;",
+        "isCorrect": false
+      },
+      {
+        "text": "nodes allocated as separate memory elements;",
+        "isCorrect": false
+      },
+      {
+        "text": "occupies a contiguous space of memory.",
+        "isCorrect": true
+      },
+      {
+        "text": "homogeneous dynamic data structure;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "What does the following sequence of code achieve?\nCode:\nnod *aux = p, *q;\nwhile(aux->next)\n{\n    q = aux->next;\n    free(aux);\n    aux = q;\n}\nif (p = NULL) u = NULL;",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 23,
+    "answers": [
+      {
+        "text": "Erroneous deallocation of a queue-type structure;",
+        "isCorrect": true
+      },
+      {
+        "text": "Deallocation of a queue structure with the deletion of the useful information;",
+        "isCorrect": false
+      },
+      {
+        "text": "deallocation of the nodes of a stack-type structure;",
+        "isCorrect": false
+      },
+      {
+        "text": "Deallocation of a doubly linked list structure;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "What does the following sequence of code accomplish?\nCode:\nint extrage(book *val, nod **p)\n{\n    if (!(*p)) return -1;\n    *val = (*p)->inf;\n    nod *aux = (*p);\n    (*p) = (*p)->next;\n    free(aux);\n    return 0;\n}",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 24,
+    "answers": [
+      {
+        "text": "An erroneous extraction of a node from a stack;",
+        "isCorrect": false
+      },
+      {
+        "text": "extraction of a node from a queue;",
+        "isCorrect": false
+      },
+      {
+        "text": "Removing a node from a stack;",
+        "isCorrect": true
+      },
+      {
+        "text": "an erroneous extraction of a node from a queue;",
+        "isCorrect": false
+      }
+    ]
+  }
+]

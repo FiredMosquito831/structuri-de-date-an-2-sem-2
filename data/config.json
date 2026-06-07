@@ -8,6 +8,7 @@
     "grile2",
     "grile3",
     "grile4",
+    "grile_curs_sdd",
     "arrays",
     "linked_lists",
     "trees"
@@ -114,6 +115,21 @@
         "all"
       ],
       "defaultCount": 30
+    },
+    "grile_curs_sdd": {
+      "id": "grile_curs_sdd",
+      "displayName": "Grile Curs SDD",
+      "shortName": "Curs SDD",
+      "icon": "ph-file-text",
+      "colorClass": "green",
+      "dataFile": "sets/grile_curs_sdd.json",
+      "englishDataFile": "sets_en/grile_curs_sdd.json",
+      "chapters": null,
+      "presets": [
+        24,
+        "all"
+      ],
+      "defaultCount": 24
     },
     "arrays": {
       "id": "arrays",
