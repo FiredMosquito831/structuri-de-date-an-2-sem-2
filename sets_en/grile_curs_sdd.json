@@ -115,11 +115,11 @@
       },
       {
         "text": "int* n = (int*)malloc(n * sizeof(int));",
-        "isCorrect": true
+        "isCorrect": false
       },
       {
         "text": "int* v = (int)malloc(n * sizeof(int));",
-        "isCorrect": false
+        "isCorrect": true
       },
       {
         "text": "int* v = (int)malloc(n * sizeof(int*));",
