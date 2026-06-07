@@ -1,0 +1,606 @@
+[
+  {
+    "id": 1,
+    "question": "Care din afirmatiile de mai jos este adevarata pentru un masiv unidimensional?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 1,
+    "answers": [
+      {
+        "text": "ocupa un spatiu contiguu de memorie.",
+        "isCorrect": true
+      },
+      {
+        "text": "contine elemente alocate in zone separate de memorie;",
+        "isCorrect": false
+      },
+      {
+        "text": "permite numai acces secvential la elemente;",
+        "isCorrect": false
+      },
+      {
+        "text": "este o structura de date dinamica neomogena;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Se considera structurile si functia de mai jos, al carei apel este: prim = functie(prim, stud); Care dintre urmatoarele afirmatii este adevarata?\nCode:\ntypedef struct {\n    int id;\n    char* nume;\n    float medie;\n} Student;\n\ntypedef struct {\n    Student st;\n    struct Nod* next;\n} Nod;\n\nvoid functie(Nod *p, Student s) {\n    Nod* nou;\n    nou = (Nod*)malloc(1 * sizeof(Nod));\n    nou->st = s;\n    nou->next = p;\n    p = nou;\n}\n\nprim = functie(prim, stud);",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 2,
+    "answers": [
+      {
+        "text": "functia permite inserarea unui nod intr-o lista simpla de studenti; adresa primului nod din lista este actualizata la fiecare inserare",
+        "isCorrect": false
+      },
+      {
+        "text": "functia permite inserarea unui nod intr-o lista simpla de studenti; adresa primului nod din lista este actualizata doar la inserarea primului student in lista",
+        "isCorrect": false
+      },
+      {
+        "text": "apelul functiei provoaca erori de compilare",
+        "isCorrect": true
+      },
+      {
+        "text": "functia nu intoarce in mod corect actualizarea adresei de inceput a listei simple",
+        "isCorrect": true
+      },
+      {
+        "text": "functia nu aloca in mod corect nodul necesar stocarii datelor unui student",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Se considera structurile si functia de mai jos, al carei apel este: functie(prim); Care dintre urmatoarele afirmatii este adevarata?\nCode:\ntypedef struct {\n    int id;\n    char* nume;\n    float medie;\n} Student;\n\ntypedef struct {\n    Student st;\n    struct Nod* next;\n} Nod;\n\nvoid functie(Nod *p) {\n    while(p) {\n        printf(\"%d %s %5.2f\\n\", p->st.id, p->st.nume, p->st.medie);\n    }\n}\n\nfunctie(prim);",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 3,
+    "answers": [
+      {
+        "text": "functia afiseaza la nesfarsit continutul primului nod",
+        "isCorrect": true
+      },
+      {
+        "text": "functia acceseaza eronat parametrul p si determina eroare la compilare",
+        "isCorrect": false
+      },
+      {
+        "text": "functia modifica adresa primului nod al listei",
+        "isCorrect": false
+      },
+      {
+        "text": "functia determina eroare la run-time (eroare de executie)",
+        "isCorrect": false
+      },
+      {
+        "text": "functia nu modifica adresa primului nod al listei",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Ce afiseaza/returneaza urmatoarea secventa de cod?\nCode:\nfloat s = 0;\nfor (int i = 0; i < nrlin; i++)\n    for (int j = 0; j < nrcol; j++)\n        if (mat[i][j] != 0) s++;\nif (s / (float)(nrlin * nrcol) < 0.3) return s;",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 4,
+    "answers": [
+      {
+        "text": "gradul de umplere al unei matrice;",
+        "isCorrect": false
+      },
+      {
+        "text": "gradul de raritate al unei matrice.",
+        "isCorrect": false
+      },
+      {
+        "text": "numarul de elemente nenule dintr-o matrice;",
+        "isCorrect": true
+      },
+      {
+        "text": "densitatea unei matrice;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Care dintre urmatoarele instructiuni aloca in mod corect memorie pentru un vector cu 5 elemente de tip intreg, unde n = 5?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 5,
+    "answers": [
+      {
+        "text": "int* v = (int*)malloc(int * sizeof(n));",
+        "isCorrect": false
+      },
+      {
+        "text": "int* n = (int*)malloc(n * sizeof(int));",
+        "isCorrect": true
+      },
+      {
+        "text": "int* v = (int)malloc(n * sizeof(int));",
+        "isCorrect": false
+      },
+      {
+        "text": "int* v = (int)malloc(n * sizeof(int*));",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "Se considera structurile si functia de mai jos. Care dintre urmatoarele afirmatii este adevarata?\nCode:\ntypedef struct {\n    int id;\n    char* nume;\n    float medie;\n} Student;\n\ntypedef struct {\n    Student* st;\n    struct Nod *next, *prev;\n} Nod;\n\ntypedef struct {\n    struct Nod *p, *u;\n} lst;\n\nlst functie(lst l, Student *pStd) {\n    Nod *nou;\n    nou = (Nod*)malloc(sizeof(Nod));\n    nou->st = pStd;\n    nou->next = 0;\n    nou->prev = l.u;\n    if(!l.p) l.u = nou;\n    else { l.u->next = nou; l.u = nou; }\n    return l;\n}",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 6,
+    "answers": [
+      {
+        "text": "functia permite crearea unei liste duble care nu poate fi parsata incepand cu ultimul nod",
+        "isCorrect": false
+      },
+      {
+        "text": "functia permite crearea unei liste duble care poate fi parsata incepand cu primul nod",
+        "isCorrect": false
+      },
+      {
+        "text": "functia provoaca erori de executie (erori la run-time)",
+        "isCorrect": false
+      },
+      {
+        "text": "functia nu efectueaza corect actualizarea adresei primului nod",
+        "isCorrect": true
+      },
+      {
+        "text": "functia insereaza un student intr-o lista dubla, la inceputul listei",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Ce valoare are elementul mat[1][1] din matricea: int mat[2][5] = {{10}, {20, 30}};?\nCode:\nint mat[2][5] = {{10}, {20, 30}};",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 7,
+    "answers": [
+      {
+        "text": "0",
+        "isCorrect": false
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      },
+      {
+        "text": "30",
+        "isCorrect": true
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Care din urmatoarele domenii de aplicabilitate nu este specific structurii de tip stiva?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 8,
+    "answers": [
+      {
+        "text": "simularea proceselor de servire;",
+        "isCorrect": true
+      },
+      {
+        "text": "conversia intre baze de numeratie;",
+        "isCorrect": false
+      },
+      {
+        "text": "evaluarea expresiilor matematice;",
+        "isCorrect": false
+      },
+      {
+        "text": "implementarea algoritmilor de sortare (quicksort);",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Care dintre urmatoarele instructiuni aloca in mod corect memorie pentru un pointer la int si initializeaza acea variabila cu valoarea 5?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 9,
+    "answers": [
+      {
+        "text": "int* n = (int)malloc(sizeof(int*)); n = 5;",
+        "isCorrect": false
+      },
+      {
+        "text": "int* n = (int*)malloc(sizeof(int)); n = 5;",
+        "isCorrect": false
+      },
+      {
+        "text": "int* n = (int*)malloc(n * sizeof(int)); *n = 5;",
+        "isCorrect": false
+      },
+      {
+        "text": "int* n = (int*)malloc(sizeof(int)); *n = 5;",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Ce realizeaza urmatoarea secventa de cod?\nCode:\nvoid dezalocare(nod *cap)\n{\n    nod *p = cap, *q;\n    while(p)\n    {\n        q = p->next;\n        p = q;\n        free(p);\n    }\n}",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 10,
+    "answers": [
+      {
+        "text": "dezalocarea unei liste simple;",
+        "isCorrect": false
+      },
+      {
+        "text": "dezalocarea unei structuri de tip stiva;",
+        "isCorrect": false
+      },
+      {
+        "text": "o dezalocare eronata;",
+        "isCorrect": true
+      },
+      {
+        "text": "dezalocarea unei structuri de tip coada;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "Care din urmatoarele variante realizeaza o dezalocare completa a unui nod al listei duble de mai jos?\nCode:\ntypedef struct\n{\n    int* cod;\n    char* denumire;\n    float* cant;\n    float* pret;\n} produs;\n\ntypedef struct\n{\n    produs pr;\n    struct nod* prev, *next;\n} nod;",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 11,
+    "answers": [
+      {
+        "text": "free(p->pr.cod); free(p->pr.denumire); free(p->pr.cant); free(p->pr.pret); free(p);",
+        "isCorrect": true
+      },
+      {
+        "text": "free(p->pr.denumire); free(p);",
+        "isCorrect": false
+      },
+      {
+        "text": "free(p->pr.cod); free(p->pr.denumire); free(p->pr.cant); free(p->pr.pret);",
+        "isCorrect": false
+      },
+      {
+        "text": "free(p->pr.cod); free(p->pr.cant); free(p->pr.pret); free(p);",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Care din mecanismele de evitare a coliziunilor intr-o tabela de dispersie evita crearea grupurilor de coliziuni (zone cluster) in cadrul tabelei?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 12,
+    "answers": [
+      {
+        "text": "overflow area;",
+        "isCorrect": false
+      },
+      {
+        "text": "linear probing;",
+        "isCorrect": false
+      },
+      {
+        "text": "quadratic probing;",
+        "isCorrect": false
+      },
+      {
+        "text": "chaining;",
+        "isCorrect": false
+      },
+      {
+        "text": "re-hashing;",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "Care din exemplele de mai jos initializeaza corect si complet o matrice cu 3 linii si 2 coloane?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 13,
+    "answers": [
+      {
+        "text": "int m1[][2] = {{1, 2}, {3, 4}, {5, 6}};",
+        "isCorrect": true
+      },
+      {
+        "text": "int m1[3][] = {{1, 2, 3}, {4, 5, 6}};",
+        "isCorrect": false
+      },
+      {
+        "text": "int m1[2][3] = {{1, 2}, {3, 4}, {5, 6}};",
+        "isCorrect": false
+      },
+      {
+        "text": "int m1[2][] = {{1, 2}, {3, 4}, {5, 6}};",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Se considera structurile si functiile de mai jos. Care dintre urmatoarele afirmatii este adevarata?\nCode:\ntypedef struct {\n    int id;\n    char* nume;\n    float medie;\n} Student;\n\ntypedef struct {\n    Student st;\n    struct Nod* next;\n} Nod;\n\nNod* f1(Nod *p, Student s) {\n    Nod* nou;\n    nou = (Nod*)malloc(1 * sizeof(Nod));\n    nou->st.id = s.id;\n    nou->st.nume = (char*)malloc((strlen(s.nume) + 1) * sizeof(char));\n    strcpy(nou->st.nume, s.nume);\n    nou->next = p;\n    return nou;\n}\n\nint f2(char* str, int s) {\n    int temp = 0, poz;\n    for(int i = 0; i < strlen(str); i++)\n        temp += str[i];\n    poz = temp % s;\n    return poz;\n}\n\nvoid f3(Nod** x, Student s, int st) {\n    int k;\n    k = f2(s.nume, st);\n    x[k] = f1(x[k], s);\n}",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 14,
+    "answers": [
+      {
+        "text": "functia f1 implementeaza eronat mecanismul chaining pentru evitarea coliziunilor",
+        "isCorrect": false
+      },
+      {
+        "text": "functia f2 implementeaza eronat lucrul cu string-uri",
+        "isCorrect": false
+      },
+      {
+        "text": "functia f3 insereaza un student intr-o tabela de dispersie cu mecanism linear probing pentru evitarea coliziunilor",
+        "isCorrect": false
+      },
+      {
+        "text": "functia f1 implementeaza eronat mecanismul linear probing pentru evitarea coliziunilor",
+        "isCorrect": false
+      },
+      {
+        "text": "functia f3 insereaza un student intr-o tabela de dispersie cu mecanism chaining pentru evitarea coliziunilor",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Ce realizeaza urmatoarea secventa de cod?\nCode:\ndenumire = (char*)malloc(strlen(buffer+1)*sizeof(char));",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 15,
+    "answers": [
+      {
+        "text": "alocarea unui spatiu de memorie cu lungimea buffer pentru variabila denumire;",
+        "isCorrect": false
+      },
+      {
+        "text": "copierea caracterelor ocupate de sirul buffer in sirul denumire;",
+        "isCorrect": false
+      },
+      {
+        "text": "o alocare eronata a spatiului de memorie pentru variabila denumire;",
+        "isCorrect": true
+      },
+      {
+        "text": "initializarea variabilei denumire cu alocarea de spatiu de memorie corespunzator;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "question": "Care din variantele urmatoare refera corect elementul de pe linia i si coloana j dintr-o matrice?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 16,
+    "answers": [
+      {
+        "text": "*((pnumem+i)+j)",
+        "isCorrect": false
+      },
+      {
+        "text": "*(*(pnumem+i)+j)",
+        "isCorrect": true
+      },
+      {
+        "text": "*(pnumem+i+j)",
+        "isCorrect": false
+      },
+      {
+        "text": "*(*(*pnumem+i)+j)",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "question": "Se considera structura si secventa de cod sursa de mai jos. Care dintre urmatoarele afirmatii este adevarata?\nCode:\ntypedef struct {\n    int id;\n    char *nume;\n    float medie;\n} Student;\n\nStudent stud;\nstud.nume = (char*)malloc((strlen(\"Ionescu\") + 1) * sizeof(char));\nstrcpy(stud.nume, \"Ionescu\");\nif(stud.nume)\n    free(stud.nume);\nstud.nume = (char*)malloc((strlen(\"Vasilescu\") + 1) * sizeof(char));\nstrcpy(stud.nume, \"Vasilescu\");",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 17,
+    "answers": [
+      {
+        "text": "secventa este incorecta deoarece aloca un numar de bytes mai mare decat cel necesar stocarii unui string in memorie heap",
+        "isCorrect": false
+      },
+      {
+        "text": "secventa este incorecta deoarece dezaloca spatiul de memorie heap pentru studentul cu numele \"Ionescu\"",
+        "isCorrect": false
+      },
+      {
+        "text": "secventa de cod este corecta si permite accesarea string-ului \"Vasilescu\" prin expresia stud.nume",
+        "isCorrect": true
+      },
+      {
+        "text": "secventa este incorecta deoarece copiaza string-ul \"Vasilescu\" peste locatia de memorie heap alocata pentru string-ul \"Ionescu\"",
+        "isCorrect": false
+      },
+      {
+        "text": "secventa este incorecta deoarece genereaza erori de compilare a codului sursa",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "question": "Care din afirmatiile de mai jos este adevarata intr-o structura de date de tip stiva?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 18,
+    "answers": [
+      {
+        "text": "succ(Z[j]) = Z[j+1];",
+        "isCorrect": true
+      },
+      {
+        "text": "succ(Z[j]) = Z[j-1];",
+        "isCorrect": false
+      },
+      {
+        "text": "pred(Z[j]) = Z[j-1];",
+        "isCorrect": true
+      },
+      {
+        "text": "pred(Z[j+1]) = Z[j];",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Cati baiti ocupa un nod al listei simple a carui informatie utila este de tip \"produs\"?\nCode:\ntypedef struct\n{\n    int cod;\n    char* denumire;\n    float cantitate;\n    float pret;\n} produs;\n\ntypedef struct\n{\n    produs inf;\n    struct nodls* next;\n} nodls;",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 19,
+    "answers": [
+      {
+        "text": "16 baiti;",
+        "isCorrect": false
+      },
+      {
+        "text": "24 baiti;",
+        "isCorrect": false
+      },
+      {
+        "text": "20 baiti;",
+        "isCorrect": true
+      },
+      {
+        "text": "8 baiti;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "question": "Consideram urmatorul antet de functie: void citire(float ***mat, int *l, int *c). Functia returneaza:\nCode:\nvoid citire(float ***mat, int *l, int *c)",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 20,
+    "answers": [
+      {
+        "text": "un pointer la matrice",
+        "isCorrect": false
+      },
+      {
+        "text": "nu returneaza nimic",
+        "isCorrect": true
+      },
+      {
+        "text": "un vector",
+        "isCorrect": false
+      },
+      {
+        "text": "matrice",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "Care din mecanismele de evitare a coliziunilor intr-o tabela de dispersie presupune gruparea coliziunilor intr-o zona secundara alocata elementelor ce genereaza coliziuni?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 21,
+    "answers": [
+      {
+        "text": "chaining;",
+        "isCorrect": false
+      },
+      {
+        "text": "overflow area;",
+        "isCorrect": true
+      },
+      {
+        "text": "re-hashing;",
+        "isCorrect": false
+      },
+      {
+        "text": "quadratic probing;",
+        "isCorrect": false
+      },
+      {
+        "text": "linear probing;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Care din afirmatiile de mai jos este falsa pentru lista simpla?",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 22,
+    "answers": [
+      {
+        "text": "permite numai acces secvential la elemente;",
+        "isCorrect": false
+      },
+      {
+        "text": "noduri alocate ca elemente separate de memorie;",
+        "isCorrect": false
+      },
+      {
+        "text": "ocupa un spatiu contiguu de memorie.",
+        "isCorrect": true
+      },
+      {
+        "text": "structura de date dinamica omogena;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "Ce realizeaza urmatoarea secventa de cod?\nCode:\nnod *aux = p, *q;\nwhile(aux->next)\n{\n    q = aux->next;\n    free(aux);\n    aux = q;\n}\nif (p = NULL) u = NULL;",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 23,
+    "answers": [
+      {
+        "text": "dezalocarea eronata a unei structuri de tip coada;",
+        "isCorrect": true
+      },
+      {
+        "text": "dezalocarea unei structuri de tip coada cu stergerea informatiei utile;",
+        "isCorrect": false
+      },
+      {
+        "text": "dezalocarea nodurilor unei structuri de tip stiva;",
+        "isCorrect": false
+      },
+      {
+        "text": "dezalocarea unei structuri de tip lista dubla;",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Ce realizeaza urmatoarea secventa de cod?\nCode:\nint extrage(book *val, nod **p)\n{\n    if (!(*p)) return -1;\n    *val = (*p)->inf;\n    nod *aux = (*p);\n    (*p) = (*p)->next;\n    free(aux);\n    return 0;\n}",
+    "source": "grile_curs_sdd.txt",
+    "sourceQuestionNumber": 24,
+    "answers": [
+      {
+        "text": "o extragere eronata a unui nod dintr-o stiva;",
+        "isCorrect": false
+      },
+      {
+        "text": "extragerea unui nod dintr-o coada;",
+        "isCorrect": false
+      },
+      {
+        "text": "extragerea unui nod dintr-o stiva;",
+        "isCorrect": true
+      },
+      {
+        "text": "o extragere eronata a unui nod dintr-o coada;",
+        "isCorrect": false
+      }
+    ]
+  }
+]

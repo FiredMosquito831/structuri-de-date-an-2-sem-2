@@ -1,28 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const SOURCES = [
-  {
-    id: 'grile1',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\\SDD_grile_FINAL_CODE_COMPLETE_verified\\outputs_txt_docx\\grile1.txt',
-  },
-  {
-    id: 'grile2',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\\SDD_grile_FINAL_CODE_COMPLETE_verified\\outputs_txt_docx\\grile2.txt',
-  },
-  {
-    id: 'grile3',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\\SDD_grile_FINAL_CODE_COMPLETE_verified\\outputs_txt_docx\\grile3.txt',
-  },
-  {
-    id: 'grile4',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\\SDD_grile_FINAL_CODE_COMPLETE_verified\\outputs_txt_docx\\grile4.txt',
-  },
-  {
-    id: 'grile_curs_sdd',
-    file: 'C:\\Users\\fgghk\\Downloads\\SDD_curs_mcqs_MANUAL_CROSSCHECKED\\SDD_curs_mcqs_MANUAL_CROSSCHECKED\\outputs_txt_docx\\grile_curs_sdd.txt',
-  },
-];
+const SOURCE = {
+  id: 'grile_curs_sdd',
+  file: 'C:\\Users\\fgghk\\Downloads\\SDD_curs_mcqs_MANUAL_CROSSCHECKED\\SDD_curs_mcqs_MANUAL_CROSSCHECKED\\outputs_txt_docx\\grile_curs_sdd.txt',
+};
 
 const siteRoot = path.resolve(__dirname, '..');
 
@@ -95,7 +77,6 @@ function parseOptions(lines, sourceQuestionNumber) {
       throw new Error(`Question ${sourceQuestionNumber}: option continuation before first option.`);
     }
 
-    // Preserve multi-line options if a future source line wraps.
     options[options.length - 1].textLines.push(line.trim());
   }
 
@@ -115,7 +96,7 @@ function parseOptions(lines, sourceQuestionNumber) {
   };
 }
 
-function parseQuestionBlock(block, index, sourceId) {
+function parseQuestionBlock(block, index) {
   const lines = block.body.split('\n').map(line => line.trimEnd());
   const { correctIndex, correctTokens } = parseCorrectLine(lines, block.sourceQuestionNumber);
   const usefulLines = lines.slice(0, correctIndex).filter((line, lineIndex, allLines) => {
@@ -136,7 +117,7 @@ function parseQuestionBlock(block, index, sourceId) {
   return {
     id: index + 1,
     question: questionText,
-    source: `${sourceId}.txt`,
+    source: `${SOURCE.id}.txt`,
     sourceQuestionNumber: block.sourceQuestionNumber,
     answers: answers.map(answer => ({
       text: answer.text,
@@ -145,17 +126,17 @@ function parseQuestionBlock(block, index, sourceId) {
   };
 }
 
-function validate(questions, sourceId) {
+function validate(questions) {
   if (!questions.length) {
-    throw new Error(`${sourceId}: extractor produced no questions.`);
+    throw new Error(`${SOURCE.id}: extractor produced no questions.`);
   }
 
   const errors = [];
   questions.forEach((question, index) => {
-    if (!question.question) errors.push(`${sourceId} #${index + 1}: missing question text`);
-    if (!Array.isArray(question.answers) || !question.answers.length) errors.push(`${sourceId} #${index + 1}: missing answers`);
-    if (question.answers.some(answer => !answer.text)) errors.push(`${sourceId} #${index + 1}: blank answer text`);
-    if (!question.answers.some(answer => answer.isCorrect)) errors.push(`${sourceId} #${index + 1}: no correct answer`);
+    if (!question.question) errors.push(`${SOURCE.id} #${index + 1}: missing question text`);
+    if (!Array.isArray(question.answers) || !question.answers.length) errors.push(`${SOURCE.id} #${index + 1}: missing answers`);
+    if (question.answers.some(answer => !answer.text)) errors.push(`${SOURCE.id} #${index + 1}: blank answer text`);
+    if (!question.answers.some(answer => answer.isCorrect)) errors.push(`${SOURCE.id} #${index + 1}: no correct answer`);
   });
 
   if (errors.length) {
@@ -163,21 +144,21 @@ function validate(questions, sourceId) {
   }
 }
 
-function writeSet(source) {
-  const rawText = fs.readFileSync(source.file, 'utf8');
+function writeSet() {
+  const rawText = fs.readFileSync(SOURCE.file, 'utf8');
   const blocks = splitQuestionBlocks(rawText);
-  const questions = blocks.map((block, index) => parseQuestionBlock(block, index, source.id));
-  validate(questions, source.id);
+  const questions = blocks.map((block, index) => parseQuestionBlock(block, index));
+  validate(questions);
 
   const json = `${JSON.stringify(questions, null, 2)}\n`;
-  const roPath = path.join(siteRoot, 'sets', `${source.id}.json`);
-  const enPath = path.join(siteRoot, 'sets_en', `${source.id}.json`);
+  const roPath = path.join(siteRoot, 'sets', `${SOURCE.id}.json`);
+  const enPath = path.join(siteRoot, 'sets_en', `${SOURCE.id}.json`);
   fs.writeFileSync(roPath, json, 'utf8');
   fs.writeFileSync(enPath, json, 'utf8');
 
   const multiCorrect = questions.filter(question => question.answers.filter(answer => answer.isCorrect).length > 1).length;
   return {
-    id: source.id,
+    id: SOURCE.id,
     count: questions.length,
     singleCorrect: questions.length - multiCorrect,
     multiCorrect,
@@ -186,9 +167,7 @@ function writeSet(source) {
   };
 }
 
-const results = SOURCES.map(writeSet);
-for (const result of results) {
-  console.log(`${result.id}: ${result.count} questions (${result.singleCorrect} single-correct, ${result.multiCorrect} multi-correct)`);
-  console.log(`  wrote ${result.roPath}`);
-  console.log(`  wrote ${result.enPath}`);
-}
+const result = writeSet();
+console.log(`${result.id}: ${result.count} questions (${result.singleCorrect} single-correct, ${result.multiCorrect} multi-correct)`);
+console.log(`  wrote ${result.roPath}`);
+console.log(`  wrote ${result.enPath}`);

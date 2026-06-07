@@ -40,6 +40,7 @@ Current counts:
 - `grile2`: 44 questions
 - `grile3`: 44 questions
 - `grile4`: 47 questions
+- `grile_curs_sdd`: 24 questions
 - `arrays`: 3 placeholder questions
 - `linked_lists`: 3 placeholder questions
 - `trees`: 3 placeholder questions
@@ -124,6 +125,12 @@ C:\Users\fgghk\Downloads\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\SDD_gril
 C:\Users\fgghk\Downloads\SDD_grile_FINAL_CODE_COMPLETE_verified_outputs\SDD_grile_FINAL_CODE_COMPLETE_verified\outputs_txt_docx\grile4.txt
 ```
 
+The course-level grile set is generated from:
+
+```text
+C:\Users\fgghk\Downloads\SDD_curs_mcqs_MANUAL_CROSSCHECKED\SDD_curs_mcqs_MANUAL_CROSSCHECKED\outputs_txt_docx\grile_curs_sdd.txt
+```
+
 Regenerate them with:
 
 ```powershell
@@ -137,13 +144,21 @@ sets/grile1.json
 sets/grile2.json
 sets/grile3.json
 sets/grile4.json
+sets/grile_curs_sdd.json
 sets_en/grile1.json
 sets_en/grile2.json
 sets_en/grile3.json
 sets_en/grile4.json
+sets_en/grile_curs_sdd.json
 ```
 
 The parser expects blocks shaped as `Question N`, prompt/code text, numbered options, then `Correct: ...`. It validates that every correct option index exists and every question has at least one correct answer.
+
+The course-level set uses the same parser shape but has its own focused extractor:
+
+```powershell
+node scripts/extract_grile_curs_sdd.js
+```
 
 ## Add A New Question Set
 
