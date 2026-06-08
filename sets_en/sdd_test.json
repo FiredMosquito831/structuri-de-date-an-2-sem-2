@@ -1125,11 +1125,11 @@
       },
       {
         "text": "Arborii imperfect echilibrați: pentru fiecare nod, diferența dintre înălțimea subarborelui drept și stâng ia valori în {-1, 0, +1}",
-        "isCorrect": false
+        "isCorrect": true
       },
       {
         "text": "Nodurile frunză de pe nivelurile 1..h-2 ale unui arbore perfect echilibrat de înălțime h trebuie să aibă numărul maxim de fii",
-        "isCorrect": true
+        "isCorrect": false
       }
     ]
   },
