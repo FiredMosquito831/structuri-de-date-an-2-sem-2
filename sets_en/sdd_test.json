@@ -1125,11 +1125,11 @@
       },
       {
         "text": "Imperfectly balanced trees: for every node, the difference between the height of the right subtree and the left subtree takes values in {-1, 0, +1}",
-        "isCorrect": false
+        "isCorrect": true
       },
       {
         "text": "Leaf nodes on levels 1..h-2 of a perfectly balanced tree of height h must have the maximum number of children",
-        "isCorrect": true
+        "isCorrect": false
       }
     ]
   },
